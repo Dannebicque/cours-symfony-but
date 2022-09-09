@@ -6,69 +6,78 @@
 
 [La documentation officielle de Symfony sur les routes](https://symfony.com/doc/current/routing.html) et [La documentation officielle de Symfony sur les controllers](https://symfony.com/doc/current/controller.html)
 
-Il est possible de décrire des routes selon les formats de fichiers : XML, JSON, Classe PHP et en annotation. Pour plus de commodité nous utiliserons **les annotations**.
+Il est possible de décrire des routes selon les formats de fichiers : XML, Classe PHP, en annotation ou avec les Attributes (php8 et +). Pour plus de commodité nous utiliserons **les Attributes**.
 
 ## Structures d'une route
 
-Une route peut être **constante** : /blog ou **dynamique** : /blog/{slug} Ici slug englobé de **{ }** devient une variable dynamique qui prend tous les caractères alphanumériques par exemple : /blog/42 /blog/lorem-ipsum /blog/titi-32\_tata Ces 3 urls correspondent à la méthode ciblée par la route avec une variable slug différente. Cette variable peut être récupérée par le controller.
+Une route peut être **constante** : `/blog` ou **dynamique** : `/blog/{slug}`. Ici slug englobé de **{ }** devient une variable dynamique qui prend tous les caractères alphanumériques par exemple : `/blog/42`, `/blog/lorem-ipsum`, `/blog/titi-32\_tata` Ces 3 urls correspondent à la méthode ciblée par la route avec une variable `slug` différente. Cette variable peut être récupérée par le controller.
 
 ```php
-/**
- * @Route("/blog/{slug}", name="article_blog")
- */
+
+#[Route('/blog/{slug}', name:'article_blog')]
 public function article($slug)
 {
     ...
 }
 ```
 
-* Une route est au minimum **un chemin (path) et un nom**&#x20;
-* Ces variables peut être mise par défaut grâce à "defaults"
+* Une route est au minimum un **chemin (path)** et un **nom**;
+* Ces variables peuvent être mises par défaut grâce à "defaults"
 * Ces variables peuvent être soumises à une validation de format via "requirements"
 
 ```php
-/**
- * @Route("/{id}", name="index", requirements={"id"="\d+"}, defaults={"id"=1})
- */
+#[Route('/{id}', name:'index', requirements:['id'=>'\d+'], defaults=['id'=>1])]
 public function index($id)
 {
     ...
 }
 ```
 
-* On peut également préfixer l'url avec le mot clé "prefix"
 * On peut définir un path différent en fonction de la locale
 * Vous pouvez cumuler plusieurs routes pour une méthode Action
-* On peut spécifier le moyen d'accès à une route (GET, POST, PUT, ...)
+* On peut spécifier le moyen d'accès à une route (GET, POST, PUT, ...), avec le paramètre "methods"
 
-## Annotations
+## Attributes
 
-Pour pouvoir utiliser une annotation il faut :
+Pour pouvoir utiliser les Attributes il faut :
 
 ```php
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 ```
 
 à ajouter après le namespace dans votre Controller.
 
-[Compléments sur les annotations](http://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/annotations/routing.html)
-
 ## Routes et paramètres
+
+### Un paramêtre
 
 On définit une variable d'url via des accolades {ma\_variable} :
 
 ```php
-/**
-* @Route("/page", defaults={"page": "nopage"}, name="blog_index")
-* @Route("/page/{page}", name="blog_index")
-*/
+#[Route('/page/{page}', name:'blog_index')]
 public function indexAction($page)
 {
     echo $page;
 }
 ```
 
-Ici on a deux routes pour la méthode indexAction avec une variable $page qui est à nopage si on accède à l'url /page.
+Pour récupérer la variable dans le controller, il suffit de déclarer une variable dans la méthode avec le même nom que la variable d'url.
+
+### Valeur par défaut
+
+Pour définir une valeur par défaut, on peut préciser la valeur sur le paramêtre de la méthode :
+
+```php
+#[Route('/page/{page}', name:'blog_index')]
+public function indexAction($page = 1)
+{
+    echo $page;
+}
+```
+
+Si l'utilisateur utilise l'URL `/page/`, la variable `$page` sera égale à 1.
+
+### plusieurs paramètres
 
 On peut cumuler plusieurs variables :
 
@@ -81,6 +90,8 @@ public function indexAction($page, $subpage)
     echo $page.' '.$subpage;
 }
 ```
+
+On pourrait utiliser un autre séparation que le slash, comme par exemple -, . ou _. La seule condition étant que Symfony puisse être en mesure de différencier les paramètres.
 
 ## Génération d'url
 
@@ -133,9 +144,7 @@ Affiche à l'écran Ma response. Dans l'état cette réponse n'est pas du HTML, 
 Une méthode render() (définie quand la classe AbstractController dont votre controller doit hériter) permet aux Actions de récupérer une vue et d'afficher le contenu de la vue compilée avec les différentes variables envoyées.
 
 ```php
-/**
- * @ Route("/", name="page")
- */
+#[Route("/", name:"page")]
 public function index() 
 {
     // votre code

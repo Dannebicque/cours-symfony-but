@@ -12,11 +12,9 @@ Symfony à également abandonné la notion de Bundle, qui était nécessaire pou
 * **config/** : contient les configurations des différents bundles, les routes, la sécurité et les services
 * **public/** : c'est le répertoire public et accessible du site. Contient le contrôleur frontal "index.php" et les "assets" (css, js, images, ...)
 * **src/** : contient votre projet (**M et C** du MVC)
-*   **templates/** : contient les vues (**V** du MVC)
-
-    **var/** : contient les logs, le cache
-
-    **vendor/** : contient les sources de bundles tiers et de Symfony
+* **templates/** : contient les vues (**V** du MVC)
+*  **var/** : contient les logs, le cache
+*  **vendor/** : contient les sources de bundles tiers et de Symfony
 
 ## Configuration
 
@@ -39,4 +37,4 @@ Dans ce répertoire se trouve toute la logique de l'application, les contrôleur
 * Migrations/ : Contient les fichiers permettant la mise à jour de la base de données pour chaque modification effectuée sur la structure.
 * Repository/ : Est très généralement lié à une entité, et permet d'ajouter des requêtes spécifiques.
 
-Tous ces points seront détaillées dans les parties suivantes.
+Tous ces points seront détaillés dans les parties suivantes.
