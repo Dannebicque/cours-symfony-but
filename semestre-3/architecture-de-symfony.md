@@ -13,8 +13,8 @@ Symfony à également abandonné la notion de Bundle, qui était nécessaire pou
 * **public/** : c'est le répertoire public et accessible du site. Contient le contrôleur frontal "index.php" et les "assets" (css, js, images, ...)
 * **src/** : contient votre projet (**M et C** du MVC)
 * **templates/** : contient les vues (**V** du MVC)
-*  **var/** : contient les logs, le cache
-*  **vendor/** : contient les sources de bundles tiers et de Symfony
+* **var/** : contient les logs, le cache
+* **vendor/** : contient les sources de bundles tiers et de Symfony
 
 ## Configuration
 

@@ -36,7 +36,7 @@ Les _Attributes_ sont la nouvelle version des annotations, intégrés nativement
 
 ## Routes
 
-Les routes permettent de faire un lien entre une URL et un contrôleur. 
+Les routes permettent de faire un lien entre une URL et un contrôleur.
 
 ## Bundles
 
@@ -44,24 +44,26 @@ Sorte de modules Symfony qui peuvent contenir tout et n'importe quoi ; C'est la 
 
 ## ENVIRONNEMENTS
 
-Symfony propose par défaut 2 environnements : _dev_ et _prod_ qui permettent de donner des configs différentes en fonction de l'environnement de travail ; 
+Symfony propose par défaut 2 environnements : _dev_ et _prod_ qui permettent de donner des configs différentes en fonction de l'environnement de travail ;
 
-* dev permet une utilisation sans cache avec des outils de dev comme le profiler ; 
-* prod lui permet d'utiliser le site avec le cache et sans aucun message d'erreurs. 
+* dev permet une utilisation sans cache avec des outils de dev comme le profiler ;
+* prod lui permet d'utiliser le site avec le cache et sans aucun message d'erreurs.
 
 De plus on peut configurer les différents environnements pour par exemple rediriger tous les mails vers toto@titi.com en dev et laisser le fonctionnement normal pour prod ; pratique pour les debugs.
 
 ## ENVIRONNEMENTS
 
 Symfony propose également de définir autant d'environnement que nécessaire afin d'avoir différentes configurations. Le changement d'un environnement à un autre se faire en modifiant la ligne suivante dans le fichier ".env" (ou .env.local) :
-   ```dotenv
-   ###> symfony/framework-bundle ###
-   APP_ENV=dev
-   ```
+
+```dotenv
+###> symfony/framework-bundle ###
+APP_ENV=dev
+```
 
 ## Profiler
 
 Le profiler est un outil puissant (et indispensable) pour débuger une application. Par défaut le profiler n'est pas installé. Pour l'ajouter il faut exécuter la commande suivante :
+
 ```bash
 composer require profiler --dev
 ```
