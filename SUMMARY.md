@@ -10,7 +10,6 @@
 * [Séance XX : Docker et Installation](semestre-3/seance-xx-docker-et-installation.md)
 * [Séance XX : Architecture de Symfony](semestre-3/architecture-de-symfony.md)
 * [Séance 2 : Première page avec Symfony](semestre-3/premiere\_page.md)
-* [console](semestre-3/console.md)
 * [Séance 2 : Controller et Routes](semestre-3/controller.md)
 * [Séance 3 : Vues - TWIG](semestre-3/vues.md)
 * [Séance 4 : Exercices](semestre-3/seance-4-exercices.md)
