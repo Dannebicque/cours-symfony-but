@@ -1,4 +1,4 @@
-# Séance XX : Première page avec Symfony
+# Séance 2 : Première page avec Symfony
 
 Pour créer une page dans Symfony, il faut, au minimum :
 
@@ -58,7 +58,6 @@ class LuckyController
         );
     }
 }
-
 ```
 
 Pour accéder a cette route, il faut maintenant taper l'URL suivante : `http://localhost:8000/lucky/number` si vous executez le serveur de développement de Symfony. Sinon, il faut taper l'URL suivante : `http://localhost:8000/public/index.php/lucky/number`. **La partie locahost:8000 est à adapter en fonction de votre configuration.**
@@ -98,7 +97,6 @@ class LuckyController extends AbstractController
         );
     }
 }
-
 ```
 
 Il faut maintenant écrire la vue.
@@ -109,3 +107,25 @@ Il faut maintenant écrire la vue.
 ```
 
 **Et Voilà !**
+
+## **Création avec la console**
+
+Symfony propose un outil qui se nomme "maker" qui permet de générer du code pour nous. Le code produit est très générique, ne correspond pas forcément exactement à vos besoin, mais permet d'avoir une première base de travail et une structure pour vos différents fichiers.
+
+Pour installer le maker, en étant dans votre projet :
+
+`composer require maker --dev`
+
+**ou**
+
+`symfony composer require maker --dev`
+
+Ensuite pour utiliser le maker, dans le projet saisir la commande suivante
+
+`bin/console make:controller NomDuController`
+
+Cette commande va générer un controller nommé "NomDuController" (dans src/controller) et la vue associée dans le repertoire templates/NomDuController, avec une méthode index.
+
+{% hint style="info" %}
+Pour ajouter d'autres méthodes, vous devrez le faire directement dans le controller, le maker ne permet pas d'en ajouter dans un fichier existant.
+{% endhint %}
