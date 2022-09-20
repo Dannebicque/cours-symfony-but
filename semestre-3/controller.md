@@ -13,7 +13,6 @@ Il est possible de décrire des routes selon les formats de fichiers : XML, Clas
 Une route peut être **constante** : `/blog` ou **dynamique** : `/blog/{slug}`. Ici slug englobé de **{ }** devient une variable dynamique qui prend tous les caractères alphanumériques par exemple : `/blog/42`, `/blog/lorem-ipsum`, `/blog/titi-32\_tata` Ces 3 urls correspondent à la méthode ciblée par la route avec une variable `slug` différente. Cette variable peut être récupérée par le controller.
 
 ```php
-
 #[Route('/blog/{slug}', name:'article_blog')]
 public function article($slug)
 {
@@ -81,17 +80,13 @@ Si l'utilisateur utilise l'URL `/page/`, la variable `$page` sera égale à 1.
 
 On peut cumuler plusieurs variables :
 
-```php
-/**
-* @Route("/page/{page}/{subpage}", name="blog_index")
-*/
-public function indexAction($page, $subpage)
+<pre class="language-php"><code class="lang-php"><strong>#[Route('/page/{page}/{subpage}', name:'blog_index')]
+</strong>public function indexAction($page, $subpage)
 {
     echo $page.' '.$subpage;
-}
-```
+}</code></pre>
 
-On pourrait utiliser un autre séparation que le slash, comme par exemple -, . ou _. La seule condition étant que Symfony puisse être en mesure de différencier les paramètres.
+On pourrait utiliser un autre séparation que le slash, comme par exemple -, . ou \_. La seule condition étant que Symfony puisse être en mesure de différencier les paramètres.
 
 ## Génération d'url
 
@@ -160,7 +155,7 @@ Ici on va récupérer le template présent dans templates/default/index.html.twi
 ## Exercice 1
 
 * Créer 2 nouvelles pages :
-  * [http://localhost/time/now](http://localhost/time/now) : afficher la date l'heure  minute et seconde
+  * [http://localhost/time/now](http://localhost/time/now) : afficher la date l'heure minute et seconde
   * [http://localhost/color/blue](http://localhost/color/blue) : affiche "blue" à l'écran dynamiquement
   * [http://localhost/color/red](http://localhost/color/red) : affiche "red" à l'écran dynamiquement
   * Ajouter un menu avec des liens vers les 2 pages créées.

@@ -33,7 +33,7 @@ Exemple d'un code que vous pourriez écrire en PHP
 
 Ce même code, écrit avec TWIG serait :
 
-```python
+```twig
 <body>
     <h1>{{ page_title }}</h1>
 
@@ -119,7 +119,7 @@ Le && de PHP s'écrit "and" dans TWIG, et le || de PHP s'écrit "or" dans TWIG.
 
 Il est possible d'avoir des _elseif_ (autant que nécessaire) et un bloc _else_ (1 au maximum)
 
-```python
+```twig
 {% raw %}
 {% if condition %}
 
@@ -137,7 +137,7 @@ Il n'existe que la boucle for dans TWIG (elle est un peu l'équivalent d'un fore
 
 Le code ci-dessous est une boucle qui varie de 1 à 10.
 
-```python
+```twig
 {% raw %}
 {% for i in 1..10 %}
 
@@ -147,7 +147,7 @@ Le code ci-dessous est une boucle qui varie de 1 à 10.
 
 La boucle ci-dessous est une boucle qui parcours une "collection" users (l'équivalent du foreach). **Attention la syntaxe est inversée par rapport au PHP**
 
-```python
+```twig
 <ul>
     {% raw %}
 {% for user in users %}
@@ -172,7 +172,7 @@ Dans le cadre d'une boucle TWIG propose une variable nommée loop qui permet d'a
 
 La boucle ci-dessous intègre un test. Ce qui simplifie l'écriture. Elle intègre également un else dans le cas ou la boucle ne ferait aucune itération. Il est possible d'utiliser le else sans le if et réciproquement.
 
-```python
+```twig
 <ul>
     {% raw %}
 {% for user in users|filter(user => (user.active == true)) %}
@@ -206,7 +206,7 @@ else {
 
 TWIG permet l'héritage de template via un `extends` dans les templates enfants :
 
-```python
+```twig
 {% raw %}
 {% extends 'base.html.twig' %}
 {% endraw %}
@@ -214,7 +214,7 @@ TWIG permet l'héritage de template via un `extends` dans les templates enfants 
 
 Dans les templates mère on définit des "block" que l'on vient surcharger dans les templates enfants :
 
-```python
+```twig
 {% raw %}
 {% block body %}
 toto
