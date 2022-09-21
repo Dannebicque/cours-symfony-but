@@ -72,6 +72,8 @@ Cette solution fonctionne, mais écrire tout le code "HTML" dans la méthode n'e
 composer require twig
 ```
 
+<pre data-overflow="wrap"><code><strong># Uniquement si vous n'avez pas installé le projet avec totues les dépendances --webapp</strong></code></pre>
+
 Il faut ensuite modifier le contrôleur pour utiliser les vues.
 
 ```php
@@ -112,7 +114,7 @@ Il faut maintenant écrire la vue.
 
 Symfony propose un outil qui se nomme "maker" qui permet de générer du code pour nous. Le code produit est très générique, ne correspond pas forcément exactement à vos besoin, mais permet d'avoir une première base de travail et une structure pour vos différents fichiers.
 
-Pour installer le maker, en étant dans votre projet :
+Pour installer le maker (si vous n'avez pas installé un projet avec toutes les dépendances --wepabb), en étant dans votre projet :
 
 `composer require maker --dev`
 
