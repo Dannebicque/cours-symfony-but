@@ -72,19 +72,19 @@ TWIG est très puissant lorsqu'il s'agit de manipuler des variables. Pour lui, s
 Par exemple si vous avez le tableau `$tab['param1']` vous écrirez en TWIG
 
 ```
-{{tab.param1}}
+{{ tab.param1 }}
 ```
 
 Si vous avez un objet `$tab`, qui est une instance d'une classe ayant comme propriété `$param1`, la syntaxe en TWIG sera :
 
 ```
-{{tab.param1}}
+{{ tab.param1 }}
 ```
 
 Si vous avez un objet `$tab`, qui est une instance d'une classe ayant comme propriété `$param1`, qui est un tableau associatif avec une clé `key1`, la syntaxe pourrait être :
 
 ```python
-{{tab.param1.key1}}
+{{ tab.param1.key1 }}
 ```
 
 La manière dont TWIG inspecte votre code pour trouver la meilleure façon d'interpréter une variable est la suivante :
