@@ -24,7 +24,7 @@ En utilisant les assets installer Bootstrap.
 
 Sur la page accueil insérez une image de votre choix
 
-Sur la page articles, ajouter des articles dans votre méthode de controller (dans un tableau associatif, ajouter au mon 3 articles).
+Sur la page articles, ajouter des articles dans votre méthode de controller (dans un tableau associatif, ajouter au moins 3 articles).
 
 Affichez ces 3 articles dans votre page articles.
 
