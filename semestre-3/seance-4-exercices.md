@@ -4,6 +4,10 @@
 
 Créer un nouveau projet Symfony et installer les dépendances nécessaires.
 
+Pour rappel, en ligne de commande depuis Docker/serveur et dans le repertoire où vous souhaitez mettre votre projet :
+
+`symfony new nomDuProjet --webapp`
+
 {% hint style="info" %}
 Comme vous utilisez docker, pensez à créer un nouvel alias dans votre fichier de conf (symfony.conf) et redémarrer apache2
 {% endhint %}
