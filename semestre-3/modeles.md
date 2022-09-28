@@ -201,6 +201,15 @@ Il existe à la place de `$em->persist, $em->remove($post);` qui permettra de fa
 #### Exercice
 
 * Configurer votre base de données (dupliquer le `.env` en `.env.local` et modifier les informations dans le `.env.local`)
+
+{% hint style="info" %}
+Si vous utilisez limage docker du cours, la ligne devrait être
+
+```
+DATABASE_URL="mysql://root:123456@mariadb:3306/nomDeLaBDD?charset=utf8mb4"
+```
+{% endhint %}
+
 * Créer la base de données (`bin/console doctrine:database:create`)
 * Créer une entité (`bin/console make:entity`), nommée Post et ajoute les champs suivants
   * titre, string de 150 caractères
