@@ -178,23 +178,24 @@ Après chaque modification ou ajout il faut de nouveau générer le fichier de m
 
 Une fois la base de données mise en place on va pouvoir insérer, modifier, supprimer et récupérer des informations de la base de données sans saisir de requêtes via des méthodes en initialisant l'entité fraichement créée :
 
-```php
-#[Route("/test", name:"test")]
-public function test()
+<pre class="language-php"><code class="lang-php">use Doctrine\ORM\EntityManagerInterface;
+
+...
+<strong>
+</strong><strong>#[Route("/test", name:"test")]
+</strong>public function test(EntityManagerInterface $entityManager)
 {
     $post = new Post(); // initialise l'entité
     $post->setTitle('Mon titre'); // on set les différents champs
     $post->setEnable(true);
     $post->setDateCreated(new \Datetime);
 
-    $em = $this->getDoctrine()->getManager(); // on récupère le gestionnaire d'entité
-    $em->persist( $post ); // on déclare une modification de type persist et la génération des différents liens entre entité
-    $em->flush(); // on effectue les différentes modifications sur la base de données 
+    $entityManager->persist( $post ); // on déclare une modification de type persist et la génération des différents liens entre entité
+    $entityManager->flush(); // on effectue les différentes modifications sur la base de données 
     // réelle
 
     return new Response('Sauvegarde OK sur : ' . $post->getId() );
-}
-```
+}</code></pre>
 
 Il existe à la place de `$em->persist, $em->remove($post);` qui permettra de faire une suppression.
 
