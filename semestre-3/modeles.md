@@ -112,27 +112,20 @@ Et le code de l'entité généré dans `src/Entity/Product.php` :
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\DBAL\Types\Types;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
- */
+#[ORM\Entity(repositoryClass:"App\Repository\ProductRepository")]
 class Product
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type:Types::STRING, length:255)]
     private $name;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type:Types::INTEGER)]
     private $price;
 
     public function getId()
@@ -186,9 +179,7 @@ Après chaque modification ou ajout il faut de nouveau générer le fichier de m
 Une fois la base de données mise en place on va pouvoir insérer, modifier, supprimer et récupérer des informations de la base de données sans saisir de requêtes via des méthodes en initialisant l'entité fraichement créée :
 
 ```php
-/**
- * @Route("/test", name="test")
- */
+#[Route("/test", name:"test")]
 public function test()
 {
     $post = new Post(); // initialise l'entité
@@ -206,6 +197,28 @@ public function test()
 ```
 
 Il existe à la place de `$em->persist, $em->remove($post);` qui permettra de faire une suppression.
+
+#### Exercice
+
+* Configurer votre base de données (dupliquer le `.env` en `.env.local` et modifier les informations dans le `.env.local`)
+* Créer la base de données (`bin/console doctrine:database:create`)
+* Créer une entité (`bin/console make:entity`), nommée Post et ajoute les champs suivants
+  * titre, string de 150 caractères
+  * message, text
+  * datePublication, DateTime
+* L'id sera automatiquement ajouté
+* Créer un nouveau contrôleur nommé "Post"
+* Ajouter une route pour créer un nouvel enregistrement
+  * Créer un objet Post et compléter les informations (titre, message, datePublication)
+  * Récupérer la connexion à doctrine (`$em = $this->getDoctrine()->getManager()`)
+  * Associer l'instance de Post avec l'ORM (`$em->persist($post))`
+  * Enregistrer dans la base de données (`$em->flush()`)
+* Appeler la route et vérifier que cela s'enregistre dans votre base de données
+* Essayer d'appeler la route plusieurs fois.
+
+
+
+### Modification
 
 Ce dernier code effectue une création dans la base de données; pour une modification il suffit de modifier l'instanciation de l'entité de la sorte :
 
@@ -317,15 +330,10 @@ $this->getDoctrine()->getRepository(Post::class)->maRequete('test');
 
 ## Exercice
 
-* Créer une entité "Post" avec :
-  * title string 255
-  * dateCreated datetime
-  * content text
-  * enable boolean
 * Créer une entité "PostCategory" avec :
   * title string 255
 * Créer une page qui va sauvegarder une catégorie avec le nom "Catégorie 1".
-* Créer une page qui va sauvegarder un post avec le nom Post 1 à la date courante avec comme contenu Lorem ipsum et en enable à true.&#x20;
+* Créer une page qui va sauvegarder un post avec le nom Post 1 à la date courante avec comme message Lorem ipsum.&#x20;
 * Créer une page qui va afficher le titre de la catégorie en id 1 et le post en id 1.
 * Créer un nouveau post identique au premier en changeant le titre.
 * Créer une page qui affiche la totalité des entités Post.&#x20;
