@@ -45,10 +45,8 @@ class Absence
 {
 // ...
 
-/**
-* @ORM\ManyToOne(targetEntity="App\Entity\Etudiant")
-* @ORM\JoinColumn(nullable=true)
-*/
+#[ORM\ManyToOne(targetEntity:Etudiant::class)]
+#[ORM\JoinColumn(nullable:true)]
 private $etudiant;
 ...
 }
@@ -67,11 +65,9 @@ class Absence
 {
 // ...
 
-/**
-* @ORM\ManyToOne(targetEntity="App\Entity\Etudiant", inversedBy="absences")
-* @ORM\JoinColumn(nullable=true)
-*/
-private $etudiant;
+#[ORM\ManyToOne(targetEntity:Etudiant::class, inversedBy:"absences")]
+#[ORM\JoinColumn(nullable:true)]
+private Etudiant $etudiant;
 ...
 }
 ```
@@ -83,10 +79,8 @@ class Etudiant
 {
     // ...
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Absence", mappedBy="etudiant")
-     */
-    private $absences;
+    #[ORM\OneToMany(targetEntity:Absence::class, mappedBy:"etudiant")]
+    private Collection $absences;
     ...
 
     public function __construct()
@@ -94,10 +88,7 @@ class Etudiant
         $this->absences = new ArrayCollection();
     }
 
-    /**
-     * @return Collection|Absence[]
-     */
-    public function getAbsences()
+    public function getAbsences(): array
     {
         return $this->absences;
     }
@@ -115,10 +106,8 @@ La relation 1..1 est peu utilisée mais permet une flexibilité en terme relatio
 Utilisateur -> Adresse Produit -> Image Commande -> Facture
 
 ```php
-/**
- * @ORM\OneToOne(targetEntity="Address")
- */
-private $address;
+#[ORM\OneToOne(targetEntity:Address::class)]
+private Address $address;
 ```
 
 ## Relation N..N (ManyToMany)

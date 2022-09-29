@@ -232,27 +232,29 @@ DATABASE_URL="mysql://root:123456@mariadb:3306/nomDeLaBDD?charset=utf8mb4"
 
 Ce dernier code effectue une création dans la base de données; pour une modification il suffit de modifier l'instanciation de l'entité de la sorte :
 
-```php
-/**
- * @Route("/test/modification", name="test")
- */
-public function testModification()
+<pre class="language-php"><code class="lang-php"><strong>use App\Repository\PostRepositoy;
+</strong>use Doctrine\ORM\EntityManagerInterface;
+
+<strong>...
+</strong><strong>
+</strong><strong>#[Route("/test/modification", name:"test")]
+</strong>public function testModification(
+        EntityManagerInterface $entityManager,
+        PostRepository $postRepository)
 {
     // récupération du post avec id 1 
-    $post = $this->getDoctrine()->getRepository(Post::class)->find(1); 
+    $post = $postRepository->find(1); 
     //equivalent à SELECT * FROM post WHERE id=1
     
     $post->setTitle('Mon titre'); // on set les différents champs
     $post->setEnable(true);
     $post->setDateCreated(new \Datetime);
 
-    $em = $this->getDoctrine()->getManager(); // on récupère le gestionnaire d'entité
-    $em->flush(); // on effectue les différentes modifications sur la base de données 
+    $entityManager->flush(); // on effectue les différentes modifications sur la base de données 
     // réelle
 
     return new Response('Sauvegarde OK sur : ' . $post->getId() );
-}
-```
+}</code></pre>
 
 ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le restant du code reste inchangé.
 
@@ -275,22 +277,21 @@ Exemple
 
 ```php
 // Modifications multiples : 
-/**
- * @Route("/est", name="test")
- */
-public function test()
+#[Route("/est", name="test")]
+public function test(
+        EntityManagerInterface $entityManager,
+        PostRepository $postRepository)
 {
     // récupération de tous les posts
-    $posts = $this->getDoctrine()->getRepository(Post::class)->findAll(); 
+    $posts = $postRepository->findAll(); 
     //équivalent à SELECT * FROM post
-    $em = $this->getDoctrine()->getManager(); // on récupère le gestionnaire d'entité
 
     foreach($posts as $post)
     {
         $post->setTitle('Mon titre ' . $post->getId() ); // on set les différents champs
     }
 
-    $em->flush(); // on effectue les différentes modifications sur la base de données 
+    $entityManager->flush(); // on effectue les différentes modifications sur la base de données 
     // réelle
 
     return new Response('Sauvegarde OK ');
@@ -307,13 +308,12 @@ Vous pouvez également générer vos requêtes manuellement pour avoir une requ�
 public function maRequete( $where )
 {
     // avec querybuilder
-    $queryBuilder = $this->createQueryBuilder("p");
+    $queryBuilder = $this->createQueryBuilder("p")
+        ->where(' p.title like :w')
+        ->setParameter(':w', '%'.$where.'%')
+        ->getQuery(); // on récupère la requêtes 
 
-    $queryBuilder->where(' p.title like :w');
-    $queryBuilder->setParameter(':w', '%'.$where.'%');
-    $query = $queryBuilder->getQuery(); // on récupère la requêtes 
-
-       return $query->getResult(); // on renvoie le résultat
+   return $query->getResult(); // on renvoie le résultat
 }
 //OU
  public function maRequeteSQL( $where )
@@ -335,7 +335,7 @@ Et l'utiliser dans votre _controller_
 
 ```php
 // src/AppBundle/Controller/DefautController
-$this->getDoctrine()->getRepository(Post::class)->maRequete('test');
+$postRepository->maRequete('test');
 ```
 
 ## Exercice
