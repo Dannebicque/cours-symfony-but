@@ -57,7 +57,7 @@ class Task
 
 On peut créer un Form de 2 façons différentes :
 
-#### Directement dans un controller
+#### Directement dans un contrôleur
 
 ```php
 // src/Controller/DefaultController.php
@@ -209,14 +209,13 @@ Une fois le formulaire créé et affiche via TWIG il faut rajouter un comporteme
 Dans la majorité des cas on va tester si :
 
 ```php
-public function newAction(Request $request){
+public function newAction(Request $request, EntityManagerInterface $entityManager){
   //... génération ou récupération du formulaire
 
   $form->handleRequest($request); // hydratation du form 
   if($form->isSubmitted() && $form->isValid()){ // test si le formulaire a été soumis et s'il est valide
-    $em = $this->getDoctrine()->getManager(); // on récupère la gestion des entités
-    $em->persist($task); // on effectue les mise à jours internes
-    $em->flush(); // on effectue la mise à jour vers la base de données
+    $entityManager->persist($task); // on effectue les mise à jours internes
+    $entityManager->flush(); // on effectue la mise à jour vers la base de données
     return $this->redirectToRoute('show_task', ['id' => $task->getId()]); // on redirige vers la route show_task avec l'id du post créé ou modifié 
   }
 }
