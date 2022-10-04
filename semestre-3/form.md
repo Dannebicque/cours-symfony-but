@@ -82,12 +82,12 @@ class DefaultController extends AbstractController
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
             ->add('dueDate', DateType::class)
-            ->add('save', SubmitType::class, array('label' => 'Create Task'))
+            ->add('save', SubmitType::class, ['label' => 'Create Task'])
             ->getForm();
 
-        return $this->render('default/new.html.twig', array(
+        return $this->render('default/new.html.twig', [
             'form' => $form->createView(),
-        ));
+        ]);
     }
 }
 ```
@@ -114,7 +114,7 @@ class TaskType extends AbstractType
     {
         $builder
             ->add('task')
-            ->add('dueDate', null, array('widget' => 'single_text'))
+            ->add('dueDate', null, ['widget' => 'single_text'])
             ->add('save', SubmitType::class)
         ;
     }
@@ -162,8 +162,10 @@ $form->createView();
 
 Soit par exemple
 
-```graphql
-return $this->render('template.html.twig', ['form' => $form->createView()]);
+```php
+wireturn $this->render('template.html.twig', ['form' => $form->createView()]);
+//ou
+return $this->renderForm('template.html.twig', ['form' => $form ];
 ```
 
 Ensuite nous aurons plusieurs fonctions twig utiles:
@@ -173,7 +175,7 @@ Ensuite nous aurons plusieurs fonctions twig utiles:
 * `{{ form_end }}` permet de générer la fermeture de `<form>` avec les différents champs restants non affichés
 * `{{ form_errors }}` affiche les erreurs éventuelles du formulaire
 * `{{ form_widget(mon formulaire.nomduchamps) }}` affiche le type de champs&#x20;
-* `{{  form_label(mon formulaire.nomduchamps) }}` affiche le label du champs
+* `{{ form_label(mon formulaire.nomduchamps) }}` affiche le label du champs
 * `{{ form_row(monformulaire.nomduchamps) }}` affiche le form\_widget et form\_label
 * `{{ form_rest }}` affiche les champs restants non récupéré précédemment (token de vérification par exemple)
 
@@ -181,13 +183,13 @@ Ces fonctions permettent une grande maîtrise de la mise en forme d'un formulair
 
 Il est donc possible d'afficher un formulaire en une seule ligne, et le rendu dépendra du paramètrage (ou du template modèle) existant.
 
-```
+```twig
 {{ form(variable_form) }}
 ```
 
 la `variable_form` correspond à la variable contenant le formulaire envoyée par le contrôleur. Il est enfin possible de préciser un "thème" pour votre formulaire avec la syntaxe :
 
-```
+```twig
 {% raw %}
 {% form_theme form 'nom_du_template.html.twig' %}
 {% endraw %}
