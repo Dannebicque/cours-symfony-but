@@ -163,15 +163,11 @@ Comme après chaque modification, il faudra générer le fichier de migration, e
 
 ## Exercice
 
-* Créer la liaison entre Post et PostCatégorie.&#x20;
-* Modifier la page de génération de Post pour créer un nouveau post avec la relation vers "Catégorie 1"
-  * La catégorie de ce post sera Catégorie 1 (s'il existe, sinon le créer, cf. séance précédente)&#x20;
+* Créer la liaison entre Post et Catégorie.&#x20;
+* Modifier la page de génération de Post pour créer un article "Post 3" avec la relation vers "Catégorie 1"
+  * La catégorie de Post 3 sera Catégorie 1.&#x20;
 * Modifier la page avec tous les posts pour afficher la catégorie liée à l'article.&#x20;
-* Afficher la catégorie 1 avec tous les posts qui lui sont associés
-* Créer une route qui supprime "Post 1"
-*   Créer une route qui supprime "Catégorie 1"
-
-    ****
+* Créer une page qui supprime "Post 1"
 
 **En plus : Flash Messages** [https://symfony.com/doc/current/controller.html#flash-messages](https://symfony.com/doc/current/controller.html#flash-messages)
 

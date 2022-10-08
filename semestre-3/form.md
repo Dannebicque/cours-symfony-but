@@ -1,4 +1,4 @@
-# Séance 8 : Formulaires
+# Séance 7 : Formulaires
 
 ## FORM
 
@@ -82,7 +82,6 @@ class DefaultController extends AbstractController
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
             ->add('dueDate', DateType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create Task'])
             ->getForm();
 
         return $this->render('default/new.html.twig', [
@@ -115,7 +114,6 @@ class TaskType extends AbstractType
         $builder
             ->add('task')
             ->add('dueDate', null, ['widget' => 'single_text'])
-            ->add('save', SubmitType::class)
         ;
     }
 }
@@ -125,7 +123,6 @@ On utilise la classe FormBuilder accessible avec la méthode
 
 ```php
 $task = new Task();
-// ou $entite = $this->getDoctrine()->getRepository(Task::class)->find(1);
 $form = $this->createForm(TaskType::class, $task);
 ```
 
@@ -136,7 +133,7 @@ On peut mettre des champs de formulaire par défaut en modifiant l'entité avant
 Par exemple
 
 ```php
-$task = new Task;
+$task = new Task();
 
 $task->setTask('Ma tâche pré-définie');
 $form = $this->createForm(TaskType::class, $task);
@@ -163,9 +160,9 @@ $form->createView();
 Soit par exemple
 
 ```php
-wireturn $this->render('template.html.twig', ['form' => $form->createView()]);
+return $this->render('template.html.twig', ['variable_form' => $form->createView()]);
 //ou
-return $this->renderForm('template.html.twig', ['form' => $form ];
+return $this->renderForm('template.html.twig', ['variable_form' => $form ];
 ```
 
 Ensuite nous aurons plusieurs fonctions twig utiles:

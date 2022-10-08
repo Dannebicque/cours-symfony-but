@@ -15,8 +15,8 @@
 * [Séance 4 : Exercices](semestre-3/seance-4-exercices.md)
 * [Séance 5 : Modèles - Entités - ORM](semestre-3/modeles.md)
 * [Séance 6 : Relations entre entités](semestre-3/relations.md)
-* [Séance 7 : Exercices](semestre-3/seance-7-exercices.md)
-* [Séance 8 : Formulaires](semestre-3/form.md)
+* [Séance 7 : Formulaires](semestre-3/form.md)
+* [Séance 8 : Exercices](semestre-3/seance-7-exercices.md)
 * [Séance 9 : Sécurité](semestre-3/securite.md)
 
 ## Semestre 4
