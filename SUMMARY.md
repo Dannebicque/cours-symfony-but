@@ -17,7 +17,8 @@
 * [Séance 6 : Relations entre entités](semestre-3/relations.md)
 * [Séance 7 : Formulaires](semestre-3/form.md)
 * [Séance 8 : Exercices](semestre-3/seance-7-exercices.md)
-* [Séance 9 : Sécurité](semestre-3/securite.md)
+* [Séance 9 : Mails](semestre-3/seance-9-mails.md)
+* [Séance 10 : Sécurité](semestre-3/securite.md)
 
 ## Semestre 4
 
