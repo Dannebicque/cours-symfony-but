@@ -226,38 +226,6 @@ DATABASE_URL="mysql://root:123456@mariadb:3306/nomDeLaBDD?charset=utf8mb4"
 * Appeler la route et vérifier que cela s'enregistre dans votre base de données
 * Essayer d'appeler la route plusieurs fois.
 
-
-
-### Modification
-
-Ce dernier code effectue une création dans la base de données; pour une modification il suffit de modifier l'instanciation de l'entité de la sorte :
-
-<pre class="language-php"><code class="lang-php"><strong>use App\Repository\PostRepositoy;
-</strong>use Doctrine\ORM\EntityManagerInterface;
-
-<strong>...
-</strong><strong>
-</strong><strong>#[Route("/test/modification", name:"test")]
-</strong>public function testModification(
-        EntityManagerInterface $entityManager,
-        PostRepository $postRepository)
-{
-    // récupération du post avec id 1 
-    $post = $postRepository->find(1); 
-    //equivalent à SELECT * FROM post WHERE id=1
-    
-    $post->setTitle('Mon titre'); // on set les différents champs
-    $post->setEnable(true);
-    $post->setDateCreated(new \Datetime);
-
-    $entityManager->flush(); // on effectue les différentes modifications sur la base de données 
-    // réelle
-
-    return new Response('Sauvegarde OK sur : ' . $post->getId() );
-}</code></pre>
-
-ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le restant du code reste inchangé.
-
 ## Recherche d'entité
 
 Symfony et Doctrine proposes des requêtes prédéfinies, qui répondent aux usages les plus courant.
@@ -337,6 +305,36 @@ Et l'utiliser dans votre _controller_
 // src/AppBundle/Controller/DefautController
 $postRepository->maRequete('test');
 ```
+
+## Modification
+
+Ce dernier code effectue une création dans la base de données; pour une modification il suffit de modifier l'instanciation de l'entité de la sorte :
+
+<pre class="language-php"><code class="lang-php"><strong>use App\Repository\PostRepositoy;
+</strong>use Doctrine\ORM\EntityManagerInterface;
+
+<strong>...
+</strong><strong>
+</strong><strong>#[Route("/test/modification", name:"test")]
+</strong>public function testModification(
+        EntityManagerInterface $entityManager,
+        PostRepository $postRepository)
+{
+    // récupération du post avec id 1 
+    $post = $postRepository->find(1); 
+    //equivalent à SELECT * FROM post WHERE id=1
+    
+    $post->setTitle('Mon titre'); // on set les différents champs
+    $post->setEnable(true);
+    $post->setDateCreated(new \Datetime);
+
+    $entityManager->flush(); // on effectue les différentes modifications sur la base de données 
+    // réelle
+
+    return new Response('Sauvegarde OK sur : ' . $post->getId() );
+}</code></pre>
+
+ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le restant du code reste inchangé.
 
 ## Exercice
 
