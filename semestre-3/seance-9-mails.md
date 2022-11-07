@@ -28,6 +28,33 @@ MAILER_DSN=smtp://user:pass@smtp.example.com:port
 Symfony propose par défaut l'usage du SMTP, mais vous pouvez ajouter d'autres gestionnaires de mail (gmail, mailChimp...). La liste ici : [https://symfony.com/doc/current/mailer.html#using-a-3rd-party-transport](https://symfony.com/doc/current/mailer.html#using-a-3rd-party-transport)
 {% endhint %}
 
+## Installation d'un outil SMTP et Webmail
+
+Si vous ne disposez pas d'un serveur SMTP, vous pouvez en installer un fictif, via docker, qui permettra de gérer les mails en environnement de développement (notamment ne pas les envoyer réellement aux destinataires, les consulter...).
+
+Dans votre fichier docker-compose.yml ajoutez le service suivant
+
+```yaml
+    maildev:
+        image: maildev/maildev
+        container_name: maildev_docker_symfony
+        command: bin/maildev --web 80 --smtp 1025 --hide-extensions STARTTLS
+        restart: always
+        ports:
+            - 8081:80
+```
+
+Ce service ajoute deux choses :&#x20;
+
+*   Le serveur smtp sur le port 1025 => Modifier le Mailer\_DSN :&#x20;
+
+    ```
+    MAILER_DSN=smtp://maildev_docker_symfony:1025
+    ```
+*   un webmail
+
+    Ouvrir dans votre navigateur : [http://127.0.0.1:8081/#/](http://127.0.0.1:8081/#/)
+
 ## Envoyer un mail simple
 
 Prenons l'exemple de Symfony
