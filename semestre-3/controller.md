@@ -25,7 +25,7 @@ public function article($slug)
 * Ces variables peuvent être soumises à une validation de format via "requirements"
 
 ```php
-#[Route('/{id}', name:'index', requirements:['id'=>'\d+'], defaults=['id'=>1])]
+#[Route('/{id}', name:'index', requirements:['id'=>'\d+'], defaults:['id'=>1])]
 public function index($id)
 {
     ...
