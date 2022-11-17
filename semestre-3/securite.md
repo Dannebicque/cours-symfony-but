@@ -1,15 +1,11 @@
-# Séance 9 : Sécurité
-
-{% hint style="danger" %}
-Attention, ce cours décrit le système de sécurité utilisé par les versions 5.4 et précédentes de Syfmony, mais depuis la version 5.2 il est possible d'activer le nouveau système de sécurité qui sera mis en place dans la version 6 (courant novembre 2021). Lire la documentation ici [https://symfony.com/doc/current/security.html#the-user](https://symfony.com/doc/current/security.html#the-user)&#x20;
-{% endhint %}
+# Séance 10 : Sécurité
 
 ## Introduction
 
 Deux notions majeures interviennent dans la conception de sécurité de Symfony :
 
-* Authentification : **Qui êtes vous ?** ; vous pouvez vous authentifier de plusieurs manières (HTTP authentification, certificat, formulaire de login, API, OAuth etc)
-* Authorization : **Avez vous accès à ?** ; permet d'autoriser de faire telle ou telle action ou accéder à telle page sans forcément savoir qui vous êtes, utilisateur anonyme par exemple.
+* _Authentification_ : **Qui êtes vous ?** ; vous pouvez vous authentifier de plusieurs manières (HTTP authentification, certificat, formulaire de login, API, OAuth etc)
+* _Authorization_ : **Avez vous accès à ?** ; permet d'autoriser de faire telle ou telle action ou accéder à telle page sans forcément savoir qui vous êtes, utilisateur anonyme par exemple.
 
 Pour fonctionner, il est nécessaire d'ajouter le composant security à votre symfony.
 
@@ -73,7 +69,7 @@ The name of the security user class (e.g. User) [User]:
    - Create a way to authenticate! See https://symfony.com/doc/current/security.html
 ```
 
-Une fois cette commande executée vous avez un fichier d'entité de créé, un repository associé, et le fichier security.yaml (dans config) qui a été mis à jour.
+Une fois cette commande exécutée vous avez un fichier d'entité de créé, un repository associé, et le fichier security.yaml (dans config) qui a été mis à jour.
 
 Il faut ensuite mettre à jour votre base de données, avec les commandes suivantes:
 
