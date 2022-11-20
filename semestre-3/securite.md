@@ -621,4 +621,8 @@ bin/console security:encode-password
 
 ## Exercice
 
-Mettre en place une classe User, et créer le formulaire de connexion en suivant la documentation. Filtrer la partie création de catégorie uniquement à des utilisateurs ayant le rôle ROLE\_ADMIN.
+Mettre en place une classe User, et créer le formulaire de connexion en suivant la documentation (une commande dans le maker existe).&#x20;
+
+Ajouter une page qui ne sera accessible qu'a des utilisateurs Admin.
+
+Vous pouvez ajouter une fonction pour récupérer le mot de passe perdu (une commande dans le maker existe...)
