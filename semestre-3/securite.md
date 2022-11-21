@@ -308,6 +308,7 @@ Le fichier security.yaml est mis à jour pour faire le lien avec cet authenticat
 
 ### LoginAuthenticator
 
+{% code lineNumbers="true" %}
 ```php
 <?php
 
@@ -369,9 +370,15 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
 }
 
 ```
+{% endcode %}
+
+{% hint style="warning" %}
+Attention !! Il faut modifier la ligne 51 avec une route qui existe dans votre projet
+{% endhint %}
 
 ### SecurityController
 
+{% code lineNumbers="true" %}
 ```php
 <?php
 
@@ -407,9 +414,11 @@ class SecurityController extends AbstractController
 }
 
 ```
+{% endcode %}
 
 ### login.html.twig
 
+{% code lineNumbers="true" %}
 ```twig
 {% raw %}
 {% extends 'base.html.twig' %}
@@ -457,9 +466,11 @@ class SecurityController extends AbstractController
 {% endraw %}
 
 ```
+{% endcode %}
 
 ### Security.yaml mis à jour
 
+{% code lineNumbers="true" %}
 ```yaml
 security:
     # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
@@ -511,6 +522,7 @@ when@test:
                 memory_cost: 10 # Lowest possible value for argon
 
 ```
+{% endcode %}
 
 La partie firewall est modifiée pour indiqué quel authenticator utiliser. On pourrait en avoir plusieurs.
 
@@ -630,9 +642,7 @@ bin/console security:hash-password
 
 ## Création d'un utilisateur
 
-
-
-Il est possible d'ajouter des utilisateurs directement dans la base de données avec le mot de passe encodé correctement (cf. commande précédente) ou alors en créant un formulaire d'inscription.
+Il est possible d'ajouter des utilisateurs directement dans la base de données (par exemple avec PhpMyAdmin ou en mode console Mysql) avec le mot de passe encodé correctement ou alors en créant un formulaire d'inscription.
 
 ### Dans la base de données
 
@@ -647,11 +657,9 @@ On va ajouter PhpMyAdmin à Docker, pour cela dans votre fichier docker-composer
             - 8082:80
 ```
 
-Pour vous connecter localhost:8082, puis vos identifiants.
+Pour vous connecter [http://localhost:8082](http://localhost:8082), puis vos identifiants.
 
 Dans la table User ajouter une entrée, avec un mot de passe crypté, et un rôle, qui doit être un tableau, exemple : `["ROLE_ADMIN"]`
-
-
 
 ### Avec un formulaire d'inscription
 
