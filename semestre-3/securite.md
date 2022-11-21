@@ -526,8 +526,6 @@ when@test:
 
 La partie firewall est modifiée pour indiqué quel authenticator utiliser. On pourrait en avoir plusieurs.
 
-
-
 Comme indiqué cette commande va créer plusieurs fichiers :
 
 * src/Security/LoginAuthenticator.php : qui va contenir la logique de votre authentification. Que faire une fois l'authetification réussie, ou en cas d'échec. Comment récupérer les informations de l'utilisateur.
@@ -660,6 +658,10 @@ On va ajouter PhpMyAdmin à Docker, pour cela dans votre fichier docker-composer
 Pour vous connecter [http://localhost:8082](http://localhost:8082), puis vos identifiants.
 
 Dans la table User ajouter une entrée, avec un mot de passe crypté, et un rôle, qui doit être un tableau, exemple : `["ROLE_ADMIN"]`
+
+{% hint style="danger" %}
+Attention ! On modifie le docker-compose.yaml MMI pas celui de Symfony !!!
+{% endhint %}
 
 ### Avec un formulaire d'inscription
 
