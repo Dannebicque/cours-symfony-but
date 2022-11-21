@@ -17,12 +17,21 @@ Pour fonctionner, il est nécessaire d'ajouter le composant security à votre sy
 composer require symfony/security-bundle
 ```
 
+{% hint style="info" %}
+Si vous avez installé le projet avec la version complète (webapp), cette ligne n'est pas nécessaire.
+{% endhint %}
+
 La sécurité dans symfony implique plusieurs éléments :
 
 * Le firewall: qui est la porte d'entrée pour le système d'authentification, on définit différents firewall (au minimum 1 seul) qui va permettre de mettre en place le bon système de connexion pour l'url spécifiée via un pattern.
 * Le provider : qui permet au firewall d'interroger une collection d'utilisateurs/mot de passe ; C'est une sorte de base de tous les utilisateurs avec les mots de passe. Il existe deux type par défaut :
   * in memory : directement dans le fichier security.yml mais du coup les hash des mots de passes sont disponible dans un fichier&#x20;
-  * Entity : N'importe quelle entité qui implémente à minima Symfony\Component\Security\Core\User\UserInterface
+  *   Entity : N'importe quelle entité qui implémente à minima les deux interfaces
+
+      ```
+      use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+      use Symfony\Component\Security\Core\User\UserInterface;
+      ```
   * Enfin, plusieurs providers peuvent fonctionner en même temps par exemple in\_memory et entity voire plusieurs entités simultanément. [http://symfony.com/doc/current/security/entity\_provider.html](http://symfony.com/doc/current/security/entity\_provider.html)
 * Un encoder : qui permet de générer des hashs/d'encoder des mots de passe ; le plus connu étant MD5 mais vous pouvez utiliser d'autres encoders tels que : sha1, bcrypt ou plaintext (qui n'encode rien c'est le mot de passe en clair) [http://symfony.com/doc/current/security/named\_encoders.html](http://symfony.com/doc/current/security/named\_encoders.html)
 * Les rôles : qui permettent de définir le niveau d'accès des utilisateurs connectés (authentifiés) et de configurer le firewall en fonction de ces rôles. Les rôles peuvent être hierarchisées afin d'expliquer par exemple qu'un administrateur (ROLE\_ADMIN par exemple) et avant tout un utilisateur (ROLE\_USER).
