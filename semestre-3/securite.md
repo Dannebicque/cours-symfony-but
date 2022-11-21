@@ -630,7 +630,30 @@ bin/console security:hash-password
 
 ## Création d'un utilisateur
 
+
+
 Il est possible d'ajouter des utilisateurs directement dans la base de données avec le mot de passe encodé correctement (cf. commande précédente) ou alors en créant un formulaire d'inscription.
+
+### Dans la base de données
+
+On va ajouter PhpMyAdmin à Docker, pour cela dans votre fichier docker-composer.yaml et ajouter les lignes ci-dessous :&#x20;
+
+```yaml
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin_docker_symfony
+        restart: always
+        ports:
+            - 8082:80
+```
+
+Pour vous connecter localhost:8082, puis vos identifiants.
+
+Dans la table User ajouter une entrée, avec un mot de passe crypté, et un rôle, qui doit être un tableau, exemple : `["ROLE_ADMIN"]`
+
+
+
+### Avec un formulaire d'inscription
 
 La aussi le maker peut nous aider grandement...
 
