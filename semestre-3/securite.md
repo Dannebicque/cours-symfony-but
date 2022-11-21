@@ -625,8 +625,18 @@ Cette méthode qui ne retourne rien, permet la déconnexion, et la redirection s
 Grâce à la console, il est possible de générer un mot de passe selon l'encodage utilisé par Symfony.
 
 ```bash
-bin/console security:encode-password
+bin/console security:hash-password
 ```
+
+## Création d'un utilisateur
+
+Il est possible d'ajouter des utilisateurs directement dans la base de données avec le mot de passe encodé correctement (cf. commande précédente) ou alors en créant un formulaire d'inscription.
+
+La aussi le maker peut nous aider grandement...
+
+`bin/console make:registration`
+
+Répondez aux questions, il est nécessaire d'installer un complément si vous voulez vérifier le mail de vos utilisateurs : `composer require symfonycasts/verify-email-bundle`
 
 ## Exercice
 
