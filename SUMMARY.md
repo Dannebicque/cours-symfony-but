@@ -22,11 +22,19 @@
 
 ## Semestre 4
 
-* [Formulaires](semestre-4/formulaires.md)
-* [Webpack](semestre-4/webpack.md)
-* [Repository](semestre-4/repository.md)
-* [Personnaliser TWIG](semestre-4/personnaliser-twig.md)
-* [Services](semestre-4/services.md)
+* [Séance 1 : Notion de service, exemple du mail](semestre-4/seance-1-notion-de-service-exemple-du-mail.md)
+* [Séance 2 : Services personnalisés](semestre-4/seance-2-services-personnalises.md)
+* [Séance 3 : Services](semestre-4/seance-3-services.md)
+* [Séance 4 : Webpack Encore et CSS](semestre-4/webpack.md)
+* [Séance 5 : Webpack Encore et API](semestre-4/seance-5-webpack-encore-et-api.md)
+* [Séance 6 : Filtres twig](semestre-4/seance-6-filtres-twig.md)
+* [Séance 7 : Evénements et Listener](semestre-4/repository.md)
+* [Séance 8 : Evénements et Listener](semestre-4/seance-8-evenements-et-listener.md)
+* [Séance 9 : Evénements, Listener et mails](semestre-4/seance-9-evenements-listener-et-mails.md)
+* [Séance 10 : Repository et requêtes](semestre-4/seance-10-repository-et-requetes.md)
+* [Séance 11 : Repository et requêtes](semestre-4/seance-11-repository-et-requetes.md)
+* [Séance 12 : Traductions](semestre-4/seance-12-traductions.md)
+* [Séance 13 : TP Noté](semestre-4/seance-13-tp-note.md)
 * [Services et Injection de dépendances](semestre-4/services-1.md)
 * [Les Bundles](semestre-4/bundles.md)
 
