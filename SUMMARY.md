@@ -35,8 +35,6 @@
 * [Séance 11 : Repository et requêtes](semestre-4/seance-11-repository-et-requetes.md)
 * [Séance 12 : Traductions](semestre-4/seance-12-traductions.md)
 * [Séance 13 : TP Noté](semestre-4/seance-13-tp-note.md)
-* [Services et Injection de dépendances](semestre-4/services-1.md)
-* [Les Bundles](semestre-4/bundles.md)
 
 ***
 

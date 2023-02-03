@@ -16,5 +16,5 @@ Le cours des versions précédentes se trouve : [https://cours.davidannebicque.f
 * [Relations entre entités](semestre-3/relations.md)
 * [FORM](semestre-3/form.md)
 * [Securité](semestre-3/securite.md)
-* [Bundles](semestre-4/bundles.md)
+* [Bundles](broken-reference)
 * [TP](broken-reference)
