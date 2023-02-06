@@ -22,9 +22,10 @@
 
 ## Semestre 4
 
+* [Contexte du S4](semestre-4/contexte-du-s4.md)
 * [Séance 1 : Notion de service, exemple du mail](semestre-4/seance-1-notion-de-service-exemple-du-mail.md)
-* [Séance 2 : Services personnalisés](semestre-4/seance-2-services-personnalises.md)
-* [Séance 3 : Services](semestre-4/seance-3-services.md)
+* [Séance 2 : Formulaires](semestre-4/seance-2-services-personnalises.md)
+* [Séance 3 : Formulaires](semestre-4/seance-3-services.md)
 * [Séance 4 : Webpack Encore et CSS](semestre-4/seance-4-webpack.md)
 * [Séance 5 : Webpack Encore et API](semestre-4/seance-5-webpack-encore-et-api.md)
 * [Séance 6 : Filtres twig](semestre-4/seance-6-filtres-twig.md)

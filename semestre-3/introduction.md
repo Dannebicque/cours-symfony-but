@@ -76,7 +76,7 @@ Article comparatifs des 10 frameworks PHP les plus populaires de 2019: [https://
 * Moteur de template puissant et simple
 * Depuis la V4, Symfony est très léger et très rapide
 
-![Roadmap des versions de Symfony](<../.gitbook/assets/Capture d’écran 2021-02-03 à 10.58.06.png>)
+![Roadmap des versions de Symfony](<../.gitbook/assets/Capture d’écran 2021-02-03 à 10.58.06.png>)
 
 {% hint style="info" %}
 Toutes les informations sur l'évolution du framework : [https://symfony.com/releases](https://symfony.com/releases)

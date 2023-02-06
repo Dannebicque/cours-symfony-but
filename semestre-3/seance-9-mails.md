@@ -116,7 +116,7 @@ Saisir le code, configurer le serveur de mail, modifier les emails et le texte.
 
 ### Profiler
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2022-11-05 à 10.41.47.png" alt=""><figcaption><p>Profiler</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2022-11-05 à 10.41.47.png" alt=""><figcaption><p>Profiler</p></figcaption></figure>
 
 En mode développement, on interdit la distribution des mails réellement (on définit MAILER\_DSN=null). Pour voir les mails, on peut donc utiliser le profiler (le dernier icône de la barre).
 
@@ -126,7 +126,7 @@ On peut aussi utiliser un outil type MailTrap, mailDev, ... qui va simuler un SM
 
 On peut voir l'ensemble des éléments du mail, le format HTML, Text, brut, l'en-tête...
 
-<figure><img src="../.gitbook/assets/Capture d’écran 2022-11-05 à 10.44.18.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Capture d’écran 2022-11-05 à 10.44.18.png" alt=""><figcaption></figcaption></figure>
 
 ## Envoyer un mail au format HTML
 
