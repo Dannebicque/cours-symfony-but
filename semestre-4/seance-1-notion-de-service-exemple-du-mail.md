@@ -2,7 +2,7 @@
 
 ## Cours
 
-Dans Symfony, tous les objets (au sens d'un ensemble de code qui apporte une fonctionnalité : mail, base de donnée, entitée, ...) sont des services. Dès l'instanciation d'une application symfony, de nombreux services sont lancés et accessible de partout dans l'application. Il est aussi possible de créer ses propres services.
+Dans Symfony, tous les objets (au sens d'un ensemble de code qui apporte une fonctionnalité : mail, base de données, entitée, ...) sont des services. Dès l'instanciation d'une application symfony, de nombreux services sont lancés et accessible de partout dans l'application. Il est aussi possible de créer ses propres services.
 
 La documentation officielle de Symfony sur les services : https://symfony.com/doc/current/service\_container.html
 
@@ -199,7 +199,7 @@ Nous installer également les dépendances suivantes :
 composer require orm form validation annotation twig security mailer
 ```
 
-### Utilisatation du mailer
+### Utilisation du mailer
 
 Dans un premier temps vous allez créer un contrôleur et une méthode, associée à une route permettant d'envoyer un mail avec avec des informations pré-remplies (n'hésitez pas à reprendre les séances du S3 sur le mailer).
 
