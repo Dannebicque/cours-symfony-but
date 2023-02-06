@@ -4,7 +4,7 @@
 
 Dans Symfony, tous les objets (au sens d'un ensemble de code qui apporte une fonctionnalité : mail, base de donnée, entitée, ...) sont des services. Dès l'instanciation d'une application symfony, de nombreux services sont lancés et accessible de partout dans l'application. Il est aussi possible de créer ses propres services.
 
-La documentation officielle de Symfony sur les services : https://symfony.com/doc/current/service_container.html
+La documentation officielle de Symfony sur les services : https://symfony.com/doc/current/service\_container.html
 
 ### Utilisation d'un service existant (rappel sur l'usage des mails)
 
@@ -160,8 +160,8 @@ class ArticleController extends AbstractController
 
 Les services sont très utiles pour plusieurs raisons :
 
-- Ils permettent de découper notre code en plusieurs parties. Par exemple, on peut avoir un service qui va nous permettre de récupérer les articles, un autre qui va nous permettre de récupérer les utilisateurs, un autre qui va nous permettre de récupérer les commentaires, etc.
-- On peut ainsi avoir un service par entité. Cela permet de découper notre code en plusieurs parties et de rendre notre code plus lisible et plus maintenable.
+* Ils permettent de découper notre code en plusieurs parties. Par exemple, on peut avoir un service qui va nous permettre de récupérer les articles, un autre qui va nous permettre de récupérer les utilisateurs, un autre qui va nous permettre de récupérer les commentaires, etc.
+* On peut ainsi avoir un service par entité. Cela permet de découper notre code en plusieurs parties et de rendre notre code plus lisible et plus maintenable.
 
 Il n'y a pas de règle pour savoir quand créer un service. Cela dépend de votre code et de vos besoins. Par exemple, si vous avez un controller qui fait trop de choses, vous pouvez créer un service qui va vous permettre de déplacer une partie du code dans ce service.
 
@@ -196,7 +196,7 @@ composer require profiler maker --dev
 Nous installer également les dépendances suivantes :
 
 ```bash
-composer require orm-pack form validation annotation twig security mailer
+composer require orm form validation annotation twig security mailer
 ```
 
 ### Utilisatation du mailer
@@ -216,6 +216,4 @@ Cela évite donc que nos contrôleurs et notre code ne soit trop dépendant des 
 1. Créer une classe `MailerService` dans le dossier `src/Service` et ajouter les méthodes suivantes :
    * le constructeur qui prend en paramètre l'objet `MailerInterface` et qui le stocke dans une propriété
    * `sendMail` : qui prend en paramètre le destinataire, le sujet et le corps du mail et qui envoie le mail
-
 2. Modifier le contrôleur pour utiliser le service de mailer
-
