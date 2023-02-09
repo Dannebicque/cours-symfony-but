@@ -73,11 +73,66 @@ On peut par exemple préciser les éléments sur le champs adresse1 en modifiant
 ])
 ```
 
-On ajoute le label, un texte d'aide (help), et une classe CSS.
-
 {% hint style="warning" %}
 Exercice :&#x20;
 
 * Faites de même sur les autres champs.
 * En consultant la documentation de Symfony, vos connaissances du HTML, configurez le champs "codePostal" avec une taille maximale de 5 caractères.
 {% endhint %}
+
+### Affichons le formulaire
+
+Pour cela, on va créer un contrôleur (`make:controller`) et ajouter la méthode new pour afficher le formulaire.
+
+{% code title="AdresseController.php" lineNumbers="true" %}
+```php
+<?php
+
+namespace App\Controller;
+
+use App\Entity\Adresse;
+use App\Form\AdresseType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class AdresseController extends AbstractController
+{
+    #[Route('/adresse', name: 'app_adresse_new')]
+    public function new(): Response
+    {
+        $adresse = new Adresse();
+        $form = $this->createForm(AdresseType::class, $adresse);
+
+        return $this->render('adresse/new.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+}
+
+```
+{% endcode %}
+
+Et la vue qui va avec.
+
+{% code lineNumbers="true" %}
+```twig
+{% raw %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+<h1>Formulaire</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+{{ form_end(form) }}
+{% endblock %}
+{% endraw %}
+```
+{% endcode %}
+
+Rendez-vous sur l'url associée à votre méthode pour voir s'afficher le formulaire. Testé que le code postal est bien limité à 5 caractères par exemple.
+
