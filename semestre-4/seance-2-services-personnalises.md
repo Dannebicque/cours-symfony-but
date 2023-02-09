@@ -136,3 +136,23 @@ Et la vue qui va avec.
 
 Rendez-vous sur l'url associée à votre méthode pour voir s'afficher le formulaire. Testé que le code postal est bien limité à 5 caractères par exemple.
 
+## Imbrication de formulaires
+
+L'entité Fournisseur est liée à l'entité Adresse. On peut donc construire un formulaire pour Fournisseurs, puis sélectionner une adresse parmi une liste d'adresse.
+
+Mais ! Dans notre cas, Fournisseur et Adresse ont une liaison 1 vers 1 (c'est à dire qu'un fournisseur à une adresse et une adresse un seul fournisseur). On utilise ce type de découpage pour éviter de surcharger l'entité, ou parce que l'on va manipuler plusieurs fois un même type de données.
+
+Pour résumer, la saisie d'un fournisseur implique la saisie de son adresse. Toujours pour éviter de multiplier le code, on va pouvoir réutiliser le formulaire AdresseType créé dans la partie précédente dans notre formulaire Fournisseur.
+
+### Exercice
+
+* Créer le formulaire pour l'entitée Fournisseur. Paramétrez les champs, et définissez comme type de  champs pour la propriété Adresse : `AdresseType`.
+
+```php
+->add('adresse', AdresseType::class, [])
+```
+
+N'oubliez pas le use associé (ou utilisez **PhpStorm** !)
+
+* Ajoutez le contrôleur associé pour la gestion des fournisseurs, et la méthode pour afficher **et** sauvegarder le formulaire du fournisseur.
+* Testez votre code et constatez que l'adresse est stockée dans sa table, et que la clé étrangère d'adresse est dans la table de fournisseur.
