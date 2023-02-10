@@ -144,6 +144,8 @@ Quelques explications :&#x20;
   * Ligne 4 nous passons le repository qui permet de manipuler nos données, et on indique avec le use que l'on souhaite utiliser notre variable codePostal.&#x20;
   * Les lignes 5 à 8 sont la requête qui permet de filtrer. Vous reconnaissez vaguement du SQL, mais en notamment objet, on appelle cela le DQL (Doctrine Query Language). On y reviendra en détail sur la partie repository.
 
+N'oubliez pas d'ajouter les use qui vont bien ! (**ou utilisez PhpStorm avec le plugin Symfony**).
+
 ### Exercice
 
 Modifiez vos fichier pour permettre de filtrer sur un code postal le fournisseur. Ajoutez des adresses et des fournisseurs (avec le formulaire que vous avez créé sur la séance précédente). Vérifiez que tout fonctionne et que vous filtrez bien les fournisseurs selon leur code postal.
