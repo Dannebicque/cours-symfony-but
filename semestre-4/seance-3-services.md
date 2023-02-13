@@ -45,7 +45,7 @@ Tout d'abord, on modifie l'appel dans le contrôleur :&#x20;
 
 {% code lineNumbers="true" %}
 ```php
-$form = $this->createForm(AdresseType::class, $adresse,
+$form = $this->createForm(ArticleType::class, $adresse,
 [
     'codePostal' => '10000'
 ]);
@@ -85,7 +85,7 @@ Nous allons ajouter entre la ligne 4 et 5, notre nouvelle option, et lui donner 
     {
         $resolver->setDefaults([
             'data_class' => Article::class,
-            'codePosal' => null
+            'codePostal' => null
         ]);
     }
 ```
@@ -126,11 +126,11 @@ Maintenant nous pouvons utiliser notre variable $codePostal comme nous le souhai
 ->add('fournisseur', EntityType::class, [
                 'class' => Fournisseur::class,
                 'choice_label' => 'libelle',
-                'query_builder' => function (FournisseurRepository $fr) use ($codePsotal) {
+                'query_builder' => function (FournisseurRepository $fr) use ($codePostal) {
                     return $fr->createQueryBuilder('f')
                         ->join('f.adresse', 'a')
                         ->where('a.codePostal = :codePostal')
-                        ->setParameter('codePostal', $codePsotal)
+                        ->setParameter('codePostal', $codePostal)
                     ;
                 },
             ])
