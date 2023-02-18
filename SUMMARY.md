@@ -28,7 +28,7 @@
 * [Séance 3 : Formulaires](semestre-4/seance-3-services.md)
 * [Séance 4 : Webpack Encore et CSS](semestre-4/seance-4-webpack.md)
 * [Séance 5 : Filtres twig](semestre-4/seance-6-filtres-twig.md)
-* [Séance 12 : Traductions](semestre-4/seance-12-traductions.md)
+* [Séance 6 : Localisation de votre application](semestre-4/seance-12-traductions.md)
 * [Séance 7 : Evénements et Listener](semestre-4/seance-7-events.md)
 * [Séance 8 : Evénements et Listener](semestre-4/seance-8-evenements-et-listener.md)
 * [Séance 9 : Evénements, Listener et mails](semestre-4/seance-9-evenements-listener-et-mails.md)
