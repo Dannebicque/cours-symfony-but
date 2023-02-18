@@ -186,5 +186,5 @@ L'appel du filtre dans twig pourrait être :
 
 ```twig
 {{ '0606060606'|formatPhone }}
+{{ '+33606060606'|formatPhone }}
 ```
-
