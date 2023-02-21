@@ -152,7 +152,7 @@ Pour résumer, la saisie d'un fournisseur implique la saisie de son adresse. Tou
 ->add('adresse', AdresseType::class, [])
 ```
 
-N'oubliez pas le use associé (ou utilisez **PhpStorm** !)
+N'oubliez pas le use associé (**ou utilisez PhpStorm avec le plugin Symfony**)
 
 * Ajoutez le contrôleur associé pour la gestion des fournisseurs, et la méthode pour afficher **et** sauvegarder le formulaire du fournisseur.
 * Testez votre code et constatez que l'adresse est stockée dans sa table, et que la clé étrangère d'adresse est dans la table de fournisseur.
