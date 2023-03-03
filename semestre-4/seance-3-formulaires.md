@@ -45,7 +45,7 @@ Tout d'abord, on modifie l'appel dans le contrôleur :&#x20;
 
 {% code lineNumbers="true" %}
 ```php
-$form = $this->createForm(ArticleType::class, $adresse,
+$form = $this->createForm(ArticleType::class, $article,
 [
     'codePostal' => '10000'
 ]);
