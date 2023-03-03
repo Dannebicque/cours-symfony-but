@@ -1,4 +1,4 @@
-# Webpack et Symfony
+# Séance 4 : Webpack Encore et CSS
 
 Webpack ([https://webpack.js.org/](https://webpack.js.org/)) est un outil logiciel open-source de type « module bundler » (littéralement, « groupeur de modules »), conçu pour faciliter le développement et la gestion de sites et d'applications web modernes. (source Wikipedia).
 
@@ -49,11 +49,10 @@ Nous avons quelques données d'exemples dans les fichiers du repertoire assets. 
 Donc, pour utiliser les fichiers "front" de votre projet, vous devez lancer la commande suivante :
 
 ```bash
-yarn encore dev ou npm run encore dev
+yarn dev ou npm run dev
 ```
 
-Cette commande va lancer Webpack, et va générer les fichiers compilés dans le répertoire public/build.
-Un fichier entrypoints.json a été créé dans le répertoire public/build. Ce fichier contient la liste des fichiers compilés, et les chemins vers ces fichiers. C'est grâce à ce fichier que Twig va pouvoir charger les fichiers compilés.
+Cette commande va lancer Webpack, et va générer les fichiers compilés dans le répertoire public/build. Un fichier entrypoints.json a été créé dans le répertoire public/build. Ce fichier contient la liste des fichiers compilés, et les chemins vers ces fichiers. C'est grâce à ce fichier que Twig va pouvoir charger les fichiers compilés.
 
 Retournez dans votre navigateur pour réessayer d'afficher votre page, elle devrait fonctionner.
 
@@ -62,7 +61,7 @@ Retournez dans votre navigateur pour réessayer d'afficher votre page, elle devr
 Comme il peut être fastidieux de relancer la commande à chaque fois que vous modifiez un fichier, vous pouvez utiliser la commande suivante :
 
 ```bash
-yarn watch (qui est une version courte de yarn encore dev --watch) ou npm run watch
+yarn watch (qui est une version courte de yarn dev --watch) ou npm run watch
 ```
 
 Cette commande va lancer Webpack, et va générer les fichiers compilés dans le répertoire public/build. En plus, elle va surveiller les fichiers du répertoire assets, et va relancer Webpack à chaque fois qu'un fichier est modifié, tant que vous ne fermez pas la fenêtre de votre terminal.
