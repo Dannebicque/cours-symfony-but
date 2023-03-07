@@ -110,7 +110,7 @@ Vous pouvez constatez sur l'avant dernière ligne que nous avons notre codePosta
 public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         //dump($options);
-        $codePsotal = $options['codePostal'];
+        $codePostal = $options['codePostal'];
         $builder
             ->add('designation')
             ...
@@ -148,11 +148,9 @@ N'oubliez pas d'ajouter les use qui vont bien ! (**ou utilisez PhpStorm avec le 
 
 ### Exercice
 
-Modifiez vos fichier pour permettre de filtrer sur un code postal le fournisseur. Ajoutez des adresses et des fournisseurs (avec le formulaire que vous avez créé sur la séance précédente). Vérifiez que tout fonctionne et que vous filtrez bien les fournisseurs selon leur code postal.
-
-Mise en forme du formulaire.
-
-En reprenant les éléments de la séance 7 du S3, et en installant Bootstrap, affichez le formulaire article sur 2 colonnes avec le thème de formulaire adapté . Vous devez obtenir le résultat ci-dessous :&#x20;
+* Modifiez vos fichier pour permettre de filtrer sur un code postal le fournisseur. Ajoutez des adresses et des fournisseurs (avec le formulaire que vous avez créé sur la séance précédente). Vérifiez que tout fonctionne et que vous filtrez bien les fournisseurs selon leur code postal.
+* Mise en forme du formulaire.
+  * En reprenant les éléments de la séance 7 du S3, et en installant Bootstrap, affichez le formulaire article sur 2 colonnes avec le thème de formulaire adapté . Vous devez obtenir le résultat ci-dessous :&#x20;
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-02-10 à 08.46.43.png" alt=""><figcaption></figcaption></figure>
 
