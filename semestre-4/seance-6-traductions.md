@@ -1,6 +1,6 @@
-# Séance 6 : Localisation d'une application
+# Séance 6 : Localisation de votre application
 
-Le terme "internationalisation" (souvent abrégé [i18n](https://fr.wikipedia.org/wiki/Internationalisation_(informatique)) ) fait référence au processus d'extraction de chaînes et d'autres éléments spécifiques aux paramètres régionaux de votre application dans une couche où ils peuvent être traduits et convertis en fonction des paramètres régionaux de l'utilisateur (c'est-à-dire la langue et le pays). Pour le texte, cela signifie envelopper chacun avec une fonction capable de traduire le texte (ou "message") dans la langue de l'utilisateur :
+Le terme "internationalisation" (souvent abrégé [i18n](https://fr.wikipedia.org/wiki/Internationalisation\_\(informatique\)) ) fait référence au processus d'extraction de chaînes et d'autres éléments spécifiques aux paramètres régionaux de votre application dans une couche où ils peuvent être traduits et convertis en fonction des paramètres régionaux de l'utilisateur (c'est-à-dire la langue et le pays). Pour le texte, cela signifie envelopper chacun avec une fonction capable de traduire le texte (ou "message") dans la langue de l'utilisateur :
 
 ```php
 // text will *always* print out in English
@@ -65,8 +65,7 @@ class DefaultController extends AbstractController
 }
 ```
 
-Pour ce premier exemple, la traduction est gérée dans une méthode d'un de nos contrôleurs qui utilise le service `translator` injecté dans la méthode.
-La chaîne de caractères à traduire est passée en paramètre de la méthode `trans()` du service `translator`.
+Pour ce premier exemple, la traduction est gérée dans une méthode d'un de nos contrôleurs qui utilise le service `translator` injecté dans la méthode. La chaîne de caractères à traduire est passée en paramètre de la méthode `trans()` du service `translator`.
 
 Notez que nous avons ici la chaîne parfaitement compréhensible par l'utilisateur, mais nous pourrions aussi avoir une clé de traduction, par exemple `home.welcome_message` qui serait plus facile à gérer pour les développeurs.
 
@@ -87,8 +86,8 @@ Symfony is great: Symfony est génial
 
 Le nom de fichier des fichiers de traduction est important : chaque fichier de message doit être nommé selon le chemin suivant domain.locale.loader:
 
-* domain (ici message) : Le domaine de traduction  ;
-* locale (ici fr) : La locale  à laquelle les traductions sont destinées (par exemple en_GB, en, etc.) ;
+* domain (ici message) : Le domaine de traduction ;
+* locale (ici fr) : La locale à laquelle les traductions sont destinées (par exemple en\_GB, en, etc.) ;
 * loader (ici yaml) : Comment Symfony doit charger et analyser le fichier (par exemple xlf, php, yaml, etc).
 
 Par défaut, Symfony fournit de nombreux "loader"" qui sont sélectionnés en fonction des extensions de fichiers suivantes :
@@ -155,3 +154,27 @@ La variable `_locale` est automatiquement injectée dans le contrôleur et peut 
 
 1. Créer une page d'accueil qui affiche un message de bienvenue en français et en anglais ;
 2. Créer un lien qui permet de changer de langue.
+
+## Localisation des heures, des dates, ...
+
+Twig permet de faciliter la localisation des dates, des heures, ...
+
+Vous pouvez suivre les documentations selon vos besoins :
+
+* Les dates : [https://twig.symfony.com/doc/3.x/filters/format\_date.html](https://twig.symfony.com/doc/3.x/filters/format\_date.html)
+* Les dates et heures : [https://twig.symfony.com/doc/3.x/filters/format\_datetime.html](https://twig.symfony.com/doc/3.x/filters/format\_datetime.html)
+* Les heures : [https://twig.symfony.com/doc/3.x/filters/format\_time.html](https://twig.symfony.com/doc/3.x/filters/format\_time.html)
+* Les monnaies : [https://twig.symfony.com/doc/3.x/filters/format\_currency.html](https://twig.symfony.com/doc/3.x/filters/format\_currency.html)
+
+Dans tous les cas deux bundles sont nécessaires
+
+```bash
+composer require twig/intl-extra
+composer require twig/extra-bundle
+```
+
+Ces deux dépendances nécessites [php-intl](https://www.php.net/manual/fr/book.intl.php) d'installé sur le serveur.
+
+### Exercices
+
+* Installez les éléments et testés différents cas de figure avec les dates.
