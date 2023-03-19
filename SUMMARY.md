@@ -31,7 +31,7 @@
 * [Séance 6 : Localisation de votre application](semestre-4/seance-6-traductions.md)
 * [Séance 7 : Repository et requêtes](semestre-4/seance-7-repository-et-requetes.md)
 * [Séance 8 : Evénements et Listener](semestre-4/seance-7-events.md)
-* [Séance 9 : Evénements et Listener](semestre-4/seance-8-evenements-et-listener.md)
+* [Séance 9 : Form Collection](semestre-4/seance-8-evenements-et-listener.md)
 * [Séance 10 : Evénements, Listener et mails](semestre-4/seance-9-evenements-listener-et-mails.md)
 * [Séance 11 : xxx](semestre-4/seance-11-repository-et-requetes.md)
 * [Séance 12 : xxx](semestre-4/seance-5-webpack-encore-et-api.md)
