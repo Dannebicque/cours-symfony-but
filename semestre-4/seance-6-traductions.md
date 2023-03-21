@@ -75,6 +75,18 @@ L'avantage de cette solution est que si la traduction n'existe pas, la chaîne d
 
 {% embed url="https://symfony.com/doc/current/reference/twig_reference.html#trans" %}
 
+## Extraire les chaînes à traduire
+
+Il est possible de copier/coller les chaînes à traduire manuellement, mais Symfony propose une commande pour extraires automatiquement les textes à traduire depuis vos vues ou vos contrôlleurs (pour les autres, il faudra les ajouter à la main).
+
+```
+bin/console translation:extract en --format yaml --force
+```
+
+Cette commande est à exécuter pour chaque locale de votre site (ici en). Le format permet de définir le type de fichier de sortie.&#x20;
+
+Le `--force` va écraser les données existantes pour ajouter les clés manquantes.
+
 ## Créer des ressources/fichiers de traduction
 
 Pour créer des ressources/fichiers de traduction, il faut créer un fichier de traduction pour chaque langue prise en charge. Par exemple, pour la langue française, nous pouvons créer un fichier `messages.fr.yaml` dans le dossier `translations` :
