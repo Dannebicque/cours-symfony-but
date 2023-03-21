@@ -27,15 +27,13 @@
 * [Séance 2 : Formulaires](semestre-4/seance-2-formulaires.md)
 * [Séance 3 : Formulaires](semestre-4/seance-3-formulaires.md)
 * [Séance 4 : Webpack Encore et CSS](semestre-4/seance-4-webpack.md)
-* [Séance 5 : Filtres twig](semestre-4/seance-6-filtres-twig.md)
+* [Séance 5 : Filtres twig](semestre-4/seance-5-filtres-twig.md)
 * [Séance 6 : Localisation de votre application](semestre-4/seance-6-traductions.md)
 * [Séance 7 : Repository et requêtes](semestre-4/seance-7-repository-et-requetes.md)
-* [Séance 8 : Evénements et Listener](semestre-4/seance-7-events.md)
-* [Séance 9 : Form Collection](semestre-4/seance-8-evenements-et-listener.md)
-* [Séance 10 : Evénements, Listener et mails](semestre-4/seance-9-evenements-listener-et-mails.md)
-* [Séance 11 : xxx](semestre-4/seance-11-repository-et-requetes.md)
-* [Séance 12 : xxx](semestre-4/seance-5-webpack-encore-et-api.md)
-* [Séance 13 : TP Noté](semestre-4/seance-13-tp-note.md)
+* [Séance 8 : Evénements et Listener](semestre-4/seance-8-events.md)
+* [Séance 9 : Form Collection](semestre-4/seance-9-forms-collection.md)
+* [Séance 10 : Validation de formulaires et forms events](semestre-4/seance-10-validation-form-event.md)
+* [Séance 11-12 : TP Noté](semestre-4/seance-11-tp-note.md)
 
 ***
 

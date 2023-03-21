@@ -1,6 +1,4 @@
-# Séance 10 : Repository et requêtes
-
-## Séance 10 : Repository et requêtes
+# Séance 7 : Repository et requêtes
 
 Dans cette partie nous allons revenir sur les notions de repository et de requêtes, afin de pouvoir écrire nos propres requêtes.
 
