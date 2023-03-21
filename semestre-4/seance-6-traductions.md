@@ -26,7 +26,7 @@ Il faut installer le bundle `symfony/translation` :
 composer require symfony/translation
 ```
 
-Après l'installation, le service de traduction de Symfony est activé par défaut dans une application Symfony. Pour le configurer, il faut modifier le fichier `config/packages/framework.yaml` :
+Après l'installation, le service de traduction de Symfony est activé par défaut dans une application Symfony. Pour le configurer, il faut modifier le fichier `config/packages/translation.yaml` :
 
 ```yaml
 # config/packages/translation.yaml
