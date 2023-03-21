@@ -73,7 +73,7 @@ L'avantage de cette solution est que si la traduction n'existe pas, la chaîne d
 
 ### Dans Twig
 
-/// parler des filtres sur les objets dans la séance filtre
+{% embed url="https://symfony.com/doc/current/reference/twig_reference.html#trans" %}
 
 ## Créer des ressources/fichiers de traduction
 
@@ -92,8 +92,8 @@ Le nom de fichier des fichiers de traduction est important : chaque fichier de m
 
 Par défaut, Symfony fournit de nombreux "loader"" qui sont sélectionnés en fonction des extensions de fichiers suivantes :
 
-* .yaml: fichier YAML (vous pouvez également utiliser l' .ymlextension de fichier) ;
-* .xlf: fichier XLIFF (vous pouvez également utiliser l' .xliffextension de fichier) ;
+* .yaml: fichier YAML (vous pouvez également utiliser l'extension de fichier .yml) ;
+* .xlf: fichier XLIFF (vous pouvez également utiliser l'extension de fichier .xliff) ;
 * .php: un fichier PHP qui renvoie un tableau avec les traductions ;
 * .csv: fichier CSV ;
 * .json: fichier JSON ;
