@@ -1,20 +1,18 @@
 # Séance 9 : Form Collection
 
-## Séance 9 : Form Collection
-
 Dans cette partie nous allons revenir sur les formulaires, et sur un cas particulier des collections de formulaires. La documentation officielle : [https://symfony.com/doc/current/form/form\_collections.html](https://symfony.com/doc/current/form/form\_collections.html)
 
 Nous avons vu dans une séance précédente comment intégrer un formulaire dans un autre. C'est un cas d'usage pratique, mais si nous souhaitons avoir une collection de formulaires, c'est à dire pouvoir ajouter plusieurs éléments en lien avec un autre, nous allons devoir faire un peu plus de travail.
 
 Prenons par exemple le cas où nous aimerions ajouter des "tags" à nos articles. Nous allons donc avoir une collection de tags, et chaque tag sera un formulaire (basique, ne contenant que le libellé).
 
-### Premières étapes
+## Premières étapes
 
 * Créer une entité `Tag` avec un champ `label` de type `string`.
 * Créer une relation `ManyToMany` entre `Article` et `Tag`.
 * Créer un formulaire `TagType` avec un champ `label` de type `TextType` en lien avec l'entité `Tag`.
 
-### Configuration du formulaire
+## Configuration du formulaire
 
 Nous allons maintenant modifier notre formulaire `ArticleType` qui va contenir une collection de tags. Pour cela, nous allons utiliser la classe `CollectionType` de Symfony. La méthode `buildForm`de notre formulaire `ArticleType` va donc ressembler à ceci :
 
@@ -35,12 +33,12 @@ public function buildForm(FormBuilderInterface $builder, array $options): void
 
 Il faut ajouter le champs dans la vue (si vous avez détaillez l'affichage du formulaire), ou alors il est déjà pris en compte.
 
-#### Exercice
+### Exercice
 
 * Modifiez le formulaire `ArticleType` pour ajouter une collection de tags.
 * Vérifiez que tout fonctionne dans la vue (à ce stade vous ne devriez vous que l'entrée "tags" apparaître)
 
-### Ajout d'un tag
+## Ajout d'un tag
 
 Nous allons maintenant ajouter un tag à notre collection. Pour cela, nous allons autoriser l'ajout dans notre formulaire en mettant `allow_add`à vraie dans le champs `tags`.
 
@@ -63,12 +61,8 @@ Pour que ca fonctionne, nous devons légérement modifier l'affichage dans notre
     data-prototype="{{ form_widget(form.tags.vars.prototype)|e('html_attr') }}"
 >
     <div data-gb-custom-block data-tag="for">
-
         <li>{{ form_row(tag.name) }}</li>
-    
-
-</div>
-
+    </div>
 </ul>
 ```
 
@@ -89,15 +83,13 @@ Pour cela, et comme nous avons installé webpack-encore, nous allons ajouter not
 
 Tout d'abord on écoute un événement "click" sur le bouton "add a tag".
 
-````javascript
-
 ```javascript
 document
   .querySelectorAll('.add_item_link')
   .forEach(btn => {
       btn.addEventListener("click", addFormToCollection)
   });
-````
+```
 
 Ensuite, on récupère le code HTML du prototype, et on l'ajoute à notre collection de tags, avec la méthode `addFormToCollection`.
 
@@ -131,13 +123,14 @@ window.addEventListener('load', () => { // le dom est chargé
 })
 ```
 
-#### Exercice
+### Exercice
 
 * Ajoutez le code JavaScript pour ajouter un tag à votre formulaire.
 * Testez votre formulaire et l'ajout des tags.
 * Mettez en place une page permettant de voir l'ensemble des articles avec leurs tags (attention, c'est une collection (i.e. un tableau)).
 
 {% hint style="info" %}
+
 Lorsque vous allez soumettre le formulaire avec les tags, vous allez avoir une erreur de base de données. En effet, lorsque nous ajoutons un articles, nous essayons également d'ajouter un tag. Ce tag doit s'ajouter dans une autre entité, liée à l'article. Pour cela, nous allons devoir ajouter une méthode `persist` sur notre relation afin que Doctrine puisse ajouter le tag dans la table. Modifiez la relation de votre entité `Article` pour ajouter la méthode `persist`.
 
 ```php
@@ -146,9 +139,10 @@ Lorsque vous allez soumettre le formulaire avec les tags, vous allez avoir une e
 ```
 
 On ajoute également remove, pour permettre la suppression d'un tag si un article est supprimé.
+
 {% endhint %}
 
-### Suppression d'un tag
+## Suppression d'un tag
 
 Nous allons maintenant ajouter la possibilité de supprimer un tag. Pour cela, nous allons devoir ajouter un bouton "supprimer" à chaque tag. Tout d'abord, il faut autoriser la suppression dans notre formulaire en mettant `allow_delete`à vraie dans le champs `tags` de notre formulaire `ArticleType`.
 
@@ -200,7 +194,7 @@ const addTagFormDeleteLink = (item) => {
 }
 ```
 
-#### Exercice
+### Exercice
 
 * Ajoutez le code JavaScript pour ajouter un bouton "supprimer" à chaque tag.
 * Testez votre formulaire et la suppression des tags.
