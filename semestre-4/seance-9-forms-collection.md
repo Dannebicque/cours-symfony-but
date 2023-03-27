@@ -61,7 +61,11 @@ Pour que ca fonctionne, nous devons légérement modifier l'affichage dans notre
     data-prototype="{{ form_widget(form.tags.vars.prototype)|e('html_attr') }}"
 >
     <div data-gb-custom-block data-tag="for">
-        <li>{{ form_row(tag.name) }}</li>
+        {% raw %}
+{% for tag in form.tags %}
+            <li>{{ form_row(tag.libelle) }}</li>
+        {% endfor %}
+{% endraw %}
     </div>
 </ul>
 ```
@@ -130,7 +134,6 @@ window.addEventListener('load', () => { // le dom est chargé
 * Mettez en place une page permettant de voir l'ensemble des articles avec leurs tags (attention, c'est une collection (i.e. un tableau)).
 
 {% hint style="info" %}
-
 Lorsque vous allez soumettre le formulaire avec les tags, vous allez avoir une erreur de base de données. En effet, lorsque nous ajoutons un articles, nous essayons également d'ajouter un tag. Ce tag doit s'ajouter dans une autre entité, liée à l'article. Pour cela, nous allons devoir ajouter une méthode `persist` sur notre relation afin que Doctrine puisse ajouter le tag dans la table. Modifiez la relation de votre entité `Article` pour ajouter la méthode `persist`.
 
 ```php
@@ -139,7 +142,6 @@ Lorsque vous allez soumettre le formulaire avec les tags, vous allez avoir une e
 ```
 
 On ajoute également remove, pour permettre la suppression d'un tag si un article est supprimé.
-
 {% endhint %}
 
 ## Suppression d'un tag
