@@ -55,12 +55,13 @@ Autoriser l'ajoute, ca ajouter un attribut sur notre formulaire (nommé data-pro
 
 Pour que ca fonctionne, nous devons légérement modifier l'affichage dans notre formulaire.
 
+{% code lineNumbers="true" %}
 ```twig
 <ul class="tags"
     data-index="{{ form.tags|length > 0 ? form.tags|last.vars.name + 1 : 0 }}"
     data-prototype="{{ form_widget(form.tags.vars.prototype)|e('html_attr') }}"
 >
-    <div data-gb-custom-block data-tag="for">
+    <div>
         {% raw %}
 {% for tag in form.tags %}
             <li>{{ form_row(tag.libelle) }}</li>
@@ -69,6 +70,7 @@ Pour que ca fonctionne, nous devons légérement modifier l'affichage dans notre
     </div>
 </ul>
 ```
+{% endcode %}
 
 L'usage des balises ul est un choix pour l'exercice, vous pourriez le faire sous n'importe qu'elle forme.
 
@@ -87,6 +89,7 @@ Pour cela, et comme nous avons installé webpack-encore, nous allons ajouter not
 
 Tout d'abord on écoute un événement "click" sur le bouton "add a tag".
 
+{% code lineNumbers="true" %}
 ```javascript
 document
   .querySelectorAll('.add_item_link')
@@ -94,9 +97,11 @@ document
       btn.addEventListener("click", addFormToCollection)
   });
 ```
+{% endcode %}
 
 Ensuite, on récupère le code HTML du prototype, et on l'ajoute à notre collection de tags, avec la méthode `addFormToCollection`.
 
+{% code lineNumbers="true" %}
 ```javascript
 const addFormToCollection = (e) => {
   const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
@@ -116,6 +121,7 @@ const addFormToCollection = (e) => {
   collectionHolder.dataset.index++;
 };
 ```
+{% endcode %}
 
 Cette méthode récupère le contenu de data-prototype, remplace `/__name__/` par l'index de notre collection (le numéro du tag que nous ajoutons), cela pour avoir des formulaires valides avec des champs ayant un nom différent à chaque fois. Ensuite, on ajoute le code HTML à la suite (`appendChild`) de notre formulaire déjà existant.
 
@@ -148,6 +154,7 @@ On ajoute également remove, pour permettre la suppression d'un tag si un articl
 
 Nous allons maintenant ajouter la possibilité de supprimer un tag. Pour cela, nous allons devoir ajouter un bouton "supprimer" à chaque tag. Tout d'abord, il faut autoriser la suppression dans notre formulaire en mettant `allow_delete`à vraie dans le champs `tags` de notre formulaire `ArticleType`.
 
+{% code lineNumbers="true" %}
 ```php
  ->add('tags', CollectionType::class, [
                 'entry_type' => TagType::class,
@@ -157,9 +164,11 @@ Nous allons maintenant ajouter la possibilité de supprimer un tag. Pour cela, n
                 'allow_delete' => true,
             ])
 ```
+{% endcode %}
 
 Ensuite, nous allons ajouter un bouton "supprimer" à chaque tag. Mais comme les tags n'existent pas dans notre vue, nous devons les gérer en JavaScript également, pour que l'ajout du bouton soit dynamique.
 
+{% code lineNumbers="true" %}
 ```javascript
 document
     .querySelectorAll('ul.tags li')
@@ -176,16 +185,17 @@ const addFormToCollection = (e) => {
     addTagFormDeleteLink(item);
 }
 ```
+{% endcode %}
 
 Cet extrait de code ajoute un bouton "supprimer" à chaque tag existant (en détectant le li des il, il faudrait adapter si vous affichez le formulaire autrement), et à chaque nouveau tag ajouté.
 
 La méthode `addTagFormDeleteLink` est la suivante, et elle permet de supprimer la ligne "li" du formulaire.
 
+{% code lineNumbers="true" %}
 ```javascript
 const addTagFormDeleteLink = (item) => {
     const removeFormButton = document.createElement('button');
-    removeFormButton.innerText = 'Delete this tag';
-
+    
     item.append(removeFormButton);
 
     removeFormButton.addEventListener('click', (e) => {
@@ -195,6 +205,7 @@ const addTagFormDeleteLink = (item) => {
     });
 }
 ```
+{% endcode %}
 
 ### Exercice
 
