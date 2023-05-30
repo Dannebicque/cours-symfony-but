@@ -171,7 +171,7 @@ Comme après chaque modification, il faudra générer le fichier de migration, e
 * Créer une route qui supprime "Post 1"
 *   Créer une route qui supprime "Catégorie 1"
 
-    ****
+
 
 **En plus : Flash Messages** [https://symfony.com/doc/current/controller.html#flash-messages](https://symfony.com/doc/current/controller.html#flash-messages)
 
