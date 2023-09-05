@@ -1,4 +1,4 @@
-# Séance XX : Architecture de Symfony
+# Séance 2 : Architecture de Symfony
 
 Depuis la version 4, Symfony à grandement simplifié la structure de ses répertoires et à normalisé les appellations pour coïncider avec la pratique de la majorité des framework.
 

@@ -15,7 +15,7 @@ Découvrir et appréhender un framework PHP web.
 * Structure MVC
 * Base de données
 
-## Rappels des concepts du MVC
+## Le concept du MVC
 
 ![Schéma de principe du MVC](../.gitbook/assets/mvc-architecture.png)
 
@@ -51,9 +51,18 @@ Un framework dit orienté objet est typiquement composé de classes mères qui
 
 Le développeur qui utilise le framework pourra personnaliser les éléments principaux du framework par extension, en utilisant le **mécanisme d’héritage** : créer des nouvelles classes qui contiennent toutes les fonctionnalités que met en place le framework, et en plus ses fonctionnalités propres, créées par le développeur en fonction des besoins spécifiques à son application.
 
-| Avantages                                                                                                                                                                                                                                                                                                                                                      | Inconvénients                                                                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p></p><ul><li>Pour éviter des erreurs dans l’organisation des appels</li><li>Éviter les appels directs aux commandes PHP</li><li>Préférer les versions des Frameworks qui apportent leur lot de contrôles.</li><li>Plus grand portabilité du code</li><li>Ne pas réinventer la roue</li><li>La gestion des formulaire, des utilisateurs, ...</li></ul> | <p></p><ul><li>Apprentissage d’une couche supplémentaire</li><li>La majorité des fonctionnalités PHP sont redéfinies</li><li>Généralement apprentissage d’un moteur de template</li><li>Apprentissage de l’utilisation du framework choisit : ses classes, ses objets, sa logique !</li></ul> |
+| Avantages | Inconvénients |
+ ----------------------------
+| * Pour éviter des erreurs dans l’organisation des appels
+* Éviter les appels directs aux commandes PHP
+* Préférer les versions des Frameworks qui apportent leur lot de contrôles.
+* Plus grand portabilité du code
+* Ne pas réinventer la roue
+* La gestion des formulaire, des utilisateurs, ... | 
+* Apprentissage d’une couche supplémentaire
+* La majorité des fonctionnalités PHP sont redéfinies
+* Généralement apprentissage d’un moteur de template
+* Apprentissage de l’utilisation du framework choisit : ses classes, ses objets, sa logique ! |
 
 ![Les 10 frameworks les plus populaires en PHP (2019).](../.gitbook/assets/php-frameworks.png)
 
@@ -63,7 +72,7 @@ Article comparatifs des 10 frameworks PHP les plus populaires de 2019: [https://
 
 ![](../.gitbook/assets/logosymfony.png)
 
-* Framework MVC en PHP 5 (V2), PHP 7 (V3, V4 et V5 ), PHP8 (V6) libre
+* Framework MVC en PHP 5 (V2), PHP 7 (V3, V4 et V5 ), PHP 8.1 (V6) libre
 * Développé en 2005 par la société Sensio pour répondre à ses besoins
 * Division de la société Sensio en deux entités l’agence Web et l’entreprise qui soutient et maintient Symfony : SensioLabs, dirigée par Fabien Potencier, l’auteur de Symfony
 * Framework français !, De renommée mondiale
@@ -96,7 +105,7 @@ Par défaut Symfony version Skeleton ne sais rien faire ! Par contre, il n'embar
 
 Grâce à Flex vous installez rapidement le nécessaire pour répondre à votre projet.
 
-### &#x20;Symfony V5 : Continuer vers la simplification et la standardisation <a href="#symfony-v4-un-retour-aux-bases" id="symfony-v4-un-retour-aux-bases"></a>
+### Symfony V5 : Continuer vers la simplification et la standardisation
 
 Avec sa version 5 (et suivante), Symfony continue sa simplification en facilitant l'usage de nombreux composants redéfinis et devenus génériques.
 
@@ -119,3 +128,82 @@ Une lecture intéressante sur la logique d'évolution du framework Symfony : [ht
 Vous pouvez suivre aussi les éléments de la documentation officielle : [https://symfony.com/doc/current/setup.html](https://symfony.com/doc/current/setup.html)
 {% endhint %}
 
+## Symfony - Eco-système
+
+Symfony nécessite tout un environnement pour fonctionner. Symfony implique aussi différents "langages" et utilise un vocabulaire spécifique (souvent repris dans d'autres frameworks).
+
+### Composer
+
+[_Composer_](https://getcomposer.org/) est un logiciel **gestionnaire de dépendances** libre écrit en PHP. Il permet à ses utilisateurs de déclarer et d'installer les bibliothèques dont le projet principal a besoin. Développé, depuis 2011, par Nils Adermann et Jordi Boggiano (qui continuent encore aujourd'hui à le maintenir), il est aujourd'hui en version 2.
+
+Le logiciel _Composer_ trouve son équivalent pour le front avec _npm_ ou _Yarn_
+
+### ENTITÉ (EQ. DU MODÈLE)
+
+Une _entité_ est une classe PHP ! Elle peut faire le lien avec une base de données, on y déclare les différentes propriétés accessibles; Symfony utilise par défaut un outil de persistence de données : [_Doctrine_](https://www.doctrine-project.org/index.html) pour lier une entité à une table de base de données.
+
+### ORM : OBJECT RELATIONNAL MAPPING
+
+Système permettant de se libérer des requêtes pour la base de données. Il se charge de générer les requêtes à effectuer sur les Entités spécifiées. Il existe plusieurs ORM, dans Symfony, il s'agit de [_Doctrine_](https://www.doctrine-project.org/index.html).
+
+### Repository
+
+Classe PHP qui fait le pont entre une entité et l'ORM, il permet notamment de structurer des requêtes complexes.
+
+### YAML
+
+Format de structuration de données très utilisé dans Symfony, mais on peut utiliser du XML, du PHP ou encore les annotations (PHP 7) ou les attributs (php 8), les fichiers de configurations par défaut sont en YAML.
+
+### Annotations
+
+Commentaire PHP directement dans les classes utiles (controller, entité, ...) interprété par Symfony pour générer des fichiers de configuration ;
+
+### Attributes
+
+Les _Attributes_ sont la nouvelle version des annotations, intégrés nativement dans les versions 8 et supérieures de PHP. Les _Attributes_ sont une forme de données structurées, qui permet d'ajouter des métadonnées à nos déclarations de classes, propriétés, méthodes, fonctions, paramètres et constantes. Ils vont nous permettre de définir de la configuration au plus près du code, directement sur nos déclarations.
+
+### Routes
+
+Les routes permettent de faire un lien entre une URL et un contrôleur.
+
+### Bundles
+
+Sorte de modules Symfony qui peuvent contenir tout et n'importe quoi ; C'est la force de Symfony les modules peuvent fonctionner indépendamment et même sur d'autres structures PHP, autre framework etc.
+
+### ENVIRONNEMENTS
+
+Symfony propose par défaut 2 environnements : _dev_ et _prod_ qui permettent de donner des configs différentes en fonction de l'environnement de travail ;
+
+* dev permet une utilisation sans cache avec des outils de dev comme le profiler ;
+* prod lui permet d'utiliser le site avec le cache et sans aucun message d'erreurs.
+
+De plus on peut configurer les différents environnements pour par exemple rediriger tous les mails vers toto@titi.com en dev et laisser le fonctionnement normal pour prod ; pratique pour les debugs. Le changement d'un environnement à un autre se faire en modifiant la ligne suivante dans le fichier ".env" (ou .env.local) :
+
+```env
+###> symfony/framework-bundle ###
+APP_ENV=dev
+```
+
+### Profiler
+
+Le profiler est un outil puissant (et indispensable) pour débuger une application. Par défaut le profiler n'est pas installé. Pour l'ajouter il faut exécuter la commande suivante :
+
+```bash
+composer require profiler --dev
+```
+
+Le profiler est toujours visible en bas de la page en mode développement.
+
+### Maker
+
+Le maker est un outil puissant pour générer du code, et des éléments dans notre projet. Par défaut le maker n'est pas installé. Pour l'ajouter il faut exécuter la commande suivante :
+
+```bash
+composer require maker --dev
+```
+
+Il est assez facile de modifier le maker pour que le code généré corresponde exactement à notre projet et nos attentes.
+
+### Moteur de template
+
+Un moteur de template est un "langage", un "outil" permettant d'écrire les vues (partie visible) de manière efficace et rapide. Symfony utilise [_Twig_](https://twig.symfony.com/doc/3.x/) par défaut.
