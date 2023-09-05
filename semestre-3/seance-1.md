@@ -1,4 +1,4 @@
-# Séance 1 : Introduction
+# Séance 1 : Introduction & Eco-système Symfony
 
 {% hint style="info" %}
 La présentation : [https://presentations.davidannebicque.fr/r319.html](https://presentations.davidannebicque.fr/r319.html)
@@ -55,18 +55,7 @@ Un framework dit orienté objet est typiquement composé de classes mères qui
 
 Le développeur qui utilise le framework pourra personnaliser les éléments principaux du framework par extension, en utilisant le **mécanisme d’héritage** : créer des nouvelles classes qui contiennent toutes les fonctionnalités que met en place le framework, et en plus ses fonctionnalités propres, créées par le développeur en fonction des besoins spécifiques à son application.
 
-| Avantages | Inconvénients |
- ----------------------------
-| * Pour éviter des erreurs dans l’organisation des appels
-* Éviter les appels directs aux commandes PHP
-* Préférer les versions des Frameworks qui apportent leur lot de contrôles.
-* Plus grand portabilité du code
-* Ne pas réinventer la roue
-* La gestion des formulaire, des utilisateurs, ... | 
-* Apprentissage d’une couche supplémentaire
-* La majorité des fonctionnalités PHP sont redéfinies
-* Généralement apprentissage d’un moteur de template
-* Apprentissage de l’utilisation du framework choisit : ses classes, ses objets, sa logique ! |
+<table><thead><tr><th>Avantages</th><th>Inconvénients</th><th data-hidden></th></tr></thead><tbody><tr><td>Pour éviter des erreurs dans l’organisation des appels</td><td>Apprentissage d’une couche supplémentair</td><td></td></tr><tr><td>Éviter les appels directs aux commandes PHP</td><td>La majorité des fonctionnalités PHP sont redéfinies</td><td></td></tr><tr><td>Préférer les versions des Frameworks qui apportent leur lot de contrôles.</td><td>Généralement apprentissage d’un moteur de template</td><td></td></tr><tr><td>Plus grand portabilité du code</td><td>Apprentissage de l’utilisation du framework choisit : ses classes, ses objets, sa logique !</td><td></td></tr><tr><td>Ne pas réinventer la roue</td><td></td><td></td></tr><tr><td>La gestion des formulaire, des utilisateurs, ...</td><td></td><td></td></tr></tbody></table>
 
 ![Les 10 frameworks les plus populaires en PHP (2019).](../.gitbook/assets/php-frameworks.png)
 
@@ -89,7 +78,7 @@ Article comparatifs des 10 frameworks PHP les plus populaires de 2019: [https://
 * Moteur de template puissant et simple
 * Depuis la V4, Symfony est très léger et très rapide
 
-![Roadmap des versions de Symfony](<../.gitbook/assets/Capture d’écran 2021-02-03 à 10.58.06.png>)
+![Roadmap des versions de Symfony](<../.gitbook/assets/Capture d’écran 2023-09-05 à 21.51.39.png>)
 
 {% hint style="info" %}
 Toutes les informations sur l'évolution du framework : [https://symfony.com/releases](https://symfony.com/releases)

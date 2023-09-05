@@ -38,3 +38,7 @@ Dans ce répertoire se trouve toute la logique de l'application, les contrôleur
 * Repository/ : Est très généralement lié à une entité, et permet d'ajouter des requêtes spécifiques.
 
 Tous ces points seront détaillés dans les parties suivantes.
+
+## Principe général de fonctionnement de Symfony
+
+<figure><img src="../.gitbook/assets/Capture d’écran 2023-09-05 à 21.54.00.png" alt=""><figcaption><p>Principe général de fonctionnement de Symfony (source : <a href="https://symfony.com/doc/current/introduction/http_fundamentals.html#the-symfony-application-flow">https://symfony.com/doc/current/introduction/http_fundamentals.html#the-symfony-application-flow</a>)</p></figcaption></figure>

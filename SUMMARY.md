@@ -6,7 +6,6 @@
 
 * [Séance 0 : Docker et Installation](semestre-3/seance-0.md)
 * [Séance 1 : Introduction & Eco-système Symfony](semestre-3/seance-1.md)
-* [Séance 1 : Eco-Système de Symfony](semestre-3/seance-a-supprimer.md)
 * [Séance 2 : Architecture de Symfony](semestre-3/seance-2.md)
 * [Séance 2 : Première page avec Symfony](semestre-3/premiere\_page.md)
 * [Séance 2 : Controller et Routes](semestre-3/controller.md)
