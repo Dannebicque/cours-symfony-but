@@ -1,6 +1,19 @@
-# Séance 2 : Controller et Routes
+# Séance 3 : Controller, routes et vues : les bases de notre fil rouge
 
-## Présentation
+## Objectifs
+
+Tout au long des prochaines séances nous allons mettre en place un système de blog simple permettant de poster des articles, d'obtenir des commentaires et de gérer les accès avec des droits différenciés.
+
+Ce projet va évoluer au fur et à mesure des connaissances de Symfony.
+
+{% hint style="info" %}
+Les concepts vont être vus progressivement selon nos besoins pour le projet. Ils ne seront donc jamais décris de manière exhaustive dans ce cours. Vous pouvez avoir l'ensemble des détails dans la documentation officielle de Symfony : [https://symfony.com/doc/current/index.html](https://symfony.com/doc/current/index.html)
+
+Par ailleurs vous pouvez aussi trouver un exemple complètement décrit de manière progressive dans le livre de Fabien Pontetier : [https://symfony.com/book](https://symfony.com/book)
+
+{% endhint %}
+
+## Présentation des routes et des contrôleurs
 
 **Une route permet de diriger une url (ou un pattern d'url) vers une méthode de controller appelée Action.**
 
@@ -80,11 +93,13 @@ Si l'utilisateur utilise l'URL `/page/`, la variable `$page` sera égale à 1.
 
 On peut cumuler plusieurs variables :
 
-<pre class="language-php"><code class="lang-php"><strong>#[Route('/page/{page}/{subpage}', name:'blog_index')]
+```php
+#[Route('/page/{page}/{subpage}', name:'blog_index')]
 </strong>public function indexAction($page, $subpage)
 {
     echo $page.' '.$subpage;
-}</code></pre>
+}
+```
 
 On pourrait utiliser un autre séparation que le slash, comme par exemple -, . ou \_. La seule condition étant que Symfony puisse être en mesure de différencier les paramètres.
 
@@ -106,19 +121,17 @@ Ou sous TWIG on a deux fonctions :
 
 ## Controller
 
-Les routes redirigent vers une méthode de Controller (une action); un controller Symfony se nomme de la sorte : NomDuController où le suffixe **Controller** est obligatoire et le nom du fichier et de la classe est en **CamelCase**.
+Les routes redirigent vers une méthode d'un contrôleur (une action); un controller Symfony se nomme de la sorte : NomDuController où le suffixe **Controller** est obligatoire et le nom du fichier et de la classe est en **CamelCase**.
 
 Les différentes méthodes se nomment de la sorte :
 
 **nomDeLaMethode** est lui en **miniCamelCase**
 
-_L'usage du suffixe Action n'est plus requis dans Symfony._
-
 Dans le cas idéal, le controller doit contenir le minimum de code possible (20 lignes maximum selon les standards de Symfony). Il ne doit que faire le lien entre les différents éléments de l'application et une réponse.
 
 ## Response
 
-Une Action renvoie toujours un type Response ; il existe plusieurs type de Response : JsonResponse, RedirectResponse, HttpResponse, BinaryFileResponse etc ...
+Une méthode d'un contrôleur renvoie toujours un type _Response_ ; il existe plusieurs type de Response : JsonResponse, RedirectResponse, HttpResponse, BinaryFileResponse etc ...
 
 La plus utilisée est Response pour l'utiliser on va ajouter dans le "use" suivant :
 
@@ -136,7 +149,7 @@ public function index(){
 
 Affiche à l'écran Ma response. Dans l'état cette réponse n'est pas du HTML, car rien n'est précisé dans le retour de la méthode.
 
-Une méthode render() (définie quand la classe AbstractController dont votre controller doit hériter) permet aux Actions de récupérer une vue et d'afficher le contenu de la vue compilée avec les différentes variables envoyées.
+Une méthode render() (définie quand la classe **AbstractController** dont votre controller doit hériter) permet aux méthodes de récupérer une vue et d'afficher le contenu de la vue compilée avec les différentes variables envoyées.
 
 ```php
 #[Route("/", name:"page")]
@@ -152,50 +165,122 @@ public function index()
 
 Ici on va récupérer le template présent dans templates/default/index.html.twig pour affecter la variable _variable_.
 
-## Exercice 1
+### Exercice 1
 
-* Créer 2 nouvelles pages :
-  * [http://localhost/time/now](http://localhost/time/now) : afficher la date l'heure minute et seconde
-  * [http://localhost/color/blue](http://localhost/color/blue) : affiche "blue" à l'écran dynamiquement
-  * [http://localhost/color/red](http://localhost/color/red) : affiche "red" à l'écran dynamiquement
-  * Ajouter un menu avec des liens vers les 2 pages créées.
+Les premières étapes consistent à mettre en place les bases de notre projet :
 
-## Manipuler les requests
+* Une installation propre en version "skeleton"
+* Un contrôleur et la méthode pour la page d'accueil et la route "/"
+* La vue associée à la page d'accueil
+* Une page de contact avec une route "/contact" et une vue associée
+* Testez vos routes et vos vues, ajoutez un contenu fictif simple pour le moment avec uniquement du HTML comme vous savez le faire depuis le S1.
 
-L'objet "request" contient toutes les données envoyées par l'utilisateur (formulaire, ...), mais aussi les données envoyées par le navigateur.
+## Les vues/templates
 
-En passant en paramètre un objet de type Request, on peut le manipuler selon les méthodes ci-dessous.
+Un template ou une vue est le meilleur moyen d'organiser et de restituer le code HTML à partir de  votre application, que vous deviez rendre le code HTML à partir d'un contrôleur ou générer le contenu d'un courrier électronique . Les templates dans Symfony sont créés avec Twig: un moteur de modèle flexible, rapide et sécurisé.
 
-_Passer un objet en paramètre de cette manière est ce que l'on nomme de l'injection de dépendance. Le lien est fait automatiquement par Symfony grâce au mécanisme d'autowiring._
+[Twig](https://twig.symfony.com/) est un moteur de rendu de template comme [Smarty](https://www.smarty.net/) (prestashop) ou [Blade](https://laravel.com/docs/5.8/blade) (laravel). Twig a cependant été développé pour Symfony à l'origine et peut être utilisé dans d'autres contextes.
+
+Les vues sont des fichiers HTML qui sont compilés par Symfony pour être envoyés au navigateur. Elles sont stockées dans le dossier `templates` et sont généralement organisées par contrôleur.
+
+{% hint style="info" %}
+Un moteur de template permet de limiter les logiques complexes pour réaliser des templates simples à coder. Un moteur de template intègre généralement des fonctionnalités qui sont récurrentes dans le développement "front" et qui permettent de simplifier le code à écrire.
+{% endhint %}
+
+## Twig
+
+Twig est le moteur de template par défaut de Symfony. Il permet de faire des boucles, des conditions, des inclusions, des héritages, des filtres, des fonctions, etc. Il est très complet et permet de faire des choses très puissantes. Twig est un langage à part entière, mais il est très simple à apprendre et à utiliser. Twig s'intègre dans le code HTML, il sera ensuite interprété par le moteur Symfony pour générer la page HTML finale.
+
+Twig est un outil très puissant, mais il implique une courte phase d'apprentissage, car contrairement à d'autres moteurs de template il n'utilise pas une syntaxe PHP. Vous pouvez vous référer à la documentation officielle  : [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/)
+
+### Exemple d'une vue avec twig
+
+Exemple d'un code que vous pourriez écrire en PHP
 
 ```php
-use Symfony\Component\HttpFoundation\Request;
-
-public function index(Request $request)
-{
-    $request->isXmlHttpRequest(); // is it an Ajax request?
-
-    $request->getPreferredLanguage(array('en', 'fr'));
-
-    // retrieves GET and POST variables respectively
-    $request->query->get('page');
-    $request->request->get('page');
-
-    // retrieves SERVER variables
-    $request->server->get('HTTP_HOST');
-
-    // retrieves an instance of UploadedFile identified by foo
-    $request->files->get('foo');
-
-    // retrieves a COOKIE value
-    $request->cookies->get('PHPSESSID');
-
-    // retrieves an HTTP request header, with normalized, lowercase keys
-    $request->headers->get('host');
-    $request->headers->get('content_type');
-}
+<body>
+    <h1><?php echo $page_title ?></h1>
+    <ul id="navigation">
+        <?php foreach ($navigation as $item): ?>
+        <li>
+                <a href="<?php echo $item->getHref() ?>">
+                    <?php echo $item->getCaption() ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</body>
 ```
 
-## Exercice 2
+Ce même code, écrit avec TWIG serait :
 
-Ajoutez une méthode (route, méthode et vue) qui permet de récupérer l'IP du client. On peut utiliser la méthode getClientIp() de l'objet request.
+```twig
+<body>
+    <h1>{{ page_title }}</h1>
+
+    <ul id="navigation">
+        {% raw %}
+{% for item in navigation %}
+            <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+        {% endfor %}
+{% endraw %}
+    </ul>
+</body>
+```
+
+La syntaxe est plus "legére" et moins encombrées des balises PHP. Le code semble donc plus lisible et par conséquent plus facile à maintenir.
+
+### Affichage
+
+La syntaxe Twig est basée sur uniquement trois constructions:
+
+* `{{ ... }}`, utilisé pour afficher le contenu d'une variable ou le résultat de l'évaluation d'une expression;
+* `{% ... %}`, utilisé pour exécuter une logique, telle qu’une condition ou une boucle;
+* `{# ... #}`, utilisé pour ajouter des commentaires au modèle (contrairement aux commentaires HTML, ces commentaires ne sont pas inclus dans la page rendue).
+
+{% hint style="danger" %}
+Vous ne pouvez pas exécuter de code PHP dans les modèles Twig, mais Twig fournit des utilitaires permettant d'exécuter une certaine logique dans les modèles. Par exemple, les **filtres** modifient le contenu avant le rendu, comme le `upper`filtre pour mettre le contenu en majuscule :
+
+`{{ title|upper }}`
+
+Twig intègre une [liste de filtre](https://twig.symfony.com/doc/2.x/) permettant de répondre aux usages courant. Mais il est très simple d'ajouter nos propres filtres afin de répondre parfaitement à nos besoins.
+{% endhint %}
+
+### Variables
+
+TWIG est très puissant lorsqu'il s'agit de manipuler des variables. Pour lui, si c'est un tableau associatif ou un objet avec des propriétés cela est identique dans la syntaxe.
+
+Par exemple si vous avez le tableau `$tab['param1']` vous écrirez en TWIG
+
+```twig
+{{ tab.param1 }}
+```
+
+Si vous avez un objet `$tab`, qui est une instance d'une classe ayant comme propriété `$param1`, la syntaxe en TWIG sera :
+
+```twig
+{{ tab.param1 }}
+```
+
+Si vous avez un objet `$tab`, qui est une instance d'une classe ayant comme propriété `$param1`, qui est un tableau associatif avec une clé `key1`, la syntaxe pourrait être :
+
+```twig
+{{ tab.param1.key1 }}
+```
+
+La manière dont TWIG inspecte votre code pour trouver la meilleure façon d'interpréter une variable est la suivante :
+
+For convenience's sake `foo.bar` does the following things on the PHP layer:
+
+* check if foo is an array and bar a valid element;
+* if not, and if foo is an object, check that bar is a valid property;
+* if not, and if foo is an object, check that bar is a valid method (even if bar is the constructor - use \_\_construct() instead);
+* if not, and if foo is an object, check that getBar is a valid method;
+* if not, and if foo is an object, check that isBar is a valid method;
+* if not, and if foo is an object, check that hasBar is a valid method;
+* if not, return a null value.
+
+foo\['bar'] on the other hand only works with PHP arrays:
+
+* check if foo is an array and bar a valid element;
+* if not, return a null value.

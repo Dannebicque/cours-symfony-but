@@ -1,4 +1,4 @@
-# Séance 4 : Exercices
+# Séance 4 : Mise en place du formulaire de contact, récupération des données et validation
 
 ## Exercice 1
 
