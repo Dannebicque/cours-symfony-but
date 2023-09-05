@@ -19,6 +19,10 @@ Découvrir et appréhender un framework PHP web.
 
 ![Schéma de principe du MVC](../.gitbook/assets/mvc-architecture.png)
 
+Le concept de programmation MVC consiste à séparer les différentes parties d'un projet web en trois parties distinctes : le modèle, la vue et le contrôleur. Le modèle représente les données et la logique métier, la vue représente l'interface utilisateur et le contrôleur gère les interactions entre le modèle et la vue. Le contrôleur reçoit les demandes de l'utilisateur, récupère les données nécessaires auprès du modèle et les transmet à la vue pour affichage.
+
+L'intérêt d'utiliser le concept de programmation MVC est de séparer les différentes parties d'un projet web en trois parties distinctes, ce qui permet une meilleure organisation et une plus grande facilité de maintenance du code. En séparant la logique métier, l'interface utilisateur et les interactions entre les deux, il est plus facile de faire des modifications sans affecter les autres parties du code. Cela permet également une meilleure collaboration entre les développeurs travaillant sur le même projet.
+
 ### C: Controller / Contrôleur
 
 C'est lui qui reçoit l'interaction (la demande/**request**) du visiteur. Il se charge de récupérer les éléments nécessaires auprès du/des modèle(s). Il transmets toutes les données nécessaires à la vue.
@@ -37,9 +41,9 @@ C'est lui qui s'occupe de récupérer et préparer les données. Le modèle peut
 
 En programmation informatique, un framework ou structure logicielle est un ensemble cohérent de composants logiciels structurels, qui sert à créer les fondations ainsi que les grandes lignes de tout ou d’une partie d’un logiciel (architecture). Un framework se distingue d’une simple bibliothèque logicielle principalement par :
 
-* son caractère générique,&#x20;
-* faiblement spécialisé,&#x20;
-* contrairement à certaines bibliothèques ;&#x20;
+* son caractère générique,
+* faiblement spécialisé,
+* contrairement à certaines bibliothèques ;
 
 Un framework peut à ce titre être constitué de plusieurs bibliothèques chacune spécialisée dans un domaine. Un framework peut néanmoins être spécialisé, sur un langage particulier, une plateforme spécifique, un domaine particulier : reporting, mapping, etc. ;
 
