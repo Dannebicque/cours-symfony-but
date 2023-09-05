@@ -5,8 +5,8 @@
 ## Semestre 3
 
 * [Planning](semestre-3/planning.md)
-* [Séance 1 : Introduction](semestre-3/introduction.md)
-* [Séance 1 : Eco-Système de Symfony](semestre-3/eco-systeme.md)
+* [Séance 1 : Introduction](semestre-3/seance-1-introduction.md)
+* [Séance 1 : Eco-Système de Symfony](semestre-3/seance-2-eco-systeme.md)
 * [Séance XX : Docker et Installation](semestre-3/seance-xx-docker-et-installation.md)
 * [Séance XX : Architecture de Symfony](semestre-3/architecture-de-symfony.md)
 * [Séance 2 : Première page avec Symfony](semestre-3/premiere\_page.md)
