@@ -6,9 +6,8 @@
 
 * [Séance 0 : Docker et Installation](semestre-3/seance-0.md)
 * [Séance 1 : Introduction & Eco-système Symfony](semestre-3/seance-1.md)
-* [Séance 2 : Architecture de Symfony](semestre-3/seance-2.md)
-* [Séance 2 : Première page avec Symfony](semestre-3/premiere\_page.md)
-* [Séance 2 : Controller et Routes](semestre-3/controller.md)
+* [Séance 2 : Architecture de Symfony & première page](semestre-3/seance-2.md)
+* [Séance 3 : Controller, Routes et vues : les bases de notre fil rouge](semestre-3/seance-3.md)
 * [Séance 3 : Vues - TWIG](semestre-3/vues.md)
 * [Séance 4 : Exercices](semestre-3/seance-4-exercices.md)
 * [Séance 5 : Modèles - Entités - ORM](semestre-3/modeles.md)
