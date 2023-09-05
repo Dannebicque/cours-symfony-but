@@ -284,3 +284,64 @@ foo\['bar'] on the other hand only works with PHP arrays:
 
 * check if foo is an array and bar a valid element;
 * if not, return a null value.
+
+### Héritage
+
+TWIG permet l'héritage de template via un `extends` dans les templates enfants :
+
+```twig
+{% raw %}
+{% extends 'base.html.twig' %}
+{% endraw %}
+```
+
+Dans les templates mère on définit des "block" que l'on vient surcharger dans les templates enfants :
+
+```twig
+{% raw %}
+{% block body %}
+toto
+{% endblock %}
+{% endraw %}
+```
+
+On peut également reprendre le block parent via
+
+```twig
+{{ parent() }}
+```
+
+On crée donc des templates mère assez flexibles pour pouvoir en hériter et surcharger les différents blocks
+
+## Exercice
+
+En se basant sur les concept d'héritage, définir un menu avec nos deux pages (accueil et contact) dans le fichier base.html.twig et l'hériter dans les deux autres templates.
+
+## Images et CSS/JavaScript
+
+Pour inclure des images, des fichiers CSS ou JavaScript, il faut utiliser la fonction asset() :
+
+```twig
+<img src="{{ asset('images/logo.png') }}" alt="Symfony!" />
+```
+
+Cette fonction va chercher le fichier dans le dossier public/images/logo.png
+
+Asset n'est pas installé par défaut, il faut donc l'installer :
+
+```bash
+composer require symfony/asset
+```
+
+Vous pouvez utiliser cette fonction pour inclure des fichiers CSS ou JavaScript :
+
+```twig
+<link rel="stylesheet" href="{{ asset('css/blog.css') }}" />
+```
+
+## Exercice
+
+* Créer un dossier css dans le dossier public
+* Créer un fichier style.css dans le dossier css, faites un peu de CSS pour mettre en forme votre page d'accueil
+* Ajouter une balise link dans le fichier base.html.twig pour inclure le fichier css
+* Ajouter une balise img dans le fichier base.html.twig pour inclure une image de votre choix sur la page d'accueil
