@@ -1,4 +1,4 @@
-# Séance XX : Docker et Installation
+# Séance 0 : Docker et Installation
 
 Le CM introductif de Patrice Gommery
 
@@ -11,3 +11,11 @@ La séance de TD (Patrice Gommery)
 {% hint style="warning" %}
 Bien prendre l'image pour les "dev" qui permet d'utiliser Symfony
 {% endhint %}
+
+Les fichiers de départ
+
+
+
+{% file src="../.gitbook/assets/docker-symfony.zip" %}
+Image docker et structure à utiliser pour Symfony. Deux URL exposées blog et demo
+{% endfile %}

@@ -1,4 +1,4 @@
-# Séance 3 : Controller, routes et vues : les bases de notre fil rouge
+# Séance 3 : Controller, Routes et vues : les bases de notre fil rouge
 
 ## Objectifs
 
@@ -10,7 +10,6 @@ Ce projet va évoluer au fur et à mesure des connaissances de Symfony.
 Les concepts vont être vus progressivement selon nos besoins pour le projet. Ils ne seront donc jamais décris de manière exhaustive dans ce cours. Vous pouvez avoir l'ensemble des détails dans la documentation officielle de Symfony : [https://symfony.com/doc/current/index.html](https://symfony.com/doc/current/index.html)
 
 Par ailleurs vous pouvez aussi trouver un exemple complètement décrit de manière progressive dans le livre de Fabien Pontetier : [https://symfony.com/book](https://symfony.com/book)
-
 {% endhint %}
 
 ## Présentation des routes et des contrôleurs
@@ -177,7 +176,7 @@ Les premières étapes consistent à mettre en place les bases de notre projet :
 
 ## Les vues/templates
 
-Un template ou une vue est le meilleur moyen d'organiser et de restituer le code HTML à partir de  votre application, que vous deviez rendre le code HTML à partir d'un contrôleur ou générer le contenu d'un courrier électronique . Les templates dans Symfony sont créés avec Twig: un moteur de modèle flexible, rapide et sécurisé.
+Un template ou une vue est le meilleur moyen d'organiser et de restituer le code HTML à partir de votre application, que vous deviez rendre le code HTML à partir d'un contrôleur ou générer le contenu d'un courrier électronique . Les templates dans Symfony sont créés avec Twig: un moteur de modèle flexible, rapide et sécurisé.
 
 [Twig](https://twig.symfony.com/) est un moteur de rendu de template comme [Smarty](https://www.smarty.net/) (prestashop) ou [Blade](https://laravel.com/docs/5.8/blade) (laravel). Twig a cependant été développé pour Symfony à l'origine et peut être utilisé dans d'autres contextes.
 
@@ -191,7 +190,7 @@ Un moteur de template permet de limiter les logiques complexes pour réaliser de
 
 Twig est le moteur de template par défaut de Symfony. Il permet de faire des boucles, des conditions, des inclusions, des héritages, des filtres, des fonctions, etc. Il est très complet et permet de faire des choses très puissantes. Twig est un langage à part entière, mais il est très simple à apprendre et à utiliser. Twig s'intègre dans le code HTML, il sera ensuite interprété par le moteur Symfony pour générer la page HTML finale.
 
-Twig est un outil très puissant, mais il implique une courte phase d'apprentissage, car contrairement à d'autres moteurs de template il n'utilise pas une syntaxe PHP. Vous pouvez vous référer à la documentation officielle  : [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/)
+Twig est un outil très puissant, mais il implique une courte phase d'apprentissage, car contrairement à d'autres moteurs de template il n'utilise pas une syntaxe PHP. Vous pouvez vous référer à la documentation officielle : [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/)
 
 ### Exemple d'une vue avec twig
 
@@ -219,11 +218,13 @@ Ce même code, écrit avec TWIG serait :
     <h1>{{ page_title }}</h1>
 
     <ul id="navigation">
-        {% raw %}
+        
+{% raw %}
 {% for item in navigation %}
             <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
         {% endfor %}
 {% endraw %}
+
     </ul>
 </body>
 ```
@@ -235,7 +236,10 @@ La syntaxe est plus "legére" et moins encombrées des balises PHP. Le code semb
 La syntaxe Twig est basée sur uniquement trois constructions:
 
 * `{{ ... }}`, utilisé pour afficher le contenu d'une variable ou le résultat de l'évaluation d'une expression;
-* `{% ... %}`, utilisé pour exécuter une logique, telle qu’une condition ou une boucle;
+* \`\{% ... %\}
+
+\`, utilisé pour exécuter une logique, telle qu’une condition ou une boucle;
+
 * `{# ... #}`, utilisé pour ajouter des commentaires au modèle (contrairement aux commentaires HTML, ces commentaires ne sont pas inclus dans la page rendue).
 
 {% hint style="danger" %}
@@ -293,6 +297,7 @@ TWIG permet l'héritage de template via un `extends` dans les templates enfants 
 {% raw %}
 {% extends 'base.html.twig' %}
 {% endraw %}
+
 ```
 
 Dans les templates mère on définit des "block" que l'on vient surcharger dans les templates enfants :
