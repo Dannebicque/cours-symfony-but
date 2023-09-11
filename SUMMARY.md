@@ -8,14 +8,18 @@
 * [Séance 1 : Introduction & Eco-système Symfony](semestre-3/seance-1.md)
 * [Séance 2 : Architecture de Symfony & première page](semestre-3/seance-2.md)
 * [Séance 3 : Controller, Routes et vues : les bases de notre fil rouge](semestre-3/seance-3.md)
-* [Séance 3 : Vues - TWIG](semestre-3/vues.md)
-* [Séance 4 : Exercices](semestre-3/seance-4-exercices.md)
-* [Séance 5 : Modèles - Entités - ORM](semestre-3/modeles.md)
+* [Séance 4 : Modèles - Entités - ORM](semestre-3/seance-4-modeles-entites-orm.md)
 * [Séance 6 : Relations entre entités](semestre-3/relations.md)
 * [Séance 7 : Formulaires](semestre-3/form.md)
 * [Séance 8 : Exercices](semestre-3/seance-7-exercices.md)
 * [Séance 9 : Mails](semestre-3/seance-9-mails.md)
 * [Séance 10 : Sécurité](semestre-3/securite.md)
+
+***
+
+* [Anciennes ressources](anciennes-ressources/README.md)
+  * [Séance 3 : Vues - TWIG](anciennes-ressources/vues.md)
+  * [Séance 4 : Exercices](anciennes-ressources/seance-4-exercices.md)
 
 ## Semestre 4
 

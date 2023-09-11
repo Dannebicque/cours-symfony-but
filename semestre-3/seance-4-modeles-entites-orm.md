@@ -1,4 +1,4 @@
-# Séance 5 : Modèles - Entités - ORM
+# Séance 4 : Modèles - Entités - ORM
 
 ## Introduction
 
@@ -195,7 +195,8 @@ Une fois la base de données mise en place on va pouvoir insérer, modifier, sup
     // réelle
 
     return new Response('Sauvegarde OK sur : ' . $post->getId() );
-}</code></pre>
+}
+</code></pre>
 
 Il existe à la place de `$em->persist, $em->remove($post);` qui permettra de faire une suppression.
 
@@ -332,17 +333,22 @@ Ce dernier code effectue une création dans la base de données; pour une modifi
     // réelle
 
     return new Response('Sauvegarde OK sur : ' . $post->getId() );
-}</code></pre>
+}
+</code></pre>
 
 ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le restant du code reste inchangé.
 
 ## Exercice
 
-* Créer une entité "PostCategory" avec :
-  * title string 255
-* Créer une page qui va sauvegarder une catégorie avec le nom "Catégorie 1".
-* Créer une page qui va sauvegarder un post avec le nom Post 1 à la date courante avec comme message Lorem ipsum.&#x20;
-* Créer une page qui va afficher le titre de la catégorie en id 1 et le post en id 1.
-* Créer un nouveau post identique au premier en changeant le titre.
-* Créer une page qui affiche la totalité des entités Post.&#x20;
-* Créer une page qui récupère le Post avec le Titre "Post 1"
+* Créer une entité "Categorie" avec :
+  * titre string 255
+  * ordre int
+* Créer une entité "Article" avec :
+  * titre string 255
+  * texte text
+  * datePublication datetime
+  * auteur string 255
+  * image string 255
+* Une fois les deux tables créées ajoutez des données depuis phpMyAdmin dans la table Article ( 3 articles)
+* Modifiez votre contrôleur et la page articles pour afficher tous les articles de votre table, par ordre décroissant (plus récent au plus ancien)
+* Modifiez votre page d'accueil pour afficher le dernier article publié.
