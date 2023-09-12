@@ -472,3 +472,9 @@ $articles = [
  ];
  ?>      
 ```
+
+## Exercice 3
+
+* Ajoutez une nouvelle page sur l'url /recherche
+* Ajouter une vue avec un formulaire avec une zone de saisie et un bouton submit. Le traitement se fera en poste sur l'url /recherche/resultat
+* La vue résultat affichera le contenu de la zone de texte saisie dans la page précédente.
