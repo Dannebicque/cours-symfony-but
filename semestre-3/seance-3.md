@@ -168,7 +168,8 @@ Ici on va récupérer le template présent dans templates/default/index.html.twi
 
 Les premières étapes consistent à mettre en place les bases de notre projet :
 
-* Une installation propre en version "skeleton"
+* Une nouvelle installation de Symfony, pour un projet nommé blog
+  * On installera toutes les dépendances en une seule fois pour plus de confort : `composer require webapp`dans le dossier blog/
 * Un contrôleur et la méthode pour la page d'accueil et la route "/"
 * La vue associée à la page d'accueil
 * Une page de contact avec une route "/contact" et une vue associée
@@ -349,4 +350,4 @@ Vous pouvez utiliser cette fonction pour inclure des fichiers CSS ou JavaScript 
 * Créer un dossier css dans le dossier public
 * Créer un fichier style.css dans le dossier css, faites un peu de CSS pour mettre en forme votre page d'accueil
 * Ajouter une balise link dans le fichier base.html.twig pour inclure le fichier css
-* Ajouter une balise img dans le fichier base.html.twig pour inclure une image de votre choix sur la page d'accueil
+* Ajouter une balise img dans le fichier index.html.twig de votre template de la page d'accueil pour inclure une image de votre choix&#x20;
