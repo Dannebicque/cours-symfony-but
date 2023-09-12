@@ -345,9 +345,130 @@ Vous pouvez utiliser cette fonction pour inclure des fichiers CSS ou JavaScript 
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}" />
 ```
 
-## Exercice
+## Exercice 1
 
 * Créer un dossier css dans le dossier public
 * Créer un fichier style.css dans le dossier css, faites un peu de CSS pour mettre en forme votre page d'accueil
 * Ajouter une balise link dans le fichier base.html.twig pour inclure le fichier css
 * Ajouter une balise img dans le fichier index.html.twig de votre template de la page d'accueil pour inclure une image de votre choix&#x20;
+
+## Logique
+
+* `{% %}` permet d'utiliser des logiques tels que :
+  * `{% if %} {% else %} {%endif %}` : condition
+  * `{% for item in items %}{%endfor}` : foreach
+  * `{% set foo='foo' %}`  : set des variables
+
+### Tests
+
+Il est possible d'écrire des tests, la syntaxe est très proche de celle de PHP. Attention toutefois, les opérateurs de comparaison ne s'écrive pas de manière identique.
+
+Le && de PHP s'écrit "and" dans TWIG, et le || de PHP s'écrit "or" dans TWIG.
+
+Il est possible d'avoir des _elseif_ (autant que nécessaire) et un bloc _else_ (1 au maximum)
+
+```twig
+{% raw %}
+{% if condition %}
+
+{% else if condition %}
+
+{% else %}
+
+{% endif %}
+{% endraw %}
+```
+
+### Boucles
+
+Il n'existe que la boucle for dans TWIG (elle est un peu l'équivalent d'un foreach).
+
+Le code ci-dessous est une boucle qui varie de 1 à 10.
+
+```twig
+{% raw %}
+{% for i in 1..10 %}
+
+{% endfor %}
+{% endraw %}
+```
+
+La boucle ci-dessous est une boucle qui parcours une "collection" users (l'équivalent du foreach). **Attention la syntaxe est inversée par rapport au PHP**
+
+```twig
+<ul>
+    {% raw %}
+{% for user in users %}
+        <li>{{ user.username }}</li>
+    {% endfor %}
+{% endraw %}
+</ul>
+```
+
+Dans le cadre d'une boucle TWIG propose une variable nommée loop qui permet d'avoir des informations sur la boucle :
+
+| Variable       | Description                                                   |
+| -------------- | ------------------------------------------------------------- |
+| loop.index     | The current iteration of the loop. (1 indexed)                |
+| loop.index0    | The current iteration of the loop. (0 indexed)                |
+| loop.revindex  | The number of iterations from the end of the loop (1 indexed) |
+| loop.revindex0 | The number of iterations from the end of the loop (0 indexed) |
+| loop.first     | True if first iteration                                       |
+| loop.last      | True if last iteration                                        |
+| loop.length    | The number of items in the sequence                           |
+| loop.parent    | The parent context                                            |
+
+La boucle ci-dessous intègre un test. Ce qui simplifie l'écriture. Elle intègre également un else dans le cas ou la boucle ne ferait aucune itération. Il est possible d'utiliser le else sans le if et réciproquement.
+
+```twig
+<ul>
+    {% raw %}
+{% for user in users|filter(user => (user.active == true)) %}
+        <li>{{ user.username }}</li>
+    {% else %}
+        <li>No users found</li>
+    {% endfor %}
+{% endraw %}
+</ul>
+```
+
+Le code ci-dessus serait équivalent en PHP au code suivant:
+
+```php
+<?php
+<ul>
+if (count($users) > 0) {
+    foreach ($users as $user) {
+        if ($user->isActive() == true) {//isActive() est une méthode de mon objet $user
+            echo '<li>'.$user->getUsername().'</li>';
+        }
+    }
+}
+else {
+    echo '<li>No users found</li>';
+}
+</ul>
+```
+
+## Exercice 2
+
+* Ajouter une page /articles
+* Construire un tableau PHP contenant 3 articles, contenant chacun un titre, un texte et une date
+* Passer le tableau à la vue de la page article.
+* Afficher le tableau en twig
+
+Exemple de tableau PHP
+
+
+
+```php
+<?php
+$articles = [
+1 => ['titre' => 'Mon premier article',
+      'texte' => 'Un texte de mon article un peu long...',
+      'date' => new DateTime('now')
+      ],
+ ...
+ ];
+ ?>      
+```
