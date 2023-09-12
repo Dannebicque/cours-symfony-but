@@ -1,20 +1,8 @@
 # Séance 0 : Docker et Installation
 
-Le CM introductif de Patrice Gommery
+{% embed url="https://docs.mmi-troyes.fr/books/docker-symfony/page/creation-dun-container-pour-le-s3-dev" %}
 
-{% embed url="http://195.83.128.21/~pgommery/WR314" %}
-
-La séance de TD (Patrice Gommery)
-
-{% embed url="http://195.83.128.21/~pgommery/WR314-SEANCE02-Docker-Compose" %}
-
-{% hint style="warning" %}
-Bien prendre l'image pour les "dev" qui permet d'utiliser Symfony
-{% endhint %}
-
-Les fichiers de départ
-
-
+{% embed url="http://symfony.mmi-troyes.fr:8313/" %}
 
 {% file src="../.gitbook/assets/docker-symfony.zip" %}
 Image docker et structure à utiliser pour Symfony. Deux URL exposées blog et demo
