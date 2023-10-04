@@ -1,4 +1,4 @@
-# Séance 6 : Relations entre entités
+# Séance 5 : Relations entre entités
 
 ## Introduction
 
@@ -163,16 +163,9 @@ Comme après chaque modification, il faudra générer le fichier de migration, e
 
 ## Exercice
 
-* Créer la liaison entre Post et PostCatégorie.&#x20;
-* Modifier la page de génération de Post pour créer un nouveau post avec la relation vers "Catégorie 1"
-  * La catégorie de ce post sera Catégorie 1 (s'il existe, sinon le créer, cf. séance précédente)&#x20;
-* Modifier la page avec tous les posts pour afficher la catégorie liée à l'article.&#x20;
-* Afficher la catégorie 1 avec tous les posts qui lui sont associés
-* Créer une route qui supprime "Post 1"
-*   Créer une route qui supprime "Catégorie 1"
-
-
-
-**En plus : Flash Messages** [https://symfony.com/doc/current/controller.html#flash-messages](https://symfony.com/doc/current/controller.html#flash-messages)
-
-* Essayer d'utiliser les flash messages.
+* Créer la liaison entre `Article` et `Categorie`.&#x20;
+* Ajoutez deux catégories dans votre base de données et liées vos articles à l'une des catégories.
+* Modifiez la page "/articles", pour afficher la catégorie de chacun des articles.
+* Modifier la page "accueil" pour afficher les catégories (et toujours le dernier article publié).
+* Créez une page "/categorie/..." pour afficher uniquement les articles de la catégorie.
+  * On pourrait judicieusement utiliser un "include" pour avoir la présentation d'un article commune sur toutes les pages

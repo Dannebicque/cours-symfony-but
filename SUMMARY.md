@@ -9,7 +9,7 @@
 * [Séance 2 : Architecture de Symfony & première page](semestre-3/seance-2.md)
 * [Séance 3 : Controller, Routes et vues : les bases de notre fil rouge](semestre-3/seance-3.md)
 * [Séance 4 : Modèles - Entités - ORM](semestre-3/seance-4-modeles-entites-orm.md)
-* [Séance 6 : Relations entre entités](semestre-3/relations.md)
+* [Séance 5 : Relations entre entités](semestre-3/seance-5.md)
 * [Séance 7 : Formulaires](semestre-3/form.md)
 * [Séance 8 : Exercices](semestre-3/seance-7-exercices.md)
 * [Séance 9 : Mails](semestre-3/seance-9-mails.md)
