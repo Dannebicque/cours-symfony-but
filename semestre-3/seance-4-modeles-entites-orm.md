@@ -350,5 +350,5 @@ ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le rest
   * auteur string 255
   * image string 255
 * Une fois les deux tables créées ajoutez des données depuis phpMyAdmin dans la table Article ( 3 articles)
-* Modifiez votre contrôleur et la page articles pour afficher tous les articles de votre table, par ordre décroissant (plus récent au plus ancien)
+* Modifiez votre contrôleur et la page "/articles" pour afficher tous les articles de votre table, par ordre décroissant (plus récent au plus ancien)
 * Modifiez votre page d'accueil pour afficher le dernier article publié.
