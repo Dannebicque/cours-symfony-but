@@ -246,15 +246,14 @@ Ici on vérifiera que le champs name doit être rempli.
 
 ### Exercice
 
-* Créer un formulaire directement dans DefaultController qui gèrera la création des Post
-* Créer un formulaire directement dans DefaultController qui gèrera la modification des Post
-* Modifier la page de listing des postes pour rajouter un lien edition et suppression
-* Mettre en place les différentes routes pour le backoffice de Post (ajout / modification / suppression / visualisation)
-* Déporter le formulaire de gestion de Post vers une classe dédiée Form/PostType.php
-* Modifier DefaultController pour utiliser PostType
-* Ajouter une validation au formulaire sur le titre qui ne doit pas dépasser 255 caractères
+* Créer un formulaire directement dans CategorieController qui gèrera la création des Categories
+* Modifier la page de listing des catégories pour rajouter un lien édition et suppression
+* Mettre en place les différentes routes pour le "backoffice" de Categorie (ajout / modification / suppression / visualisation)
+* Déporter le formulaire de gestion de Categorie vers une classe dédiée Form/CategorieType.php
+* Modifier CategorieController pour utiliser CategorieType
+* Ajouter une validation au formulaire sur le titre qui ne doit pas dépasser 150 caractères
 * Rechercher pour mettre en place le template bootstrap pour les Form
-* Afficher le message d'erreur en rouge.
+* Gérer les autres routes : modification et suppression
 
 ### Génération de CRUD
 
@@ -276,21 +275,6 @@ Attention si vous modifier une entité les FormType ne sont pas générés autom
 
 ### Exercice
 
-* Générer le CRUD de Post avec l'url /admin/post
-* Générer le CRUD de PostCategory avec l'url /admin/postcategory
-* Tester le fonctionnement&#x20;
+* Générer le CRUD de Article
+* Tester le fonctionnement, comprendre pourquoi ca ne fonctionne pas et corriger
 * Mettre les liens dans le menu pour aller sur le listing post et listing postcategory; mettre en actif si url courante
-
-### Exercice
-
-* On va créer une page de recherche&#x20;
-*   Modifier le repository de Post pour créer une méthode `search($word)`
-
-    qui recherchera dans le titre et le contenu le mot $word&#x20;
-
-    Tips : [https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository](https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository)
-* Créer une nouvelle page dans le Controller /search/{word}
-* Créer le formulaire directement dans le controller sans le lier à une entité&#x20;
-* A la soumission on va récupérer `$form->getData()` qui sera notre $\_POST
-* Pour récupérer la variable $word et utiliser la méthode du repository fraichement créée.
-* Pour finalement afficher tout le contenu dans une page de listing.

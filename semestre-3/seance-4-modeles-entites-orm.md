@@ -213,16 +213,15 @@ DATABASE_URL="mysql://root:123456@mariadb:3306/nomDeLaBDD?charset=utf8mb4"
 {% endhint %}
 
 * Créer la base de données (`bin/console doctrine:database:create`)
-* Créer une entité (`bin/console make:entity`), nommée Post et ajoute les champs suivants
-  * titre, string de 150 caractères
-  * message, text
-  * datePublication, DateTime
+* Créer une entité (`bin/console make:entity`), nommée Categorie et ajouter les champs suivants
+  * titre string 150 caractères
+  * ordre int
 * L'id sera automatiquement ajouté
-* Créer un nouveau contrôleur nommé "Post"
+* Créer un nouveau contrôleur nommé "CategorieTestController"
 * Ajouter une route pour créer un nouvel enregistrement
-  * Créer un objet Post et compléter les informations (titre, message, datePublication)
+  * Créer un objet Categorie et compléter les informations (titre, ordre)
   * Récupérer la connexion à doctrine (`$em = $this->getDoctrine()->getManager()`)
-  * Associer l'instance de Post avec l'ORM (`$em->persist($post))`
+  * Associer l'instance de Categorie avec l'ORM (`$em->persist($categorie))`
   * Enregistrer dans la base de données (`$em->flush()`)
 * Appeler la route et vérifier que cela s'enregistre dans votre base de données
 * Essayer d'appeler la route plusieurs fois.
@@ -340,15 +339,12 @@ ici on récupère le _repository_ de Post et on récupère l'id 1 ; tout le rest
 
 ## Exercice
 
-* Créer une entité "Categorie" avec :
-  * titre string 255
-  * ordre int
-* Créer une entité "Article" avec :
+* Créer une deuxième entité "Article" avec :
   * titre string 255
   * texte text
   * datePublication datetime
   * auteur string 255
   * image string 255
-* Une fois les deux tables créées ajoutez des données depuis phpMyAdmin dans la table Article ( 3 articles)
+* Ajoutez des données depuis phpMyAdmin dans la table Article ( 3 articles) ou avec un nouveau contrôler de test
 * Modifiez votre contrôleur et la page "/articles" pour afficher tous les articles de votre table, par ordre décroissant (plus récent au plus ancien)
 * Modifiez votre page d'accueil pour afficher le dernier article publié.

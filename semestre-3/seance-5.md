@@ -169,3 +169,9 @@ Comme après chaque modification, il faudra générer le fichier de migration, e
 * Modifier la page "accueil" pour afficher les catégories (et toujours le dernier article publié).
 * Créez une page "/categorie/..." pour afficher uniquement les articles de la catégorie.
   * On pourrait judicieusement utiliser un "include" pour avoir la présentation d'un article commune sur toutes les pages
+* Faire fonctionner la recherche en utilisant les données du formulaire pour trouver et afficher les articles associés.
+  *   Modifier le repository de Article pour créer une méthode `search($word)`
+
+      qui recherchera dans le titre et le contenu le mot $word&#x20;
+
+      Tips : [https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository](https://symfony.com/doc/current/doctrine.html#querying-for-objects-the-repository)
