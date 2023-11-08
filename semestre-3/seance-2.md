@@ -1,4 +1,4 @@
-# Séance 2 : Architecture de Symfony
+# Séance 2 : Architecture de Symfony & première page
 
 Depuis la version 4, Symfony à grandement simplifié la structure de ses répertoires et à normalisé les appellations pour coïncider avec la pratique de la majorité des framework.
 
@@ -117,7 +117,8 @@ Cette solution fonctionne, mais écrire tout le code "HTML" dans la méthode n'e
 composer require twig
 ```
 
-<pre data-overflow="wrap"><code><strong># Uniquement si vous n'avez pas installé le projet avec totues les dépendances --webapp</strong></code></pre>
+<pre data-overflow="wrap"><code><strong># Uniquement si vous n'avez pas installé le projet avec toutes les dépendances --webapp
+</strong></code></pre>
 
 Il faut ensuite modifier le contrôleur pour utiliser les vues.
 
