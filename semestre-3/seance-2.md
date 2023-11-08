@@ -128,12 +128,13 @@ Il faut ensuite modifier le contrôleur pour utiliser les vues.
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class LuckyController extends AbstractController
 {
     #[Route("/lucky/number", name:"app_lucky_number")]
-    public function number()
+    public function number(): Response
     {
         $number = random_int(0, 100);
 
@@ -145,6 +146,7 @@ class LuckyController extends AbstractController
         );
     }
 }
+
 ```
 
 Il faut maintenant écrire la vue.
