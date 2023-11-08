@@ -1,4 +1,4 @@
-# Séance 3 : Controller, Routes et vues : les bases de notre fil rouge
+# Séance 3 et 4 : Controller, Routes et vues : les bases de notre fil rouge
 
 ## Objectifs
 
@@ -237,10 +237,7 @@ La syntaxe est plus "legére" et moins encombrées des balises PHP. Le code semb
 La syntaxe Twig est basée sur uniquement trois constructions:
 
 * `{{ ... }}`, utilisé pour afficher le contenu d'une variable ou le résultat de l'évaluation d'une expression;
-* \`\{% ... %\}
-
-\`, utilisé pour exécuter une logique, telle qu’une condition ou une boucle;
-
+* `{% ... %}`, utilisé pour exécuter une logique, telle qu’une condition ou une boucle;
 * `{# ... #}`, utilisé pour ajouter des commentaires au modèle (contrairement aux commentaires HTML, ces commentaires ne sont pas inclus dans la page rendue).
 
 {% hint style="danger" %}
@@ -319,7 +316,7 @@ On peut également reprendre le block parent via
 
 On crée donc des templates mère assez flexibles pour pouvoir en hériter et surcharger les différents blocks
 
-## Exercice
+## Exercice 2
 
 En se basant sur les concept d'héritage, définir un menu avec nos deux pages (accueil et contact) dans le fichier base.html.twig et l'hériter dans les deux autres templates.
 
@@ -345,7 +342,7 @@ Vous pouvez utiliser cette fonction pour inclure des fichiers CSS ou JavaScript 
 <link rel="stylesheet" href="{{ asset('css/blog.css') }}" />
 ```
 
-## Exercice 1
+## Exercice 3
 
 * Créer un dossier css dans le dossier public
 * Créer un fichier style.css dans le dossier css, faites un peu de CSS pour mettre en forme votre page d'accueil
@@ -450,7 +447,7 @@ else {
 </ul>
 ```
 
-## Exercice 2
+## Exercice 4
 
 * Ajouter une page /articles
 * Construire un tableau PHP contenant 3 articles, contenant chacun un titre, un texte et une date
@@ -473,7 +470,7 @@ $articles = [
  ?>      
 ```
 
-## Exercice 3
+## Exercice 5
 
 * Ajoutez une nouvelle page sur l'url /recherche
 * Ajouter une vue avec un formulaire avec une zone de saisie et un bouton submit. Le traitement se fera en poste sur l'url /recherche/resultat
