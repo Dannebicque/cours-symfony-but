@@ -39,5 +39,6 @@
 ***
 
 * [FAQ](faq.md)
+* [Installation](installation.md)
 * [Mise en production](mise-en-production.md)
 * [Créer un environnement Symfony collaboratif](creer-un-environnement-symfony-collaboratif.md)
