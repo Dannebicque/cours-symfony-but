@@ -215,3 +215,7 @@ Cela évite donc que nos contrôleurs et notre code ne soit trop dépendant des 
    * le constructeur qui prend en paramètre l'objet `MailerInterface` et qui le stocke dans une propriété
    * `sendMail` : qui prend en paramètre le destinataire, le sujet et le corps du mail et qui envoie le mail
 2. Modifier le contrôleur pour utiliser le service de mailer
+3. Pour aller plus loin
+   1. Ajoutez une méthode qui permet d'envoyer un email en utilisant "twig"
+      1. Quelles sont les propriétés nécessaires ?
+      2. Comment modifier le code ?
