@@ -4,7 +4,7 @@
 
 Dans Symfony, tous les objets (au sens d'un ensemble de code qui apporte une fonctionnalité : mail, base de données, entitée, ...) sont des services. Dès l'instanciation d'une application symfony, de nombreux services sont lancés et accessible de partout dans l'application. Il est aussi possible de créer ses propres services.
 
-La documentation officielle de Symfony sur les services : [https://symfony.com/doc/current/service\_container.html](https://symfony.com/doc/current/service_container.html)
+La documentation officielle de Symfony sur les services : [https://symfony.com/doc/current/service\_container.html](https://symfony.com/doc/current/service\_container.html)
 
 ### Utilisation d'un service existant (rappel sur l'usage des mails)
 
@@ -112,9 +112,7 @@ use App\Repository\ArticleRepository;
 
 class ArticleService
 {
-    private ArticleRepository $articleRepository;
-
-    public function __construct(ArticleRepository $articleRepository)
+    public function __construct(private ArticleRepository $articleRepository)
     {
         $this->articleRepository = $articleRepository;
     }
@@ -196,7 +194,7 @@ composer require profiler maker --dev
 Nous installer également les dépendances suivantes :
 
 ```bash
-composer require orm form validation annotation twig security mailer
+composer require orm form validation twig security mailer
 ```
 
 ### Utilisation du mailer
