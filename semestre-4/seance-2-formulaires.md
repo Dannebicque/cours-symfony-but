@@ -126,7 +126,7 @@ Et la vue qui va avec.
 <h1>Formulaire</h1>
 
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form) }}
     <button type="submit" class="btn btn-primary">Submit</button>
 {{ form_end(form) }}
 {% endblock %}

@@ -114,7 +114,6 @@ class ArticleService
 {
     public function __construct(private ArticleRepository $articleRepository)
     {
-        $this->articleRepository = $articleRepository;
     }
 
     public function countArticles(): int
