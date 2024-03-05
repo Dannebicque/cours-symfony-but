@@ -1,4 +1,4 @@
-# Séance 6 : Filtres twig
+# Séance 4 : Filtres twig
 
 Twig propose de nombreux filtres permettant d'interagir avec vos variables. Ces filtres sont très utiles pour formater vos données, les transformer, les comparer, etc. Une longue liste est disponible par défaut [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/), mais vous pouvez également créer vos propres filtres [https://symfony.com/doc/current/templates.html#writing-a-twig-extension](https://symfony.com/doc/current/templates.html#writing-a-twig-extension).
 
@@ -172,17 +172,25 @@ Nous ajoutons sur la déclaration du filtre un tableau avec la clé `is_safe` et
 
 ### Exercice 1
 
-Créer un filtre qui va permettre d'afficher la date du jour au format français.
-L'appel du filtre dans twig pourrait être :
+Créer un filtre qui va permettre d'afficher la date du jour au format français. L'appel du filtre dans twig pourrait être :
 
 ```twig
+{{ dateObjet|dateFr }}
+```
+
+Ou `dateObjet` est un objet DateTime envoyé par le contrôleur
+
+Modifier votre filtre pour que la syntaxe suivante puisse fonctionne en utilisant la date du jour
+
+
+
+```
 {{ 'now'|dateFr }}
 ```
 
 ### Exercice 2
 
-Créer un filtre qui va formatter un numéro de téléphone en ajoutant des espaces entre les groupes de chiffres.
-L'appel du filtre dans twig pourrait être :
+Créer un filtre qui va formatter un numéro de téléphone en ajoutant des espaces entre les groupes de chiffres. L'appel du filtre dans twig pourrait être :
 
 ```twig
 {{ '0606060606'|formatPhone }}
