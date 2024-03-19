@@ -34,7 +34,8 @@
 * [Séance 8 : Webpack Encore et CSS](semestre-4/seance-4-webpack.md)
 * [Séance 9 : Form Collection](semestre-4/seance-9-forms-collection.md)
 * [Séance 10 : Validation de formulaires et forms events](semestre-4/seance-10-validation-form-event.md)
-* [Séance 11-12 : TP Noté](semestre-4/seance-11-tp-note.md)
+* [Séance 11-12 : TP Révision](semestre-4/seance-11-tp-note.md)
+* [Séance 13 : Evaluation](semestre-4/seance-13-evaluation.md)
 
 ***
 

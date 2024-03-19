@@ -1,4 +1,12 @@
-# Séance 4 : Webpack Encore et CSS
+# Séance 8 : Webpack Encore et CSS
+
+
+
+{% hint style="info" %}
+Depuis la version 7 de Symfony, il est conseillé d'utiliser une version sans webpack : [https://symfony.com/doc/current/frontend/asset\_mapper.html](https://symfony.com/doc/current/frontend/asset\_mapper.html)
+
+Nous voyons ici la solution avec Webpack qui est très répendu, et parce que Webpack est un outil que l'on peut utiliser en dehors de Symfony.
+{% endhint %}
 
 Webpack ([https://webpack.js.org/](https://webpack.js.org/)) est un outil logiciel open-source de type « module bundler » (littéralement, « groupeur de modules »), conçu pour faciliter le développement et la gestion de sites et d'applications web modernes. (source Wikipedia).
 
