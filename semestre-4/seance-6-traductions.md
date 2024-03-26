@@ -76,8 +76,14 @@ L'avantage de cette solution est que si la traduction n'existe pas, la chaîne d
 {% embed url="https://symfony.com/doc/current/reference/twig_reference.html#trans" %}
 
 ```twig
-// Some code
+// La forme la plus simple
 {{ 'symfony is great'|trans }}
+
+// avec un domaine
+{{ 'symfony is great'|trans({},'message') }}
+
+// avec des paramètres
+{{ 'Symfony %version% is great'|trans({'%version%': 7}) }}
 ```
 
 ## Extraire les chaînes à traduire
