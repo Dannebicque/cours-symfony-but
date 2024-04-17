@@ -35,3 +35,5 @@ Dans cette séance nous allons reprendre l'ensemble des concepts vu cette année
 * Un admin pourra ajouter une catégorie depuis une page de gestion dédiée (CRUD possible, mais mis en page)
 * Une page de recherche permettra de rechercher un message dans toutes les catégories (texte libre)
 * On pourra filtrer par tag
+* Ajouter un événement déclenché à chaque ajout d'un message et diffuser aux utilisateurs par mail
+*
