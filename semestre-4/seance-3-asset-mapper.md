@@ -1,7 +1,7 @@
-# Séance 3 : Asset Mapper
+# Séance 3 : AssetMapper
 
 {% hint style="info" %}
-Depuis la version 7 de Symfony, il est conseillé d'utiliser une version sans webpack : [https://symfony.com/doc/current/frontend/asset_mapper.html](https://symfony.com/doc/current/frontend/asset_mapper.html)
+Depuis la version 7 de Symfony, il est conseillé d'utiliser une version sans webpack : [https://symfony.com/doc/current/frontend/asset\_mapper.html](https://symfony.com/doc/current/frontend/asset_mapper.html)
 {% endhint %}
 
 ## Introduction
@@ -36,9 +36,12 @@ Plusieurs fichiers ont été ajoutés à votre projet :
 Et dans base.html.twig, vous avez maintenant :
 
 ```twig
+
+{% raw %}
 {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
 {% endblock %}
+{% endraw %}
 ```
 
 ## Réorganiser vos images
@@ -165,7 +168,7 @@ Ajouter Bootstrap à votre projet. Créer un fichier `assets/styles/app.css` et 
 
 Ajoutez une dépendance à une librairie d'icône (par exemple Font Awesome) et ajoutez un icône à votre page dans le menu.
 
-Modifiez le filtre Twig créé sur la séance d'avant pour ajouter des étoiles à la place des * ou -.
+Modifiez le filtre Twig créé sur la séance d'avant pour ajouter des étoiles à la place des \* ou -.
 
 ## Précédemment dans Symfony, Webpack Encore et CSS
 
