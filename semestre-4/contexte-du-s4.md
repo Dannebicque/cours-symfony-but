@@ -25,12 +25,15 @@ Séance de TP noté individuelle (3h) en fin de ressource et évaluation écrite
 ## Les chapitres de la ressource
 
 1. [Notion de service : exemple du mail](seance-1-notion-de-service-exemple-du-mail.md) : Correction de la dernière séance de S3 et rappels sur les services
-
-
-
-- Twig avancé (filtre) et AssetMapper
-- Event Dispatcher/Listener
-- Localisation de l'application
-- Requetes personnalisés (repository)
-- Formulaires et validations
-- Peut être sécurité et voters
+2. [Filtres twig](seance-2-filtres-twig.md) : Personnalisation des filtres Twig
+3. [AssetMapper](seance-3-asset-mapper.md) : Gestion des assets (CSS, JS, images, ...)
+4. [Mise en place d'un panier](seance-4-panier.md) : Utilisation des services et des sessions
+5. [Event Dispatcher/Listener](seance-5-events.md) : Gestion des événements
+6. [Localisation de l'application](seance-6-localisation.md) : Gestion des langues
+7. [Requetes personnalisés (repository)](seance-7-repository-et-requetes.md) : Utilisation des repositories
+8. [Formulaires](seance-8-formulaires.md) : Personnalisation des formulaires
+9. [Formulaires et validations](seance-9-validation-form-event.md) : Validation des formulaires
+10. [Sécurité et voters](seance-10-voters.md) : Gestion des droits
+11. [Séance révision](seance-11-revisions.md) : TP de révision
+12. [TP Noté (3 heures)](seance-12-13-tp-note.md) : TP noté
+13. [Evaluation écrite](seance-14-evaluation.md) : Evaluation écrite

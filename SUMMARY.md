@@ -40,6 +40,8 @@
 
 ***
 
+## Autres ressources
+
 * [FAQ](faq.md)
 * [Installation](installation.md)
 * [Mise en production](mise-en-production.md)
