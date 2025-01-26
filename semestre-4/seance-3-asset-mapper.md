@@ -16,7 +16,156 @@ Le composant a deux fonctionnalités principales :
 
 **Importmaps** : Une fonctionnalité native du navigateur qui facilite l'utilisation de l'instruction `import` de JavaScript (par exemple, `import { Modal } from 'bootstrap'`) sans système de build. Elle est prise en charge par tous les navigateurs (grâce à un shim) et fait partie de la norme HTML.
 
+## Installation
 
+Pour installer le composant AssetMapper, vous devez exécuter la commande suivante :
+
+```bash
+composer require symfony/asset-mapper symfony/asset 
+```
+
+**Ces éléments sont déjà installés si vous avez installé le bundle webapp.**
+
+Plusieurs fichiers ont été ajoutés à votre projet :
+
+* `assets/app.js` Your main JavaScript file;
+* `assets/styles/app.css` Your main CSS file;
+* `config/packages/asset_mapper.yaml` Where you define your asset "paths";
+* `importmap.php` Your importmap config file.
+
+Et dans base.html.twig, vous avez maintenant :
+
+```twig
+{% block javascripts %}
+    {% block importmap %}{{ importmap('app') }}{% endblock %}
+{% endblock %}
+```
+
+## Réorganiser vos images
+
+Il est recommandé de déplacer vos images (celles de votre site : logo, bannière, décoration, ...) dans le répertoire `assets/**` pour les rendre accessibles publiquement. Vous pouvez ensuite les référencer dans vos templates Twig avec `{{ asset('images/product.jpg') }}` si vous avez un répertoire `images` dans `assets`.
+
+Les images uploadées par les utilisateurs (avatars, photos de profil, ...) ne doivent pas être déplacées dans `assets/`. Elles doivent être stockées dans un répertoire `public` (comme `public/uploads/`) et référencées directement dans vos templates Twig.
+
+Si vous regardez la source de la page, vous verrez que les images sont maintenant servies avec un hash de version dans l'URL. Cela signifie que les navigateurs peuvent mettre en cache les images indéfiniment, mais que si vous modifiez une image, le navigateur téléchargera la nouvelle version.
+
+En production il faudra "compiler" les assets avec la commande :
+
+```bash
+bin/console asset-map:compile
+```
+
+Il est possible de lister tous les assets à disposition avec la commande :
+
+```bash
+bin/console debug:asset-map
+```
+
+## Utiliser du JavaScript moderne
+
+Le composant AssetMapper utilise Importmaps pour permettre l'utilisation de l'instruction `import` de JavaScript sans système de build. Cela signifie que vous pouvez écrire du JavaScript moderne sans avoir à vous soucier de la compilation.
+
+Par exemple, en suivant la documentation de Symfony, nous allons créer un fichier javascript `assets/duck.js` :
+
+```javascript
+export default class {
+    constructor(name) {
+        this.name = name;
+    }
+    quack() {
+        console.log(`${this.name} says: Quack!`);
+    }
+}
+```
+
+Ce code JavaScript crée une classe `Duck` avec une méthode `quack()` qui affiche un message dans la console.
+
+Pour utiliser ce code dans un fichier `assets/app.js`, vous pouvez importer le fichier `duck.js` :
+
+```javascript
+import Duck from './duck.js';
+
+const duck = new Duck('Waddles');
+duck.quack();
+```
+
+Comme nous avons déjà ajouté le fichier `app.js` dans le fichier `base.html.twig` avec l'instruction `{{ importmap('app') }}`, vous pouvez maintenant ouvrir la console de votre navigateur pour voir le message `Waddles says: Quack!`. **Et voilà !**
+
+## Importer des dépendances externes
+
+Pour ajouter un package externe, vous pouvez utiliser la commande suivante :
+
+```bash
+bin/console importmap:require bootstrap
+```
+
+Pour ajouter une dépendance à Bootrstrap. Vous pouvez ajouter tous les packages disponibles sur Npm (https://www.npmjs.com/) avec cette commande.
+
+Cela ajoutera une entrée dans le fichier `importmap.php` :
+
+```php
+return [
+    'app' => [
+        'path' => './assets/app.js',
+        'entrypoint' => true,
+    ],
+    'bootstrap' => [
+        'version' => '5.3.0',
+    ],
+];
+```
+
+Cette commande peut installer plusieurs lignes si la librairie a des dépendances. Automatiquement les fichiers sont télécargés et ajoutés dans le répertoire `assets/vendor/`. **Ce dossier ne doit pas être modifié ni ajouté dans Git**
+
+Vous pouvez maintenant utiliser Bootstrap dans votre fichier `app.js` :
+
+```javascript
+import 'bootstrap';
+// ou
+import { Alert } from 'bootstrap'; //pour n'importer que les Alertes par exemple
+```
+
+## Importer des fichiers CSS
+
+### Pour des fichiers CSS internes
+
+Il faut ajouter dans app.js votre fichier CSS :
+
+```javascript
+import '../styles/app.css';
+```
+
+Si styles est un dossier dans assets.
+
+### Pour des fichiers CSS externes
+
+Pour importer des fichiers CSS, vous pouvez utiliser la commande suivante :
+
+```bash
+bin/console importmap:require bootstrap/dist/css/bootstrap.min.css
+```
+
+Puis l'importer dans votre fichier `app.js` :
+
+```javascript
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+## Exercices
+
+## Exercice 1
+
+Tester l'exemple de duck.js et app.js. Modifier le message de la console.
+
+## Exercice 2
+
+Ajouter Bootstrap à votre projet. Créer un fichier `assets/styles/app.css` et ajouter une couleur de fond à la page. Ajouter une couleur de texte.
+
+## Exercice 3
+
+Ajoutez une dépendance à une librairie d'icône (par exemple Font Awesome) et ajoutez un icône à votre page dans le menu.
+
+Modifiez le filtre Twig créé sur la séance d'avant pour ajouter des étoiles à la place des * ou -.
 
 ## Précédemment dans Symfony, Webpack Encore et CSS
 
