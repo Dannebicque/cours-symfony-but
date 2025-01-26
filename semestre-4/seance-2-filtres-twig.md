@@ -108,12 +108,13 @@ class AppExtension extends AbstractExtension
 
     public function stars($note)
     {
+        // pour le moment nous mettons un simple tiret pour les étoiles vides, nous verrons plus tard comment ajouter des icônes avec une libraire CSS
         $html = '';
         for ($i = 0; $i < $note; $i++) {
-            $html .= '<i class="fas fa-star"></i>';
+            $html .= '*';
         }
         for ($i = 0; $i < 5 - $note; $i++) {
-            $html .= '<i class="far fa-star"></i>';
+            $html .= '-';
         }
 
         return $html;
@@ -155,10 +156,10 @@ class AppExtension extends AbstractExtension
     {
         $html = '';
         for ($i = 0; $i < $note; $i++) {
-            $html .= '<i class="fas fa-star"></i>'; //sous réserve que fontawesome soit chargé
+            $html .= '*';
         }
         for ($i = 0; $i < 5 - $note; $i++) {
-            $html .= '<i class="far fa-star"></i>'; //sous réserve que fontawesome soit chargé
+            $html .= '-';
         }
 
         return $html;
@@ -172,7 +173,12 @@ Nous ajoutons sur la déclaration du filtre un tableau avec la clé `is_safe` et
 
 ### Exercice 1
 
-Créer un filtre qui va permettre d'afficher la date du jour au format français. L'appel du filtre dans twig pourrait être :
+Mettre en place les filtres `price` et `stars` dans votre projet pour pouvoir les utiliser dans vos vues.
+La notion d'étoile n'existe pas dans Jeu, vous devrez donc ajouter une entrée dans la base de données, saisir des valeurs pour les jeux et afficher les étoiles en fonction de la note.
+
+### Exercice 2
+
+Créer un filtre qui va permettre d'afficher la date du jour au format français, sur la page d'accueil. L'appel du filtre dans twig pourrait être :
 
 ```twig
 {{ dateObjet|dateFr }}
@@ -182,17 +188,17 @@ Ou `dateObjet` est un objet DateTime envoyé par le contrôleur
 
 Modifier votre filtre pour que la syntaxe suivante puisse fonctionne en utilisant la date du jour
 
-
-
 ```
 {{ 'now'|dateFr }}
 ```
 
-### Exercice 2
+### Exercice 3
 
-Créer un filtre qui va formatter un numéro de téléphone en ajoutant des espaces entre les groupes de chiffres. L'appel du filtre dans twig pourrait être :
+Créer un filtre qui va formatter un numéro de téléphone de l'éditeur en ajoutant des espaces entre les groupes de chiffres. L'appel du filtre dans twig pourrait être :
 
 ```twig
 {{ '0606060606'|formatPhone }}
 {{ '+33606060606'|formatPhone }}
 ```
+
+Notez de nouveau que la donnée n'existe pas, il faut donc ajouter ce champs dans l'entité Editeur, saisir des données et les afficher dans la vue.

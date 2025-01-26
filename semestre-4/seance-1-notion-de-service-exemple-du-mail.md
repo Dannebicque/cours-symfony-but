@@ -172,8 +172,6 @@ L'objectif est de garder vos contrôleurs et les méthodes qu'ils contiennent re
 
 **Pour faciliter le point de départ, vous avez une correction du S3 à votre disposition dans le dossier ci-dessous. Cette correction peut être incomplète par rapport au S3 et peu contenir des différences de nomages ou d'organisation.**
 
-
-
 {% file src="../.gitbook/assets/mmiple-base.zip" %}
 Projet de départ
 {% endfile %}

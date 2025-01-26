@@ -1,12 +1,28 @@
-# Séance 3 : Webpack Encore et CSS
-
-
+# Séance 3 : Asset Mapper
 
 {% hint style="info" %}
-Depuis la version 7 de Symfony, il est conseillé d'utiliser une version sans webpack : [https://symfony.com/doc/current/frontend/asset\_mapper.html](https://symfony.com/doc/current/frontend/asset\_mapper.html)
-
-Nous voyons ici la solution avec Webpack qui est très répendu, et parce que Webpack est un outil que l'on peut utiliser en dehors de Symfony.
+Depuis la version 7 de Symfony, il est conseillé d'utiliser une version sans webpack : [https://symfony.com/doc/current/frontend/asset_mapper.html](https://symfony.com/doc/current/frontend/asset_mapper.html)
 {% endhint %}
+
+## Introduction
+
+Extrait de la documentation officielle de Symfony :
+
+Le composant AssetMapper vous permet d'écrire du JavaScript et du CSS modernes sans la complexité d'utiliser un bundler. Les navigateurs prennent déjà en charge de nombreuses fonctionnalités modernes de JavaScript comme l'instruction import et les classes ES6. Et le protocole HTTP/2 signifie que combiner vos assets pour réduire les connexions HTTP n'est plus urgent. Ce composant est une couche légère qui aide à servir vos fichiers directement au navigateur.
+
+Le composant a deux fonctionnalités principales :
+
+**Mappage et versionnage des assets** : Tous les fichiers à l'intérieur du répertoire `assets/` sont rendus disponibles publiquement et versionnés. Vous pouvez référencer le fichier `assets/images/product.jpg` dans un template Twig avec `{{ asset('images/product.jpg') }}`. L'URL finale inclura un hash de version, comme `/assets/images/product-3c16d92m.jpg`.
+
+**Importmaps** : Une fonctionnalité native du navigateur qui facilite l'utilisation de l'instruction `import` de JavaScript (par exemple, `import { Modal } from 'bootstrap'`) sans système de build. Elle est prise en charge par tous les navigateurs (grâce à un shim) et fait partie de la norme HTML.
+
+
+
+## Précédemment dans Symfony, Webpack Encore et CSS
+
+Dans les versions 4 à 6 la recommandation était d'utiliser Webpack Encore pour gérer les assets de votre projet Symfony.
+
+Ci-dessous le cours sur Webpack Encore, si besoin.
 
 Webpack ([https://webpack.js.org/](https://webpack.js.org/)) est un outil logiciel open-source de type « module bundler » (littéralement, « groupeur de modules »), conçu pour faciliter le développement et la gestion de sites et d'applications web modernes. (source Wikipedia).
 
