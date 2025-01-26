@@ -1,4 +1,4 @@
-# Séance 5 : Localisation de votre application
+# Séance 6 : Localisation de votre application
 
 Le terme "internationalisation" (souvent abrégé [i18n](https://fr.wikipedia.org/wiki/Internationalisation\_\(informatique\)) ) fait référence au processus d'extraction de chaînes et d'autres éléments spécifiques aux paramètres régionaux de votre application dans une couche où ils peuvent être traduits et convertis en fonction des paramètres régionaux de l'utilisateur (c'est-à-dire la langue et le pays). Pour le texte, cela signifie envelopper chacun avec une fonction capable de traduire le texte (ou "message") dans la langue de l'utilisateur :
 

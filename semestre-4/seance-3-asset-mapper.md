@@ -1,4 +1,4 @@
-# Séance 8 : Webpack Encore et CSS
+# Séance 3 : Webpack Encore et CSS
 
 
 

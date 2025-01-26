@@ -1,4 +1,4 @@
-# Séance 4 : Filtres twig
+# Séance 2 : Filtres twig
 
 Twig propose de nombreux filtres permettant d'interagir avec vos variables. Ces filtres sont très utiles pour formater vos données, les transformer, les comparer, etc. Une longue liste est disponible par défaut [https://twig.symfony.com/doc/3.x/](https://twig.symfony.com/doc/3.x/), mais vous pouvez également créer vos propres filtres [https://symfony.com/doc/current/templates.html#writing-a-twig-extension](https://symfony.com/doc/current/templates.html#writing-a-twig-extension).
 

@@ -1,4 +1,4 @@
-# Séance 3 : Formulaires
+# Séance 8 : Formulaires
 
 ## Formulaire pour article
 

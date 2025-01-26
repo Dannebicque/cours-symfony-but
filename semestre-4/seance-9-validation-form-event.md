@@ -1,4 +1,4 @@
-# Séance 10 : Validation des formulaires
+# Séance 9 : Validation des formulaires
 
 ## Validation des formulaires
 

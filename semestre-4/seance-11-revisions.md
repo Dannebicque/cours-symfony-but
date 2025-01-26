@@ -1,4 +1,4 @@
-# Séance 11-12 : TP Révision
+# Séance 11 : TP Révision
 
 Dans cette séance nous allons reprendre l'ensemble des concepts vu cette année sur Symfony et développer un mini forum.
 

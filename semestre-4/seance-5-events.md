@@ -1,4 +1,4 @@
-# Séance 8 : Evénements et Listener
+# Séance 5 : Evénements et Listener
 
 Symfony (comme beaucoup de framework) émét des événements à chaque étape de son cycle de vie (préparation de la requête, traitement de la requête, génération de la réponse, etc.). Ces événements peuvent être écoutés par des listeners qui peuvent modifier le comportement de Symfony.
 
