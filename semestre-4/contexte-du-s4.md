@@ -1,8 +1,6 @@
 # Contexte du S4
 
-## Contexte du S4
-
-### Dans la continuité du S3
+## Dans la continuité du S3
 
 {% hint style="warning" %}
 Tout ce qui a été vu et fait dans Symfony en S3 est considéré comme acquis (donc ne pas hésiter à réviser : le support est ici : [https://docs.mmi-troyes.fr/books/wr319d-wra319d](https://docs.mmi-troyes.fr/books/wr319d-wra319d)).
@@ -10,7 +8,7 @@ Tout ce qui a été vu et fait dans Symfony en S3 est considéré comme acquis (
 **Quelques rappels seront fait, mais on ne revient pas sur les bases de l'installation, de la manipulation contrôleurs/vue, des entités, de la sécurité ou encore la configuration de docker qui doit maintenant être acquise.**
 {% endhint %}
 
-### Enjeux du S4
+## Enjeux du S4
 
 Approfondir un ensemble de concepts (personnalisation des formulaires, événements, webpack, repository, ...), qui facilitent le développement, permettent de garder un code "propre" et "bien rangé".
 
@@ -20,7 +18,7 @@ L'objectif est de produire un _workflow_ complet d'une application web "moderne"
 
 <figure><img src="../.gitbook/assets/schema-S4 (2).png" alt=""><figcaption><p>Organisation des cours du S4</p></figcaption></figure>
 
-### Evaluation de ce module
+## Evaluation de ce module
 
 Séance de TP noté individuelle (3h) en fin de ressource et évaluation écrite (1h) en fin de semestre.
 
