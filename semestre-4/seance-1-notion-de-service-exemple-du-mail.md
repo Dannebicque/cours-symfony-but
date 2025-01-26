@@ -2,12 +2,11 @@
 
 **Le concept de service a déjà été évoqué en S3, il s'agit ici d'un rappel et d'une mise en pratique.**
 
-
 ## Cours
 
 Dans Symfony, tous les objets (au sens d'un ensemble de code qui apporte une fonctionnalité : mail, base de données, entitée, ...) sont des services. Dès l'instanciation d'une application symfony, de nombreux services sont lancés et accessible de partout dans l'application. Il est aussi possible de créer ses propres services.
 
-La documentation officielle de Symfony sur les services : [https://symfony.com/doc/current/service\_container.html](https://symfony.com/doc/current/service\_container.html)
+La documentation officielle de Symfony sur les services : [https://symfony.com/doc/current/service\_container.html](https://symfony.com/doc/current/service_container.html)
 
 ### Utilisation d'un service existant (rappel sur l'usage des mails)
 
@@ -171,17 +170,23 @@ L'objectif est de garder vos contrôleurs et les méthodes qu'ils contiennent re
 
 ### Reprenons quelques bases
 
-**Pour faciliter le point de départ, vous avez une correction du S3 à votre disposition dans le dossier ci-dessous. Cette correction peut être incomplète par rapport au S3 et peu contenir des différences de nommages ou d'organisation.**
+**Pour faciliter le point de départ, vous avez une correction du S3 à votre disposition dans le dossier ci-dessous. Cette correction peut être incomplète par rapport au S3 et peu contenir des différences de nomages ou d'organisation.**
+
+
+
+{% file src="../.gitbook/assets/mmiple-base.zip" %}
+Projet de départ
+{% endfile %}
 
 Un fois le dossier récupéré il faut lancer les commandes suivantes :
 
 * Installer les dépendances :
+
 ```bash
 composer install
 ```
 
-* Créer et mettre à jour le fichier /.env.local avec les informations de connexion à votre base de données.
-
+* Créer et mettre à jour le fichier `.env.local` avec les informations de connexion à votre base de données.
 * puis créer la base de données :
 
 ```bash
@@ -194,10 +199,9 @@ php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 ```
 
-*On pourrait utiliser une migration comme vu en S3, mais pour simplifier nous allons utiliser cette commande qu va ici reconstruire toutes les tables de la base de données*
+_On pourrait utiliser une migration comme vu en S3, mais pour simplifier nous allons utiliser cette commande qu va ici reconstruire toutes les tables de la base de données_
 
 * Charger les données du fichier sql qui se trouve dans le dossier.
-
 * N'oubliez pas de faire le nécessaire du côté de docker pour rendre ce projet accessible depuis votre navigateur sur l'adresse `http://mmiple.mmi-troyes:8319/`. (Url à adapter en fonction de votre configuration).
 
 ### Utilisation du mailer

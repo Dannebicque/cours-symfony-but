@@ -27,18 +27,16 @@
 * [Séance 1 : Notion de service, exemple du mail](semestre-4/seance-1-notion-de-service-exemple-du-mail.md)
 * [Séance 2 : Filtres twig](semestre-4/seance-2-filtres-twig.md)
 * [Séance 3 : AssetMapper](semestre-4/seance-3-asset-mapper.md)
-* [Séance 4 : Mise en place d'un panier](semestre-4/panier.md)
+* [Séance 4 : Mise en place d'un panier](semestre-4/seance-4-mise-en-place-dun-panier.md)
 * [Séance 5 : Event Dispatcher/Listener](semestre-4/seance-5-events.md)
 * [Séance 6 : Localisation de l'application](semestre-4/seance-6-localisation.md)
-* [Séance 7 : Requetes personnalisés (repository)](semestre-4/seance-7-repository-et-requests.md)
+* [Séance 7 : Requetes personnalisés (repository)](semestre-4/seance-7-requetes-personnalises-repository.md)
 * [Séance 8 : Formulaires](semestre-4/seance-8-formulaires.md)
 * [Séance 9 : Formulaires et validations](semestre-4/seance-9-validation-form-event.md)
 * [Séance 10 : Sécurité et voters](semestre-4/seance-10-voters.md)
 * [Séance 11 : Séance révision](semestre-4/seance-11-revisions.md)
 * [Séance 12 - 13 : TP Noté (3 heures)](semestre-4/seance-12-13-tp-note.md)
 * [Séance 14 : Evaluation écrite](semestre-4/seance-14-evaluation.md)
-
-***
 
 ## Autres ressources
 
