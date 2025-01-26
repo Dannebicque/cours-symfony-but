@@ -1,12 +1,14 @@
-# Présentaton de la ressource WR(A)407D
+# Contexte du S4
 
 ## Contexte du S4
 
 ### Dans la continuité du S3
 
-Tout ce qui a été vu et fait dans Symfony en S3 est considéré comme acquis (donc ne pas hésiter à réviser : le support est ici : [https://docs.mmi-troyes.fr/books/wr319d-wra319d](https://docs.mmi-troyes.fr/books/wr319d-wra319d)). 
+{% hint style="warning" %}
+Tout ce qui a été vu et fait dans Symfony en S3 est considéré comme acquis (donc ne pas hésiter à réviser : le support est ici : [https://docs.mmi-troyes.fr/books/wr319d-wra319d](https://docs.mmi-troyes.fr/books/wr319d-wra319d)).
 
-**Quelques rappels seront fait, mais on ne revient pas sur les bases de l'installation, de la manipulation contrôleurs/vue, des entités, de la sécurité.**
+**Quelques rappels seront fait, mais on ne revient pas sur les bases de l'installation, de la manipulation contrôleurs/vue, des entités, de la sécurité ou encore la configuration de docker qui doit maintenant être acquise.**
+{% endhint %}
 
 ### Enjeux du S4
 
