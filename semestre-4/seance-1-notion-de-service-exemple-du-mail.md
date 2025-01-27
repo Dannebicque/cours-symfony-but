@@ -176,6 +176,8 @@ L'objectif est de garder vos contrôleurs et les méthodes qu'ils contiennent re
 Projet de départ
 {% endfile %}
 
+Ou via GitHub : [https://github.com/Dannebicque/mmiples4.git](https://github.com/Dannebicque/mmiples4.git)
+
 Un fois le dossier récupéré il faut lancer les commandes suivantes :
 
 * Installer les dépendances :
