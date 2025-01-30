@@ -111,7 +111,7 @@ class AppExtension extends AbstractExtension
         // pour le moment nous mettons un simple tiret pour les étoiles vides, nous verrons plus tard comment ajouter des icônes avec une libraire CSS
         $html = '';
         for ($i = 0; $i < $note; $i++) {
-            $html .= '*';
+            $html .= '<strong>*</strong>';
         }
         for ($i = 0; $i < 5 - $note; $i++) {
             $html .= '-';
@@ -173,8 +173,7 @@ Nous ajoutons sur la déclaration du filtre un tableau avec la clé `is_safe` et
 
 ### Exercice 1
 
-Mettre en place les filtres `price` et `stars` dans votre projet pour pouvoir les utiliser dans vos vues.
-La notion d'étoile n'existe pas dans Jeu, vous devrez donc ajouter une entrée dans la base de données, saisir des valeurs pour les jeux et afficher les étoiles en fonction de la note.
+Mettre en place les filtres `price` et `stars` dans votre projet pour pouvoir les utiliser dans vos vues. La notion d'étoile n'existe pas dans Jeu, vous devrez donc ajouter une entrée dans la base de données, saisir des valeurs pour les jeux et afficher les étoiles en fonction de la note.
 
 ### Exercice 2
 
