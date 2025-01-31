@@ -327,5 +327,5 @@ Il existe plusieurs fonctions :
 
 ### Exercice 3
 
-* Affichez un formulaire avec les champs prix, texte (nom) et code postal.
+* Dans une page "recherche" (contrôleur + vue), mettre en place un formulaire avec les champs prix, texte (nom) et code postal. Ajouter un lien dans le menu
 * Récupérez ces données et les passer dans une requête qui filtre les produits inférieurs au prix saisie et dont le code postal de l'éditeur est celui saisi ou pour lesquels le nom contient le "texte" du champs associé.. Triez par prix décroissant.
