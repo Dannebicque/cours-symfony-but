@@ -55,13 +55,13 @@ Si vous regardez la source de la page, vous verrez que les images sont maintenan
 En production il faudra "compiler" les assets avec la commande :
 
 ```bash
-bin/console asset-map:compile
+php bin/console asset-map:compile
 ```
 
 Il est possible de lister tous les assets à disposition avec la commande :
 
 ```bash
-bin/console debug:asset-map
+php bin/console debug:asset-map
 ```
 
 ## Utiliser du JavaScript moderne
@@ -99,7 +99,7 @@ Comme nous avons déjà ajouté le fichier `app.js` dans le fichier `base.html.t
 Pour ajouter un package externe, vous pouvez utiliser la commande suivante :
 
 ```bash
-bin/console importmap:require bootstrap
+php bin/console importmap:require bootstrap
 ```
 
 Pour ajouter une dépendance à Bootrstrap. Vous pouvez ajouter tous les packages disponibles sur Npm (https://www.npmjs.com/) avec cette commande.
