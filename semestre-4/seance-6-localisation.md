@@ -1,6 +1,6 @@
-# Séance 6 : Localisation de votre application
+# Séance 6 : Localisation de l'application
 
-Le terme "internationalisation" (souvent abrégé [i18n](https://fr.wikipedia.org/wiki/Internationalisation\_\(informatique\)) ) fait référence au processus d'extraction de chaînes et d'autres éléments spécifiques aux paramètres régionaux de votre application dans une couche où ils peuvent être traduits et convertis en fonction des paramètres régionaux de l'utilisateur (c'est-à-dire la langue et le pays). Pour le texte, cela signifie envelopper chacun avec une fonction capable de traduire le texte (ou "message") dans la langue de l'utilisateur :
+Le terme "internationalisation" (souvent abrégé [i18n](https://fr.wikipedia.org/wiki/Internationalisation_\(informatique\)) ) fait référence au processus d'extraction de chaînes et d'autres éléments spécifiques aux paramètres régionaux de votre application dans une couche où ils peuvent être traduits et convertis en fonction des paramètres régionaux de l'utilisateur (c'est-à-dire la langue et le pays). Pour le texte, cela signifie envelopper chacun avec une fonction capable de traduire le texte (ou "message") dans la langue de l'utilisateur :
 
 ```php
 // text will *always* print out in English
@@ -94,7 +94,7 @@ Il est possible de copier/coller les chaînes à traduire manuellement, mais Sym
 bin/console translation:extract en --format yaml --force
 ```
 
-Cette commande est à exécuter pour chaque locale de votre site (ici en). Le format permet de définir le type de fichier de sortie.&#x20;
+Cette commande est à exécuter pour chaque locale de votre site (ici en). Le format permet de définir le type de fichier de sortie.
 
 Le `--force` va écraser les données existantes pour ajouter les clés manquantes.
 
@@ -175,7 +175,7 @@ La variable `_locale` est automatiquement injectée dans le contrôleur et peut 
 
 ## Exercices
 
-1. Créer une page d'accueil qui affiche un message de bienvenue en français et en anglais ;
+1. Traduire le menu et la page jeu (qui liste les jeux) de mmiple
 2. Créer un lien qui permet de changer de langue.
 
 ## Localisation des heures, des dates, ...
@@ -184,10 +184,10 @@ Twig permet de faciliter la localisation des dates, des heures, ...
 
 Vous pouvez suivre les documentations selon vos besoins :
 
-* Les dates : [https://twig.symfony.com/doc/3.x/filters/format\_date.html](https://twig.symfony.com/doc/3.x/filters/format\_date.html)
-* Les dates et heures : [https://twig.symfony.com/doc/3.x/filters/format\_datetime.html](https://twig.symfony.com/doc/3.x/filters/format\_datetime.html)
-* Les heures : [https://twig.symfony.com/doc/3.x/filters/format\_time.html](https://twig.symfony.com/doc/3.x/filters/format\_time.html)
-* Les monnaies : [https://twig.symfony.com/doc/3.x/filters/format\_currency.html](https://twig.symfony.com/doc/3.x/filters/format\_currency.html)
+* Les dates : [https://twig.symfony.com/doc/3.x/filters/format\_date.html](https://twig.symfony.com/doc/3.x/filters/format_date.html)
+* Les dates et heures : [https://twig.symfony.com/doc/3.x/filters/format\_datetime.html](https://twig.symfony.com/doc/3.x/filters/format_datetime.html)
+* Les heures : [https://twig.symfony.com/doc/3.x/filters/format\_time.html](https://twig.symfony.com/doc/3.x/filters/format_time.html)
+* Les monnaies : [https://twig.symfony.com/doc/3.x/filters/format\_currency.html](https://twig.symfony.com/doc/3.x/filters/format_currency.html)
 
 Dans tous les cas deux bundles sont nécessaires
 
@@ -200,4 +200,6 @@ Ces deux dépendances nécessites [php-intl](https://www.php.net/manual/fr/book.
 
 ### Exercices
 
-* Installez les éléments et testés différents cas de figure avec les dates.
+* Installez les éléments et testés différents cas de figure&#x20;
+  * avec les dates (afficher la date du jour sur la page d'accueil).
+  * avec les monnaies à la place du filtre que nous avions écrit dans les séances précédentes.

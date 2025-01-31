@@ -1,4 +1,4 @@
-# Séance 7 : Repository et requêtes
+# Séance 7 : Requetes personnalisés (repository)
 
 Dans cette partie nous allons revenir sur les notions de repository et de requêtes, afin de pouvoir écrire nos propres requêtes.
 
@@ -8,7 +8,7 @@ Un repository est une classe qui permet de faire des requêtes sur une table (pa
 
 Ce fichier va contenir nos requêtes spécifiques, en utilisant au choix du SQL ou du DQL (Doctrine Query Language), qui permet de construire des requêtes en notation objet sans utiliser la syntaxe SQL qui nous rendrait dépendant de notre SGBD.
 
-Reprenons l'exemple de la séance 2, avec les entités Adresse, Article et Fournisseur. Nous allons analyser le repository pour l'entité Adresse.
+Prenons par exemple une entité Adresse. Nous allons analyser le repository pour l'entité Adresse.
 
 #### AdresseRepository.php
 
@@ -35,24 +35,6 @@ class AdresseRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Adresse::class);
-    }
-
-    public function save(Adresse $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    public function remove(Adresse $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
     }
 
 //    /**
@@ -86,8 +68,6 @@ class AdresseRepository extends ServiceEntityRepository
 Tout d'abord ce fichier contient une classe qui étend la classe ServiceEntityRepository, qui est une classe fournie par Doctrine. Cette classe permet de faire des requêtes sur une table de la base de données.
 
 La classe contient une méthode constructeur qui prend en paramètre un objet de type ManagerRegistry, qui est une classe fournie par Doctrine. Cette classe permet de récupérer des informations sur la base de données, notamment le nom de la table associée à l'entité.
-
-La classe contient également 2 méthodes qui permettent de sauvegarder et de supprimer une entité dans la base de données. Ces méthodes sont très utiles, car elles permettent de ne pas avoir à écrire le code pour persister et supprimer une entité dans la base de données. Cet ajout est relativement récent dans l'éco-système Symfony. Il n'est pas obligatoire de l'utiliser, mais cela allège le code de vos contrôleurs.
 
 Enfin, notez les lignes de commentaires avant la classe. Elles indiquent les 4 méthodes nativement proposées par les repository avec Doctrine, à savoir (voir S3 pour plus de détails) :
 
@@ -166,8 +146,8 @@ Cette requête est très similaire à la précédente, sauf qu'elle **ne doit re
 
 ### Exercice
 
-* Proposer une requête qui permet de récupérer toutes les adresses dont le champ `code_postal` est égal à 10000.
-* Proposer une requête qui permet de récupérer toutes les adresses dont le champ `code_postal` est égal à 10000 et les réponses triés par rue.
+* Proposer une requête qui permet de récupérer tous les éditeurs dont le champ `code_postal` est égal à 33000.
+* Proposer une requête qui permet de récupérer tous les éditeurs et trier les réponses par nom.
 * Testez ces deux méthodes dans un contrôleur pour voir les résultats.
 
 **Ajoutez des données dans votre base de données pour effectuer vos tests.**
@@ -338,14 +318,14 @@ Il existe plusieurs fonctions :
 
 ### Exercice 2
 
-* Proposer une requête qui permet de récupérer toutes les articles dont le prix est supérieur à une valeur passée en paramètre.
-* Proposer une requête qui permet de récupérer toutes les articles dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre.
-* Proposer une requête qui permet de récupérer toutes les articles dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre, et qui sont triés par prix décroissant.
-* Proposer une requête qui permet de récupérer toutes les articles dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre, et qui sont triés par prix décroissant, et qui est proposé par un fournisseur dont le code postal est 10000.
-* Ecrire les méthodes correspondantes dans le repository `ArticleRepository`.
-* Utiliser les méthodes dans le contrôleur `ArticleController` pour afficher les résultats dans une vue.
+* Proposer une requête qui permet de récupérer tous les jeux dont le prix est supérieur à une valeur passée en paramètre.
+* Proposer une requête qui permet de récupérer tous les jeux dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre.
+* Proposer une requête qui permet de récupérer tous les jeux dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre, et qui sont triés par prix décroissant.
+* Proposer une requête qui permet de récupérer tous les jeux dont le prix est supérieur à une valeur passée en paramètre et dont le nom contient une chaîne de caractères passée en paramètre, et qui sont triés par prix décroissant, et qui est proposé par un éditeur dont le code postal est 33000.
+* Ecrire les méthodes correspondantes dans le repository `JeuRepository`.
+* Utiliser les méthodes dans le contrôleur `JeuxRequetesController` pour afficher les résultats dans une vue. Chaque methode utilisera une requête (donc 4 méthodes/routes). Mais la même vue pourra être utilisée.
 
 ### Exercice 3
 
-* Affichez un formulaire avec les champs prix et code postal.
-* Récupérez ces données et les passer dans une requête qui filtre les produits inférieurs au prix saisie et dont le code postal du fournisseur est celui saisi. Triez par prix décroissant.
+* Affichez un formulaire avec les champs prix, texte (nom) et code postal.
+* Récupérez ces données et les passer dans une requête qui filtre les produits inférieurs au prix saisie et dont le code postal de l'éditeur est celui saisi ou pour lesquels le nom contient le "texte" du champs associé.. Triez par prix décroissant.
