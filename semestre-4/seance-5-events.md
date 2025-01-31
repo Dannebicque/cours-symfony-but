@@ -1,4 +1,4 @@
-# Séance 5 : Evénements et Listener
+# Séance 5 : Event Dispatcher/Listener
 
 Symfony (comme beaucoup de framework) émét des événements à chaque étape de son cycle de vie (préparation de la requête, traitement de la requête, génération de la réponse, etc.). Ces événements peuvent être écoutés par des listeners qui peuvent modifier le comportement de Symfony.
 
@@ -51,12 +51,12 @@ class MyEventSubscriber implements EventSubscriberInterface
 Dans cet exemple, la méthode `onKernelRequest()` sera appelée à chaque fois que l'événement `kernel.request` sera émis.
 
 {% hint style="info" %}
-Il existe aussi la possibilité de définir des listener avec une syntaxe différente qui ne va écouter qun' seul événement précis : [https://symfony.com/doc/current/event\_dispatcher.html#creating-an-event-listener](https://symfony.com/doc/current/event\_dispatcher.html#creating-an-event-listener)
+Il existe aussi la possibilité de définir des listener avec une syntaxe différente qui ne va écouter qun' seul événement précis : [https://symfony.com/doc/current/event\_dispatcher.html#creating-an-event-listener](https://symfony.com/doc/current/event_dispatcher.html#creating-an-event-listener)
 {% endhint %}
 
 ## Définir des événements (_Event_)
 
-[https://symfony.com/doc/current/components/event\_dispatcher.html](https://symfony.com/doc/current/components/event\_dispatcher.html)
+[https://symfony.com/doc/current/components/event\_dispatcher.html](https://symfony.com/doc/current/components/event_dispatcher.html)
 
 Pour définir nos propres événements il faut deux choses :
 
@@ -166,4 +166,4 @@ Créer un événement `UserRegisteredEvent` qui sera émis à chaque fois qu'un 
 
 ### Exercice 2
 
-Créer un deuxième événement `UserUpdatedEvent` qui sera émis à chaque fois qu'un utilisateur met à jour son profil. Créer un listener qui enverra un email (en utilisant notre service) à l'utilisateur pour lui dire qu'il a bien été mis à jour.
+Créer deux événements `JeuAddedEvent` et `JeuUpdatedEvent` qui seront émis à chaque fois qu'un utilisateur ajoute ou modifie un jeu. Créer un listener qui enverra un email (en utilisant notre service) à l'administrateur du site (`admin@mmiple.fr)` pour lui indiquer qu'un jeu a été mis à jour ou ajouté avec les informations dans l'email.
