@@ -81,7 +81,9 @@ Affichez le contenu du panier sur la page `panier/index.html.twig`. Le contenu d
 #### La partie Twig
 
 ```twig
-{% block main %}
+
+<div data-gb-custom-block data-tag="block">
+
     <h1>Panier</h1>
 
     <table class="table">
@@ -96,13 +98,14 @@ Affichez le contenu du panier sur la page `panier/index.html.twig`. Le contenu d
         <tbody id="panier">
         </tbody>
     </table>
-{% endblock %}
+
+</div>
 ```
 
 #### La partie JavaScript
 
 ```javascript
-//dans app.js
+// dans panier.js
 document.addEventListener('DOMContentLoaded', function() {
     // Récupération du panier
     // détecter si un élément avec l'id panier existe, si oui appeler la fonction afficherPanier
@@ -111,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// dans panier.js
 
 function afficherPanier() {
     // Récupération du panier
