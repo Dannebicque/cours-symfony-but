@@ -81,10 +81,7 @@ Affichez le contenu du panier sur la page `panier/index.html.twig`. Le contenu d
 #### La partie Twig
 
 ```twig
-
-<div data-gb-custom-block data-tag="block">
-
-    <h1>Panier</h1>
+ <h1>Panier</h1>
 
     <table class="table">
         <thead>
@@ -98,8 +95,6 @@ Affichez le contenu du panier sur la page `panier/index.html.twig`. Le contenu d
         <tbody id="panier">
         </tbody>
     </table>
-
-</div>
 ```
 
 #### La partie JavaScript
