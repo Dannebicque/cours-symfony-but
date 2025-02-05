@@ -168,4 +168,4 @@ Créer un événement `UserRegisteredEvent` qui sera émis à chaque fois qu'un 
 
 Créer deux événements : ADDED et UPDATED (mais un seul fichier `JeuEvent)` qui seront émis à chaque fois qu'un utilisateur ajoute ou modifie un jeu. Créer un listener qui enverra un email (en utilisant notre service) à l'administrateur du site (`admin@mmiple.fr)` pour lui indiquer qu'un jeu a été mis à jour ou ajouté avec les informations dans l'email.
 
-On utiliserai un email avec template pour afficher toutes les informations du jeu.
+On utiliserai un email avec template pour afficher toutes les informations du jeu. Vous pouvez/devez modifier la méthode `sendTemplatedMail` pour qu'elle prenne en paramètre un nom de fichier Twig qui sera utilisé comme modèle pour chaque mail.
