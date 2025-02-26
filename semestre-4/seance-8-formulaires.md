@@ -127,9 +127,8 @@ Maintenant nous pouvons utiliser notre variable $codePostal comme nous le souhai
                 'class' => Editeur::class,
                 'choice_label' => 'libelle',
                 'query_builder' => function (EditeurRepository $fr) use ($codePostal) {
-                    return $fr->createQueryBuilder('f')
-                        ->join('f.adresse', 'a')
-                        ->where('a.codePostal = :codePostal')
+                    return $fr->createQueryBuilder('e')
+                        ->where('e.cp = :codePostal')
                         ->setParameter('codePostal', $codePostal)
                     ;
                 },
