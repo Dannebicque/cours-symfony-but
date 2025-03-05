@@ -35,7 +35,7 @@
 * [Séance 9 : Formulaires et validations](semestre-4/seance-9-validation-form-event.md)
 * [Séance 10 : Sécurité et voters](semestre-4/seance-10-voters.md)
 * [Séance 11 : Séance révision](semestre-4/seance-11-revisions.md)
-* [Séance 12 - 13 : TP Noté (3 heures)](semestre-4/seance-12-13-tp-note.md)
+* [Séance 12 - 13 : TP Noté (2 heures 45)](semestre-4/seance-12-13-tp-note.md)
 * [Séance 14 : Evaluation écrite](semestre-4/seance-14-evaluation.md)
 
 ## Autres ressources
