@@ -1,5 +1,13 @@
 # Présentation
 
+{% hint style="warning" %}
+Le cours de 2025-2026 est mené par Patrice Gommery et se trouve ici : [https://docs.mmi-troyes.fr/books/wr319d-wra319d](https://docs.mmi-troyes.fr/books/wr319d-wra319d)
+{% endhint %}
+
+
+
+
+
 **L'ensemble de ce cours se base sur la version 6 de Symfony**
 
 {% hint style="success" %}
