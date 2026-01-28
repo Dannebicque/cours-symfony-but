@@ -20,7 +20,7 @@ L'objectif est de produire un _workflow_ complet d'une application web "moderne"
 
 ## Evaluation de ce module
 
-Séance de TP noté individuelle (3h) en fin de ressource et évaluation écrite (1h) en fin de semestre.
+Evaluation régulières en fin de séance (QCM) + TP Noté (QCM associé) + QCM de cours (30 mars).
 
 ## Les chapitres de la ressource
 
