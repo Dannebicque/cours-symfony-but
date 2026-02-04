@@ -71,7 +71,7 @@ class AppExtension extends AbstractExtension
         public function formatPrice($number, $symbol = '€', $decimals = 0, $decPoint = '.', $thousandsSep = ',')
     {
         $price = number_format($number, $decimals, $decPoint, $thousandsSep);
-        $price = $price. ' €'; //il faudrait améliorer encore ce code car le symbole ne se met pas à la fin si le nombre est en dollar par exemple.
+        $price = $price. ' '.$symbol; //il faudrait améliorer encore ce code car le symbole ne se met pas à la fin si le nombre est en dollar par exemple.
 
         return $price;
     }
