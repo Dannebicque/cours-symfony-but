@@ -37,11 +37,9 @@ Et dans base.html.twig, vous avez maintenant :
 
 ```twig
 
-{% raw %}
 {% block javascripts %}
     {% block importmap %}{{ importmap('app') }}{% endblock %}
 {% endblock %}
-{% endraw %}
 ```
 
 ## Réorganiser vos images
