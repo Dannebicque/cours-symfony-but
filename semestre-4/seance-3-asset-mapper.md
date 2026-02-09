@@ -62,9 +62,13 @@ Il est possible de lister tous les assets à disposition avec la commande :
 php bin/console debug:asset-map
 ```
 
+{% hint style="warning" %}
+## Attention, une fois compilées les assets sont prioritaires et vos modifications ne sont plus prises en comptes. Supprimez le répertoire build dans public si besoin.
+{% endhint %}
+
 ## Utiliser du JavaScript moderne
 
-Le composant AssetMapper utilise Importmaps pour permettre l'utilisation de l'instruction `import` de JavaScript sans système de build. Cela signifie que vous pouvez écrire du JavaScript moderne sans avoir à vous soucier de la compilation.
+Le composant AssetMapper utilise ImportmMaps pour permettre l'utilisation de l'instruction `import` de JavaScript sans système de build. Cela signifie que vous pouvez écrire du JavaScript moderne sans avoir à vous soucier de la compilation.
 
 Par exemple, en suivant la documentation de Symfony, nous allons créer un fichier javascript `assets/duck.js` :
 
@@ -151,6 +155,10 @@ Puis l'importer dans votre fichier `app.js` :
 ```javascript
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
+
+{% hint style="info" %}
+## Il est possible de compiler du SCSS avec AssetMapper, cependant, il est recommandé de travailler avec un compilateur externe et de ne prendre en compte que le CSS généré.
+{% endhint %}
 
 ## Exercices
 
