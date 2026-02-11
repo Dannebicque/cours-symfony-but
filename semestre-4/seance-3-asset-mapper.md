@@ -281,3 +281,9 @@ Créer et modifier des contrôleurs et des vues pour tester votre style.
 ### Exercice 2
 
 En vous appuyant sur la documentation de Boostrap et de Symfony, ajouter Bootstrap à votre projet (ni en CDN, ni en téléchargement, mais en l'installant avec npm ou yarn).
+
+Utilisez par exemple :&#x20;
+
+```
+@fortawesome/fontawesome-free/css/all.min.css
+```
