@@ -145,6 +145,104 @@ Quelques explications :
 
 N'oubliez pas d'ajouter les use qui vont bien ! (**ou utilisez PhpStorm avec le plugin Symfony**).
 
+### Bonnes pratiques
+
+#### Options d’affichage (liste non exhaustive)
+
+* `label` → personnaliser le libellé d’un champ (`->add('nom', TextType::class, ['label' => 'Nom du jeu'])`)
+* `attr` → ajouter des attributs HTML (`placeholder`, classes CSS, data-attributes, etc.)
+* `required` → rendre un champ facultatif (`false`)
+* `help` / `help_attr` → ajouter un texte d’aide sous le champ
+
+## Traduction dans les formulaires
+
+### Les labels sont traduisibles automatiquement
+
+Si on fait :
+
+```
+->add('name')
+```
+
+Symfony génère un label basé sur le nom du champ.<br>
+
+Mais si on fait :
+
+```
+->add('name', TextType::class, [
+    'label' => 'form.game.name'
+])
+```
+
+Alors il va chercher la clé dans les fichiers de traduction.
+
+* `label` est une clé de traduction (on aurait pu l'écrire en clair aussi)
+* Le domaine par défaut est `messages`
+* On peut définir un autre domaine
+
+***
+
+### Définir le domaine de traduction du formulaire
+
+Dans ton FormType :
+
+```
+public function configureOptions(OptionsResolver $resolver): void
+{
+    $resolver->setDefaults([
+        'translation_domain' => 'form',
+    ]);
+}
+```
+
+👉 Cela évite de mélanger les clés métier et les clés UI.
+
+Une bonne pratique :
+
+| Domaine    | Contenu                    |
+| ---------- | -------------------------- |
+| messages   | textes généraux            |
+| form       | labels, help, placeholders |
+| validators | messages de validation     |
+
+***
+
+## Traduire plus que les labels
+
+Dans les options :
+
+```
+->add('name', TextType::class, [
+    'label' => 'form.game.name',
+    'help' => 'form.game.name_help',
+    'attr' => [
+        'placeholder' => 'form.game.name_placeholder'
+    ]
+])
+```
+
+⚠ Important :\
+Les `attr` ne sont pas traduits automatiquement !
+
+Il faut faire :
+
+```
+'attr' => [
+    'placeholder' => 'form.game.name_placeholder'
+],
+'label_translation_parameters' => [...],
+```
+
+Ou utiliser :
+
+```
+'attr' => [
+    'placeholder' => $this->translator->trans('form.game.name_placeholder')
+]
+```
+
+***
+
 ### Exercice
 
 * Modifiez vos fichier pour permettre de filtrer sur un code postal le éditeur. Ajoutez des adresses et des éditeurs (avec le formulaire que vous avez créé sur la séance précédente). Vérifiez que tout fonctionne et que vous filtrez bien les éditeurs selon leur code postal.
@@ -152,3 +250,5 @@ N'oubliez pas d'ajouter les use qui vont bien ! (**ou utilisez PhpStorm avec le 
   * En reprenant les éléments de la séance 7 du S3, et en installant Bootstrap, affichez le formulaire article sur 2 colonnes avec le thème de formulaire adapté . Vous devez obtenir le résultat ci-dessous :
 
 <figure><img src="../.gitbook/assets/Capture d’écran 2023-02-10 à 08.46.43.png" alt=""><figcaption></figcaption></figure>
+
+* Modifier le formulaire pour qu'il soit dans les différentes langues de votre site, et gérer les traductions dans le domaine "form"
