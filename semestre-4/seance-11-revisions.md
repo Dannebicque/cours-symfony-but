@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Séance 10 & 11 : Séance révision
 
 Dans cette séance nous allons reprendre l'ensemble des concepts vu cette année sur Symfony et développer un mini forum.
