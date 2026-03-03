@@ -1,6 +1,4 @@
-# Séance 12 - 13 : TP Noté (2 heures 45)
-
-26 Mars, 8h00 / 11h00, 2 heures 45 - Rattrapage
+# Séance 13 : TP Noté (1 heures 25)
 
 **Vous pouvez préparer une installation d'un projet Symfony vide (avec webapp), avec un docker configuré sur le domaine wr407d.mmi-troyes.fr. Le projet sera nommé avec votre login MMI.**
 
