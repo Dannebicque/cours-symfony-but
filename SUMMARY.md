@@ -33,7 +33,7 @@
 * [Séance 7 : Requetes personnalisés (repository)](semestre-4/seance-7-repository-et-requetes.md)
 * [Séance 8 : Formulaires](semestre-4/seance-8-formulaires.md)
 * [Séance 9 : Formulaires et validations](semestre-4/seance-9-validation-form-event.md)
-* [Séance 10 & 11 : Séance révision](semestre-4/seance-11-revisions.md)
+* [Séances 10 & 11 : Séances révision](semestre-4/seance-11-revisions.md)
 * [Séance 12 : Sécurité et voters](semestre-4/seance-10-voters.md)
 * [Séance 13 : TP Noté (1 heures 25)](semestre-4/seance-12-13-tp-note.md)
 * [Séance 14 : Evaluation écrite](semestre-4/seance-14-evaluation.md)
